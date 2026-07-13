@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FadeIn, StaggerChildren, StaggerItem } from './animation/FadeIn'
+import { Mail } from 'lucide-react'
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -79,9 +80,7 @@ export default function Contact() {
               <StaggerItem>
                 <div className="flex items-center gap-4">
                   <div className="h-12 w-12 rounded-lg bg-navy/5 flex items-center justify-center text-glacier shrink-0">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
+                    <Mail className="w-5 h-5" strokeWidth={2} />
                   </div>
                   <div>
                     <div className="text-xs font-semibold text-medium-gray uppercase tracking-widest">Email</div>
@@ -95,8 +94,9 @@ export default function Contact() {
               <StaggerItem>
                 <div className="flex items-center gap-4">
                   <div className="h-12 w-12 rounded-lg bg-navy/5 flex items-center justify-center text-glacier shrink-0">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                      <rect width="4" height="12" x="2" y="9" />
                       <circle cx="4" cy="4" r="2" />
                     </svg>
                   </div>

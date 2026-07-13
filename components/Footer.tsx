@@ -2,6 +2,8 @@
 
 import { FadeIn } from './animation/FadeIn'
 import AdanacMark from './brand/AdanacMark'
+import TrianglePattern from './brand/TrianglePattern'
+import { Mail } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -15,8 +17,9 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-navy text-white/60 py-12 border-t-[3px] border-glacier relative z-10">
-      <div className="container mx-auto px-6 md:px-12">
+    <footer className="relative overflow-hidden bg-navy text-white/60 py-12 border-t-[3px] border-glacier z-10">
+      <TrianglePattern variant="dark" opacity={0.08} className="absolute inset-0 w-full h-full" />
+      <div className="relative z-10 container mx-auto px-6 md:px-12">
         <FadeIn>
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
 
@@ -42,13 +45,12 @@ export default function Footer() {
 
             <div className="flex items-center gap-6">
               <a href="mailto:sergey@adanacadvisory.ca" className="hover:text-white transition-colors" aria-label="Email">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
+                <Mail className="w-5 h-5" strokeWidth={2} />
               </a>
               <a href="https://linkedin.com/in/pochikovskiy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="LinkedIn">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect width="4" height="12" x="2" y="9" />
                   <circle cx="4" cy="4" r="2" />
                 </svg>
               </a>

@@ -1,6 +1,7 @@
 'use client'
 
 import { FadeIn, StaggerChildren, StaggerItem } from './animation/FadeIn'
+import TrianglePattern from './brand/TrianglePattern'
 
 export default function SocialProof() {
   const clients = [
@@ -27,8 +28,9 @@ export default function SocialProof() {
   ]
 
   return (
-    <section className="py-24 bg-navy text-white">
-      <div className="container mx-auto px-6 md:px-12">
+    <section className="relative overflow-hidden py-24 bg-navy text-white">
+      <TrianglePattern variant="dark" opacity={0.08} className="absolute inset-0 w-full h-full" />
+      <div className="relative z-10 container mx-auto px-6 md:px-12">
 
         <FadeIn>
           <div className="max-w-3xl mb-16 space-y-4">

@@ -1,22 +1,29 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import AdanacMark from './brand/AdanacMark'
 import AdanacWordmark from './brand/AdanacWordmark'
+import { Menu, X } from 'lucide-react'
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [pastHero, setPastHero] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
+      setIsScrolled(window.scrollY > 20)
+
+      const hero = document.querySelector('#hero')
+      if (hero) {
+        const heroBottom = hero.getBoundingClientRect().bottom
+        setPastHero(heroBottom <= 64)
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -44,15 +51,26 @@ export default function Navigation() {
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-        <a
-          href="#hero"
-          onClick={(e) => handleNavClick(e, '#hero')}
-          className="flex items-center"
-        >
-          <AdanacWordmark color="#ffffff" incColor="rgba(255,255,255,0.35)" fontSize={16} showInc={false} />
-        </a>
+        <AnimatePresence>
+          {pastHero && (
+            <motion.a
+              key="lockup"
+              href="#hero"
+              onClick={(e) => handleNavClick(e, '#hero')}
+              className="flex items-center"
+              initial={{ opacity: 0, x: -8 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -8 }}
+              transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
+            >
+              <AdanacMark size={24} tile={false} fill="#ffffff" />
+              <div className="w-px h-5 bg-white/20 mx-3" />
+              <AdanacWordmark color="#ffffff" incColor="rgba(255,255,255,0.35)" fontSize={14} showInc={false} />
+            </motion.a>
+          )}
+        </AnimatePresence>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8 ml-auto">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -72,26 +90,36 @@ export default function Navigation() {
           </a>
         </div>
 
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden text-white hover:text-glacier focus:outline-none"
-          aria-label="Toggle navigation menu"
-        >
-          <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
-            {isMobileMenuOpen ? (
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.83-4.828 4.83a1 1 0 01-1.414-1.414l4.83-4.83-4.83-4.828a1 1 0 011.414-1.414l4.828 4.83 4.829-4.83a1 1 0 011.414 1.414l-4.83 4.828 4.83 4.83z"
-              />
-            ) : (
-              <path
-                fillRule="evenodd"
-                d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"
-              />
+        <div className="flex items-center gap-3 md:hidden">
+          <AnimatePresence>
+            {pastHero && (
+              <motion.a
+                key="mobile-lockup"
+                href="#hero"
+                onClick={(e) => handleNavClick(e, '#hero')}
+                className="flex items-center"
+                initial={{ opacity: 0, x: -8 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -8 }}
+                transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
+              >
+                <AdanacMark size={20} tile={false} fill="#ffffff" />
+              </motion.a>
             )}
-          </svg>
-        </button>
+          </AnimatePresence>
+
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-white hover:text-glacier focus:outline-none"
+            aria-label="Toggle navigation menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" strokeWidth={2} />
+            ) : (
+              <Menu className="h-6 w-6" strokeWidth={2} />
+            )}
+          </button>
+        </div>
       </div>
 
       <div

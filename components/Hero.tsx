@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import AdanacMark from './brand/AdanacMark'
 import AdanacWordmark from './brand/AdanacWordmark'
+import TrianglePattern from './brand/TrianglePattern'
 
 const container = {
   hidden: { opacity: 0 },
@@ -36,19 +37,8 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center bg-navy text-white overflow-hidden pt-20"
     >
-      {/* Subtle geometric grid background */}
-      <svg
-        className="absolute inset-0 w-full h-full opacity-[0.04]"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden
-      >
-        <defs>
-          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid" />
-      </svg>
+      {/* Brand triangle pattern background */}
+      <TrianglePattern variant="dark" opacity={0.04} className="absolute inset-0 w-full h-full" />
 
       {/* Hero content */}
       <motion.div
