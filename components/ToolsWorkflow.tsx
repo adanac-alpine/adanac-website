@@ -177,34 +177,31 @@ function ToolIcon({ name, className = '' }: { name: string; className?: string }
 
 const row1 = [
   { name: 'JIRA', icon: 'jira' },
+  { name: 'Confluence', icon: 'confluence' },
   { name: 'Slack', icon: 'slack' },
+  { name: 'MS Teams', icon: 'teams' },
   { name: 'Claude', icon: 'claude' },
-  { name: 'Next.js', icon: 'nextjs' },
-  { name: 'Vercel', icon: 'vercel' },
-  { name: 'Sentry', icon: 'sentry' },
-  { name: 'PostHog', icon: 'posthog' },
-  { name: 'Azure DevOps', icon: 'azuredevops' },
+  { name: 'ChatGPT', icon: 'chatgpt' },
+  { name: 'Copilot', icon: 'copilot' },
+  { name: 'Gemini', icon: 'gemini' },
+  { name: 'Codex', icon: 'codex' },
+  { name: 'OpenCode', icon: 'opencode' },
+  { name: 'Jules', icon: 'jules' },
 ]
 
 const row2 = [
-  { name: 'Confluence', icon: 'confluence' },
-  { name: 'MS Teams', icon: 'teams' },
-  { name: 'ChatGPT', icon: 'chatgpt' },
+  { name: 'Azure DevOps', icon: 'azuredevops' },
+  { name: 'Next.js', icon: 'nextjs' },
   { name: 'React', icon: 'react' },
-  { name: 'Supabase', icon: 'supabase' },
-  { name: 'Playwright', icon: 'playwright' },
-  { name: 'Copilot', icon: 'copilot' },
-  { name: 'Render', icon: 'render' },
-]
-
-const row3 = [
-  { name: 'Gemini', icon: 'gemini' },
-  { name: 'Codex', icon: 'codex' },
   { name: 'Tailwind CSS', icon: 'tailwind' },
   { name: 'Python', icon: 'python' },
   { name: 'FastAPI', icon: 'fastapi' },
-  { name: 'OpenCode', icon: 'opencode' },
-  { name: 'Jules', icon: 'jules' },
+  { name: 'Vercel', icon: 'vercel' },
+  { name: 'Supabase', icon: 'supabase' },
+  { name: 'Render', icon: 'render' },
+  { name: 'PostHog', icon: 'posthog' },
+  { name: 'Sentry', icon: 'sentry' },
+  { name: 'Playwright', icon: 'playwright' },
 ]
 
 function MarqueeRow({ tools, reverse = false }: { tools: typeof row1; reverse?: boolean }) {
@@ -254,7 +251,6 @@ export default function ToolsWorkflow() {
         <div className="space-y-4">
           <MarqueeRow tools={row1} />
           <MarqueeRow tools={row2} reverse />
-          <MarqueeRow tools={row3} />
         </div>
 
       </div>
