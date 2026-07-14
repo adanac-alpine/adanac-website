@@ -68,7 +68,7 @@ export default function Hero() {
           variants={item}
           className="text-lg sm:text-xl text-white/70 font-normal max-w-2xl leading-relaxed"
         >
-          Backbase and VeriPark implementation consulting for credit unions, banks, and FinTechs. I help financial institutions go from digital strategy to production — on time, on budget.
+          Implementation consulting for credit unions, banks, and FinTechs. I help financial institutions go from digital strategy to production — on time, on budget.
         </motion.p>
 
         <motion.div variants={item} className="flex flex-col sm:flex-row justify-center gap-4 mt-4">
