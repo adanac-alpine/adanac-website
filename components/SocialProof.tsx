@@ -7,12 +7,12 @@ export default function SocialProof() {
   const clients = [
     {
       platform: 'Backbase',
-      description: 'Delivered commercial banking digital channels for a top-6 Canadian bank — recognized as one of Backbase&apos;s most successful commercial banking implementations in North America.',
+      description: "Delivered commercial banking digital channels for a top-6 Canadian bank — recognized as one of Backbase's most successful commercial banking implementations in North America.",
       type: 'Bank',
     },
     {
       platform: 'Backbase',
-      description: 'Contributed to digital banking platform delivery for a $200B+ US bank — J.D. Power&apos;s #1 ranked mobile banking app for customer satisfaction.',
+      description: "Contributed to digital banking platform delivery for a $200B+ US bank — J.D. Power's #1 ranked mobile banking app for customer satisfaction.",
       type: 'Bank',
     },
     {
@@ -23,6 +23,11 @@ export default function SocialProof() {
     {
       platform: 'VeriPark',
       description: 'Product owner advisor for VeriChannel rollout at an Ontario credit union with 65,000+ members and $3.5B in assets under administration.',
+      type: 'Credit Union',
+    },
+    {
+      platform: 'Salesforce',
+      description: 'Salesforce Financial Services Cloud certified — currently leading data quality, case management automation, and multiple workstreams at YNCU, plus data synchronization with Fiserv DNA at Sunrise Credit Union.',
       type: 'Credit Union',
     },
   ]
@@ -38,7 +43,7 @@ export default function SocialProof() {
               Track Record
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
-              Platforms I&apos;ve delivered on
+              Where I&apos;ve delivered
             </h2>
             <p className="text-white/60 text-lg">
               I&apos;ve worked with banks and credit unions across North America to deliver production-ready digital banking platforms.

@@ -3,16 +3,17 @@ import { describe, it, expect } from 'vitest'
 import Navigation from '../../components/Navigation'
 
 describe('Navigation', () => {
-  it('renders all nav links', () => {
+  it('renders all nav links (desktop + mobile)', () => {
     render(<Navigation />)
-    expect(screen.getByRole('link', { name: /about/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /services/i })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /contact/i })).toBeInTheDocument()
+    // Desktop and mobile navs both render these links
+    expect(screen.getAllByRole('link', { name: /about/i }).length).toBeGreaterThanOrEqual(1)
+    expect(screen.getAllByRole('link', { name: /services/i }).length).toBeGreaterThanOrEqual(1)
+    expect(screen.getAllByRole('link', { name: /contact/i }).length).toBeGreaterThanOrEqual(1)
   })
 
   it('renders the "Get in Touch" CTA button', () => {
     render(<Navigation />)
-    expect(screen.getByRole('link', { name: /get in touch/i })).toBeInTheDocument()
+    expect(screen.getAllByRole('link', { name: /get in touch/i }).length).toBeGreaterThanOrEqual(1)
   })
 
   it('renders the mobile menu toggle', () => {

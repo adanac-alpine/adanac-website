@@ -32,6 +32,7 @@ describe('About', () => {
 
   it('lists CBAP certification', () => {
     render(<About />)
-    expect(screen.getByText(/CBAP/i)).toBeInTheDocument()
+    const matches = screen.getAllByText(/CBAP/)
+    expect(matches.length).toBeGreaterThanOrEqual(1)
   })
 })

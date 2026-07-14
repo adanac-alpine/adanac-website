@@ -27,7 +27,7 @@ describe('Services', () => {
 
   it('lists capabilities for VeriPark', () => {
     render(<Services />)
-    expect(screen.getByText(/verichannel/i)).toBeInTheDocument()
-    expect(screen.getByText(/veritouch crm/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/verichannel/i).length).toBeGreaterThanOrEqual(1)
+    expect(screen.getAllByText(/veritouch crm/i).length).toBeGreaterThanOrEqual(1)
   })
 })

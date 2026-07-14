@@ -43,7 +43,8 @@ describe('Contact', () => {
 
   it('has a hidden honeypot field', () => {
     render(<Contact />)
-    const honeypot = screen.getByRole('textbox', { hidden: true })
-    expect(honeypot).toHaveAttribute('name', 'honeypot')
+    const honeypot = document.querySelector('input[name="honeypot"]')
+    expect(honeypot).toBeInTheDocument()
+    expect(honeypot).toHaveAttribute('type', 'text')
   })
 })

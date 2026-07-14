@@ -17,29 +17,28 @@ export default function Services() {
         'Go-live support and post-launch optimization',
       ],
       icon: (
-        <svg className="w-8 h-8 text-glacier" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-          <line x1="8" y1="21" x2="16" y2="21" />
-          <line x1="12" y1="17" x2="12" y2="21" />
+        <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="10" fill="#0052FF" />
+          <path d="M12 14h16v3H12zm0 5h12v3H12zm0 5h8v3H12z" fill="#fff" />
         </svg>
       ),
     },
     {
-      title: 'VeriPark Implementation',
+      title: 'Salesforce Implementation',
       description:
-        'VeriChannel, VeriTouch CRM, and VeriLoan LOS delivery for credit unions. I help Canadian financial institutions modernize their digital banking on Microsoft Azure and Dynamics — from vendor selection support through to go-live.',
+        'Salesforce Financial Services Cloud and Service Cloud for credit unions — member data unification, case management automation, advisor consoles, and data quality frameworks. SF certified, currently delivering at YNCU and Sunrise Credit Union.',
       capabilities: [
-        'VeriChannel internet & mobile banking delivery',
-        'VeriTouch CRM configuration and data migration',
-        'VeriLoan LOS rollout and workflow design',
-        'Core banking integration (Fiserv DNA, Central 1)',
-        'Member experience design and UAT',
+        'Financial Services Cloud configuration',
+        'Case management & workflow automation',
+        'Data quality frameworks & deduplication',
+        'Core banking data synchronization (Fiserv DNA)',
+        'User training & adoption support',
       ],
       icon: (
-        <svg className="w-8 h-8 text-glacier" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 2L2 7l10 5 10-5-10-5z" />
-          <path d="M2 17l10 5 10-5" />
-          <path d="M2 12l10 5 10-5" />
+        <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="10" fill="#00A1E0" />
+          <path d="M20 10c-3 0-5.5 1.5-7 3.5 1.5-0.5 3-0.5 5 0.5 1.5 0.8 3 2.5 4.5 2.5 1.5 0 3-1 4.5-2.5 2-1 3.5-1 5-0.5-1.5-2-4-3.5-7-3.5z" fill="#fff" opacity="0.9" />
+          <path d="M13 22c0-3 2.5-5.5 5.5-5.5S24 19 24 22s-2.5 5.5-5.5 5.5S13 25 13 22z" fill="#fff" />
         </svg>
       ),
     },
@@ -58,7 +57,7 @@ export default function Services() {
               What I do
             </h2>
             <p className="text-dark-gray text-lg">
-              I specialize in two platforms: Backbase and VeriPark. That depth means I can deliver faster, catch issues earlier, and actually help your team — not just advise from the sidelines.
+              I specialize in two platform ecosystems: Backbase for digital banking and Salesforce for financial services CRM. That depth means I can deliver faster, catch issues earlier, and actually help your team — not just advise from the sidelines.
             </p>
           </div>
         </FadeIn>

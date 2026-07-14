@@ -1,5 +1,6 @@
 'use client'
 
+import { Handshake, Wrench, GraduationCap, Languages } from 'lucide-react'
 import { FadeIn, StaggerChildren, StaggerItem } from './animation/FadeIn'
 import TrianglePattern from './brand/TrianglePattern'
 
@@ -7,19 +8,23 @@ export default function WhatIBring() {
   const differentiators = [
     {
       title: 'Vendor Liaison',
-      description: 'I speak both languages — the vendor\'s technical team and your business stakeholders. I translate between them so nothing gets lost.',
+      description: "I speak both languages — the vendor's technical team and your business stakeholders. I translate between them so nothing gets lost.",
+      icon: <Handshake className="w-6 h-6" strokeWidth={1.5} />,
     },
     {
       title: 'Hands-On Delivery',
-      description: 'I don\'t just advise from the sidelines. I configure, I test, I sit in the room with your team during UAT. Delivery, not decks.',
+      description: "I don't just advise from the sidelines. I configure, I test, I sit in the room with your team during UAT. Delivery, not decks.",
+      icon: <Wrench className="w-6 h-6" strokeWidth={1.5} />,
     },
     {
       title: 'Coaching & Team Building',
-      description: 'I\'ve hired and coached new consultants at Modes. I help your team build internal capability, not dependency.',
+      description: "I've hired and coached new consultants at Modes. I help your team build internal capability, not dependency.",
+      icon: <GraduationCap className="w-6 h-6" strokeWidth={1.5} />,
     },
     {
       title: 'Bilingual',
       description: 'English and Russian. Useful when working with diverse teams and international stakeholders.',
+      icon: <Languages className="w-6 h-6" strokeWidth={1.5} />,
     },
   ]
 
@@ -43,8 +48,10 @@ export default function WhatIBring() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {differentiators.map((item, idx) => (
               <StaggerItem key={idx}>
-                <div className="space-y-3">
-                  <div className="h-1 w-12 bg-glacier rounded-full" />
+                <div className="space-y-4">
+                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-glacier">
+                    {item.icon}
+                  </div>
                   <h3 className="text-lg font-bold">
                     {item.title}
                   </h3>

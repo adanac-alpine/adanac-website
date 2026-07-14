@@ -4,7 +4,6 @@ import About from '@/components/About'
 import SocialProof from '@/components/SocialProof'
 import Services from '@/components/Services'
 import Process from '@/components/Process'
-import TechStack from '@/components/TechStack'
 import ToolsWorkflow from '@/components/ToolsWorkflow'
 import WhatIBring from '@/components/WhatIBring'
 import Scoutloop from '@/components/Scoutloop'
@@ -21,7 +20,6 @@ export default function Home() {
         <SocialProof />
         <Services />
         <Process />
-        <TechStack />
         <ToolsWorkflow />
         <WhatIBring />
         <Scoutloop />

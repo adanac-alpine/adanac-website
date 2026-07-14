@@ -1,0 +1,156 @@
+# Adanac Website CI/CD
+#
+# CI:  lint + tests on every push and PR
+# CD:  Vercel production deploy on merge to main (only after CI passes)
+#
+# ── Deployment modes ─────────────────────────────────────────────────────────
+#   Auto:    push to main → production deploy
+#   Manual:  Actions → Run workflow → choose environment
+#             - production: deploys to adanacalpine.ca
+#             - preview:    deploys to a one-off preview URL
+#
+# ── Prerequisites ────────────────────────────────────────────────────────────
+#   GitHub secrets required:
+#     VERCEL_TOKEN       — Vercel dashboard → Settings → Tokens → Create
+#     VERCEL_ORG_ID      — team_PFN8aBk4T3KzjhaUoFIDJ5Az (from .vercel/project.json)
+#     VERCEL_PROJECT_ID  — prj_S92QOUmkhhnQtcJeSOFBYZtkz3qX (from .vercel/project.json)
+
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+
+  pull_request:
+    branches: [main]
+
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Deploy environment"
+        required: true
+        default: "production"
+        type: choice
+        options:
+          - production
+          - preview
+      ref:
+        description: "Branch or commit to deploy (defaults to main)"
+        required: false
+        default: ""
+
+jobs:
+  # ── CI: lint + test ──────────────────────────────────────────────────────
+  ci:
+    name: Lint & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Run tests
+        run: npm test
+
+  # ── CD: deploy to Vercel ────────────────────────────────────────────────
+  deploy:
+    name: Deploy to Vercel
+    needs: ci
+    runs-on: ubuntu-latest
+    if: |
+      github.repository == 'Segey-P/adanac-website' && (
+        (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production') ||
+        (github.event_name == 'push' && github.ref == 'refs/heads/main')
+      )
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.ref || github.ref }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Check secrets
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "::warning::VERCEL_TOKEN not set — deployment skipped"
+            echo "Add these GitHub secrets to enable deploys:"
+            echo "  VERCEL_TOKEN       — Vercel Settings → Tokens"
+            echo "  VERCEL_ORG_ID      — ${{ vars.VERCEL_ORG_ID || 'team_PFN8aBk4T3KzjhaUoFIDJ5Az' }}"
+            echo "  VERCEL_PROJECT_ID  — ${{ vars.VERCEL_PROJECT_ID || 'prj_S92QOUmkhhnQtcJeSOFBYZtkz3qX' }}"
+            exit 0
+          fi
+
+      - name: Deploy to Vercel (production)
+        id: deploy
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          echo "Deploying to PRODUCTION..."
+          vercel --prod --token="$VERCEL_TOKEN" --yes 2>&1 | tee /tmp/vercel_output.txt
+          VERCEL_EXIT="${PIPESTATUS[0]}"
+
+          if [ "$VERCEL_EXIT" -ne 0 ]; then
+            echo "::error::Vercel CLI exited with code $VERCEL_EXIT"
+            exit "$VERCEL_EXIT"
+          fi
+
+          URL=$(echo "$OUTPUT" | grep -Eo 'https://[^ ]+\.(vercel\.app|adanacalpine\.ca)' | tail -1)
+          echo "DEPLOYMENT_URL=$URL" >> "$GITHUB_OUTPUT"
+          echo "### Production deployment" >> "$GITHUB_STEP_SUMMARY"
+          echo "**URL:** $URL" >> "$GITHUB_STEP_SUMMARY"
+
+  # ── CD: preview deploy (manual only) ────────────────────────────────────
+  deploy-preview:
+    name: Deploy Preview
+    needs: ci
+    runs-on: ubuntu-latest
+    if: |
+      github.repository == 'Segey-P/adanac-website' &&
+      github.event_name == 'workflow_dispatch' &&
+      github.event.inputs.environment == 'preview'
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.ref || github.ref }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Deploy preview
+        id: deploy
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          echo "Deploying PREVIEW..."
+          OUTPUT=$(vercel --token="$VERCEL_TOKEN" --yes 2>&1)
+          echo "$OUTPUT"
+          URL=$(echo "$OUTPUT" | grep -Eo 'https://[^ ]+\.vercel\.app' | tail -1)
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "### Preview deployment" >> "$GITHUB_STEP_SUMMARY"
+          echo "**URL:** $URL" >> "$GITHUB_STEP_SUMMARY"

@@ -1,5 +1,6 @@
 'use client'
 
+import { Search, Settings, Rocket } from 'lucide-react'
 import { FadeIn, StaggerChildren, StaggerItem } from './animation/FadeIn'
 
 export default function Process() {
@@ -8,16 +9,19 @@ export default function Process() {
       number: '01',
       title: 'Discovery',
       description: 'I learn your business, your members, and your current technology landscape. Together we define what success looks like and build a roadmap to get there.',
+      icon: <Search className="w-6 h-6" strokeWidth={1.5} />,
     },
     {
       number: '02',
       title: 'Implementation',
       description: 'Hands-on delivery — platform configuration, system integration, data migration, and custom development. I work alongside your team as part of the delivery, not just an advisor pointing at slides.',
+      icon: <Settings className="w-6 h-6" strokeWidth={1.5} />,
     },
     {
       number: '03',
       title: 'Launch & Support',
       description: 'Testing, training, go-live support, and post-launch optimization. I stay involved until the platform is running smoothly and your team is confident.',
+      icon: <Rocket className="w-6 h-6" strokeWidth={1.5} />,
     },
   ]
 
@@ -42,11 +46,18 @@ export default function Process() {
               <StaggerItem key={idx}>
                 <div className="relative">
                   {idx < steps.length - 1 && (
-                    <div className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)] h-px bg-glacier/20" />
+                    <div className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)]">
+                      <div style={{ borderTop: '1px dashed rgba(74,144,217,0.3)' }} />
+                    </div>
                   )}
                   <div className="text-center space-y-4">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-navy text-white text-xl font-extrabold">
-                      {step.number}
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-navy/5 border border-navy/10 text-glacier">
+                      {step.icon}
+                    </div>
+                    <div>
+                      <span className="text-xs font-bold text-glacier/60 uppercase tracking-widest">
+                        Step {step.number}
+                      </span>
                     </div>
                     <h3 className="text-xl font-bold text-navy">
                       {step.title}

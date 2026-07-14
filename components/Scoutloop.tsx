@@ -47,11 +47,11 @@ export default function Scoutloop() {
                 </p>
 
                 <p className="text-dark-gray leading-relaxed">
-                  It pulls weather, avalanche danger, road closures, and fire bans into one pre-trip briefing. I built it with the same modern stack I bring to client work — Next.js, Supabase, Vercel — and integrated Claude for AI risk assessment.
+                  It pulls weather, avalanche danger, road closures, and fire bans into one pre-trip briefing. Built with the same modern stack I bring to client work — and built using AI-assisted development workflows with Claude, Codex, Gemini, and OpenCode.
                 </p>
 
                 <div className="flex flex-wrap gap-2">
-                  {['Next.js', 'Supabase', 'Vercel', 'Claude AI'].map((tech) => (
+                  {['Next.js', 'React', 'Supabase', 'Vercel', 'Tailwind', 'Python', 'FastAPI'].map((tech) => (
                     <span key={tech} className="text-xs bg-forest/5 text-forest font-semibold px-2.5 py-1 rounded">
                       {tech}
                     </span>

@@ -8,29 +8,41 @@ function CredentialLogo({ name, className = '' }: { name: string; className?: st
     cbap: (
       <svg className={className} viewBox="0 0 40 40" fill="none">
         <rect width="40" height="40" rx="8" fill="#1a2332" />
-        <text x="20" y="16" textAnchor="middle" fill="#4a90d9" fontSize="7" fontWeight="700" fontFamily="Inter, sans-serif">CBAP</text>
-        <text x="20" y="26" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">IIBA</text>
+        <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#d95f26" strokeWidth="1.5" />
+        <text x="20" y="17" textAnchor="middle" fill="#d95f26" fontSize="8" fontWeight="800" fontFamily="Inter, sans-serif">CBAP</text>
+        <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">IIBA</text>
       </svg>
     ),
     cspo: (
       <svg className={className} viewBox="0 0 40 40" fill="none">
         <rect width="40" height="40" rx="8" fill="#1a2332" />
-        <text x="20" y="16" textAnchor="middle" fill="#2d6a4f" fontSize="7" fontWeight="700" fontFamily="Inter, sans-serif">CSPO</text>
-        <text x="20" y="26" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">Scrum</text>
+        <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#2d6a4f" strokeWidth="1.5" />
+        <text x="20" y="17" textAnchor="middle" fill="#2d6a4f" fontSize="8" fontWeight="800" fontFamily="Inter, sans-serif">CSPO</text>
+        <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">Scrum</text>
       </svg>
     ),
     backbase: (
       <svg className={className} viewBox="0 0 40 40" fill="none">
         <rect width="40" height="40" rx="8" fill="#1a2332" />
-        <text x="20" y="16" textAnchor="middle" fill="#4a90d9" fontSize="6" fontWeight="700" fontFamily="Inter, sans-serif">BACKBASE</text>
-        <text x="20" y="26" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">Certified</text>
+        <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#4a90d9" strokeWidth="1.5" />
+        <text x="20" y="17" textAnchor="middle" fill="#4a90d9" fontSize="6" fontWeight="800" fontFamily="Inter, sans-serif">BACKBASE</text>
+        <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">Certified</text>
       </svg>
     ),
     ubc: (
       <svg className={className} viewBox="0 0 40 40" fill="none">
         <rect width="40" height="40" rx="8" fill="#1a2332" />
-        <text x="20" y="16" textAnchor="middle" fill="#ffffff" fontSize="7" fontWeight="700" fontFamily="Inter, sans-serif">UBC</text>
-        <text x="20" y="26" textAnchor="middle" fill="#4a90d9" fontSize="5" fontFamily="Inter, sans-serif">Sauder</text>
+        <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#4a90d9" strokeWidth="1.5" />
+        <text x="20" y="17" textAnchor="middle" fill="#ffffff" fontSize="8" fontWeight="800" fontFamily="Inter, sans-serif">UBC</text>
+        <text x="20" y="27" textAnchor="middle" fill="#4a90d9" fontSize="5" fontFamily="Inter, sans-serif">Sauder</text>
+      </svg>
+    ),
+    mfin: (
+      <svg className={className} viewBox="0 0 40 40" fill="none">
+        <rect width="40" height="40" rx="8" fill="#1a2332" />
+        <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#4a90d9" strokeWidth="1.5" />
+        <text x="20" y="17" textAnchor="middle" fill="#4a90d9" fontSize="8" fontWeight="800" fontFamily="Inter, sans-serif">MFin</text>
+        <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">BSUE</text>
       </svg>
     ),
     ucw: (
@@ -58,7 +70,7 @@ export default function About() {
       title: 'Education',
       items: [
         { text: 'MBA — UBC Sauder School of Business', logo: 'ubc' },
-        { text: 'Master of Finance — Belarus University of Economics', logo: null },
+        { text: 'Master of Finance — Belarus State University of Economics', logo: 'mfin' },
       ],
     },
     {
