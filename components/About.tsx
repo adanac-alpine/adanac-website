@@ -127,16 +127,6 @@ export default function About() {
                   My experience spans the full spectrum: a small FinTech startup, a Canadian credit union, a fast-growing bank in Belarus, and high-scale enterprise commercial banking in North America. That range means I understand the constraints and realities at every level — from a 35,000-member credit union to a top-6 Canadian bank.
                 </p>
               </StaggerItem>
-              <StaggerItem>
-                <p>
-                  I started at MTBank — commercial lending, then product management, then leading customer experience initiatives across the bank. After moving to Canada, I worked as a Business Systems Analyst at Assiniboine Credit Union, then pivoted to consulting. At Aequilibrium, I was a BA and Product Owner on Backbase mobile banking. At JUDI.AI, I led product development for a SaaS lending platform. Since 2020, I&apos;ve been at Modes as Director of Customer Success — delivering Backbase and Salesforce implementations and coaching new consultants into the space.
-                </p>
-              </StaggerItem>
-              <StaggerItem>
-                <p>
-                  On the side, I teach MBA courses at University Canada West — Business Analytics and Digital Transformation. I hold an MBA from UBC Sauder, a Master of Finance, and CBAP and CSPO designations.
-                </p>
-              </StaggerItem>
             </StaggerChildren>
           </div>
 
