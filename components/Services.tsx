@@ -19,10 +19,8 @@ export default function Services() {
       icon: (
         <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
           <rect width="40" height="40" rx="10" fill="#0A2540" />
-          <path d="M11 12h8c3.3 0 6 2.7 6 6s-2.7 6-6 6h-8V12z" fill="none" stroke="#00D4AA" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M11 18h8" stroke="#00D4AA" strokeWidth="2.5" strokeLinecap="round" />
-          <path d="M19 18c2.2 0 4 1.8 4 4s-1.8 4-4 4" fill="none" stroke="#00D4AA" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M25 14v12" stroke="#00D4AA" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M9 10h4.5v10.5c0 2.5 1.5 4 4 4h1.5V10h4.5v15h-6c-4 0-6.5-2.5-6.5-7V10z" fill="#00D4AA" />
+          <path d="M23 10h4.5v15H23V10z" fill="#00D4AA" />
         </svg>
       ),
     },
@@ -40,7 +38,7 @@ export default function Services() {
       icon: (
         <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
           <rect width="40" height="40" rx="10" fill="#00A1E0" />
-          <path d="M20.5 10c-2.2 0-4.2 1-5.5 2.6a6.1 6.1 0 0 0-3.5 5.6c0 3.4 2.7 6.1 6.1 6.1.8 0 1.6-.2 2.3-.5a5.9 5.9 0 0 0 5.2 3.2c3.3 0 6-2.7 6-6a5.9 5.9 0 0 0-5-5.8 7.5 7.5 0 0 0-5.6-4.6z" fill="#fff" />
+          <path d="M20.5 8c-3.5 0-6.5 1.5-8.5 4 1.5-1 3.5-1.5 5.5-1.5 4 0 7.5 2 9.5 5 1.5-1 3.5-1.5 5.5-1.5 5 0 9 3.5 9 8s-4 8-9 8c-1 0-2-.1-3-.3-2 3-5.5 5.5-9.5 5.5-2 0-4-.5-5.5-1.5-2 4-6 7-11 7s-9-3-11-7c-1 .5-2 .5-3 .5-4.5 0-8-3-8-7.5 0-3.5 2.5-6.5 6-8-.5-1.5-1-3-1-5C1 5 5.5 0 11.5 0c3.5 0 6.5 1.5 8.5 4-.5-.5-1-.5-1-.5-.5.5.5 4.5.5 4.5z" fill="#fff" />
         </svg>
       ),
     },
@@ -57,10 +55,8 @@ export default function Services() {
       ],
       icon: (
         <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="10" fill="#6C2BD9" />
-          <path d="M10 26V14l5 6 5-6v12" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M22 14h3c1.7 0 3 1.3 3 3v1c0 1.7-1.3 3-3 3h-3" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M22 21h4" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" />
+          <rect width="40" height="40" rx="10" fill="#DF1E26" />
+          <path d="M10 20l5 5 15-15" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
     },

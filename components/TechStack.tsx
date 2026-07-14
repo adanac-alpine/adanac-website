@@ -6,12 +6,16 @@ function TechLogo({ name, className = '' }: { name: string; className?: string }
   const logos: Record<string, JSX.Element> = {
     backbase: (
       <svg className={className} viewBox="0 0 120 32" fill="none">
-        <text x="0" y="22" fill="#4a90d9" fontSize="16" fontWeight="800" fontFamily="Inter, sans-serif">Backbase</text>
+        <path d="M4 6h6v14c0 3 2 5 5 5h2V6h6v20h-8c-6 0-11-4-11-11V6z" fill="#00D4AA" />
+        <path d="M28 6h6v20h-6V6z" fill="#00D4AA" />
+        <text x="42" y="22" fill="#0A2540" fontSize="14" fontWeight="700" fontFamily="Inter, sans-serif">backbase</text>
       </svg>
     ),
     veripark: (
       <svg className={className} viewBox="0 0 120 32" fill="none">
-        <text x="0" y="22" fill="#4a90d9" fontSize="16" fontWeight="800" fontFamily="Inter, sans-serif">VeriPark</text>
+        <circle cx="14" cy="16" r="12" fill="#DF1E26" />
+        <path d="M8 16l4 4 8-8" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <text x="32" y="22" fill="#DF1E26" fontSize="14" fontWeight="700" fontFamily="Inter, sans-serif">VeriPark</text>
       </svg>
     ),
     judiai: (
@@ -21,7 +25,8 @@ function TechLogo({ name, className = '' }: { name: string; className?: string }
     ),
     salesforce: (
       <svg className={className} viewBox="0 0 120 32" fill="none">
-        <text x="0" y="22" fill="#4a90d9" fontSize="16" fontWeight="800" fontFamily="Inter, sans-serif">Salesforce</text>
+        <path d="M14 5c-3 0-5.5 1.5-7 3.5 1.5-.5 3-.5 5 .5 1.5.8 3 2.5 4.5 2.5 1.5 0 3-1 4.5-2.5 2-1 3.5-1 5-.5-1.5-2-4-3.5-7-3.5z" fill="#00A1E0" />
+        <text x="32" y="22" fill="#00A1E0" fontSize="14" fontWeight="700" fontFamily="Inter, sans-serif">salesforce</text>
       </svg>
     ),
     azure: (
