@@ -10,17 +10,45 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Adanac Advisory — Digital Enablement for Financial Services',
-  description: 'IT consulting and digital transformation for financial services. Backbase, Salesforce, and VeriPark implementation experts.',
+  description: 'IT consulting and digital transformation for financial services. Backbase and Salesforce implementation experts for banks and credit unions.',
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
     title: 'Adanac Advisory — Digital Enablement for Financial Services',
-    description: 'IT consulting and digital transformation for financial services. Backbase, Salesforce, and VeriPark implementation experts.',
+    description: 'IT consulting and digital transformation for financial services. Backbase and Salesforce implementation experts for banks and credit unions.',
     url: 'https://adanacadvisory.ca',
     siteName: 'Adanac Advisory',
     locale: 'en_CA',
     type: 'website',
+    images: [
+      {
+        url: 'https://adanacadvisory.ca/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Adanac Advisory — Digital Enablement for Financial Services',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Adanac Advisory — Digital Enablement for Financial Services',
+    description: 'IT consulting and digital transformation for financial services. Backbase and Salesforce implementation experts for banks and credit unions.',
+    images: ['https://adanacadvisory.ca/og-image.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://adanacadvisory.ca',
   },
 }
 

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1a2332"/>
+  
+  <!-- Triangle pattern -->
+  <g opacity="0.06" stroke="#4a90d9" stroke-width="1.4" fill="none">
+    <path d="M 0,44 L 16,9 L 32,44 Z"/>
+    <path d="M 32,44 L 48,20 L 64,44 Z"/>
+    <path d="M 64,44 L 80,9 L 96,44 Z"/>
+    <path d="M 96,44 L 112,20 L 128,44 Z"/>
+    <path d="M 128,44 L 144,9 L 160,44 Z"/>
+    <path d="M 160,44 L 176,20 L 192,44 Z"/>
+    <path d="M 192,44 L 208,9 L 224,44 Z"/>
+    <path d="M 224,44 L 240,20 L 256,44 Z"/>
+    <path d="M 256,44 L 272,9 L 288,44 Z"/>
+    <path d="M 288,44 L 304,20 L 320,44 Z"/>
+    <path d="M 320,44 L 336,9 L 352,44 Z"/>
+    <path d="M 352,44 L 368,20 L 384,44 Z"/>
+    <path d="M 384,44 L 400,9 L 416,44 Z"/>
+    <path d="M 416,44 L 432,20 L 448,44 Z"/>
+    <path d="M 448,44 L 464,9 L 480,44 Z"/>
+    <path d="M 480,44 L 496,20 L 512,44 Z"/>
+    <path d="M 512,44 L 528,9 L 544,44 Z"/>
+    <path d="M 544,44 L 560,20 L 576,44 Z"/>
+    <path d="M 576,44 L 592,9 L 608,44 Z"/>
+    <path d="M 608,44 L 624,20 L 640,44 Z"/>
+    <path d="M 640,44 L 656,9 L 672,44 Z"/>
+    <path d="M 672,44 L 688,20 L 704,44 Z"/>
+    <path d="M 704,44 L 720,9 L 736,44 Z"/>
+    <path d="M 736,44 L 752,20 L 768,44 Z"/>
+    <path d="M 768,44 L 784,9 L 800,44 Z"/>
+    <path d="M 800,44 L 816,20 L 832,44 Z"/>
+    <path d="M 832,44 L 848,9 L 864,44 Z"/>
+    <path d="M 864,44 L 880,20 L 896,44 Z"/>
+    <path d="M 896,44 L 912,9 L 928,44 Z"/>
+    <path d="M 928,44 L 944,20 L 960,44 Z"/>
+    <path d="M 960,44 L 976,9 L 992,44 Z"/>
+    <path d="M 992,44 L 1008,20 L 1024,44 Z"/>
+    <path d="M 1024,44 L 1040,9 L 1056,44 Z"/>
+    <path d="M 1056,44 L 1072,20 L 1088,44 Z"/>
+    <path d="M 1088,44 L 1104,9 L 1120,44 Z"/>
+    <path d="M 1120,44 L 1136,20 L 1152,44 Z"/>
+    <path d="M 1152,44 L 1168,9 L 1184,44 Z"/>
+    <path d="M 1184,44 L 1200,20 L 1216,44 Z"/>
+  </g>
+
+  <!-- Glacier accent line -->
+  <rect x="100" y="230" width="60" height="4" rx="2" fill="#4a90d9"/>
+  
+  <!-- Company name -->
+  <text x="100" y="280" font-family="Inter, system-ui, sans-serif" font-size="48" font-weight="700" fill="white" letter-spacing="0.08em">ADANAC</text>
+  <text x="330" y="280" font-family="Inter, system-ui, sans-serif" font-size="48" font-weight="300" fill="white" letter-spacing="0.12em">ADVISORY</text>
+  
+  <!-- Tagline -->
+  <text x="100" y="330" font-family="Inter, system-ui, sans-serif" font-size="22" fill="rgba(255,255,255,0.6)">Digital Enablement for Financial Services</text>
+  
+  <!-- Services -->
+  <text x="100" y="390" font-family="Inter, system-ui, sans-serif" font-size="16" fill="rgba(255,255,255,0.4)" letter-spacing="0.05em">BACKBASE · SALESFORCE · DIGITAL BANKING</text>
+  
+  <!-- Website -->
+  <text x="100" y="560" font-family="Inter, system-ui, sans-serif" font-size="14" fill="rgba(255,255,255,0.3)" letter-spacing="0.1em">adanacadvisory.ca</text>
+</svg>

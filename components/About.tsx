@@ -24,8 +24,16 @@ function CredentialLogo({ name, className = '' }: { name: string; className?: st
     backbase: (
       <svg className={className} viewBox="0 0 40 40" fill="none">
         <rect width="40" height="40" rx="8" fill="#1a2332" />
-        <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#4a90d9" strokeWidth="1.5" />
-        <text x="20" y="17" textAnchor="middle" fill="#4a90d9" fontSize="6" fontWeight="800" fontFamily="Inter, sans-serif">BACKBASE</text>
+        <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#00D4AA" strokeWidth="1.5" />
+        <text x="20" y="17" textAnchor="middle" fill="#00D4AA" fontSize="6" fontWeight="800" fontFamily="Inter, sans-serif">BACKBASE</text>
+        <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">Certified</text>
+      </svg>
+    ),
+    sfadmin: (
+      <svg className={className} viewBox="0 0 40 40" fill="none">
+        <rect width="40" height="40" rx="8" fill="#1a2332" />
+        <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#00A1E0" strokeWidth="1.5" />
+        <text x="20" y="17" textAnchor="middle" fill="#00A1E0" fontSize="6" fontWeight="800" fontFamily="Inter, sans-serif">SF ADMIN</text>
         <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">Certified</text>
       </svg>
     ),
@@ -79,6 +87,7 @@ export default function About() {
         { text: 'CBAP (Certified Business Analysis Professional)', logo: 'cbap' },
         { text: 'CSPO (Certified Scrum Product Owner)', logo: 'cspo' },
         { text: 'Backbase Certified Consultant', logo: 'backbase' },
+        { text: 'Salesforce Certified Administrator', logo: 'sfadmin' },
       ],
     },
     {

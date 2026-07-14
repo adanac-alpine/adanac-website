@@ -32,7 +32,7 @@ describe('Scoutloop', () => {
 
   it('displays tech stack badges', () => {
     render(<Scoutloop />)
-    for (const tech of ['Next.js', 'Supabase', 'Vercel', 'Claude AI']) {
+    for (const tech of ['Next.js', 'React', 'Supabase', 'Vercel', 'Tailwind', 'Python', 'FastAPI']) {
       expect(screen.getByText(tech)).toBeInTheDocument()
     }
   })

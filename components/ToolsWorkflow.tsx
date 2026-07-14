@@ -4,7 +4,6 @@ import { FadeIn } from './animation/FadeIn'
 
 function ToolIcon({ name, className = '' }: { name: string; className?: string }) {
   const icons: Record<string, JSX.Element> = {
-    // Project Management
     jira: (
       <svg className={className} viewBox="0 0 40 40" fill="none">
         <rect width="40" height="40" rx="10" fill="#2684FF" />
@@ -18,7 +17,6 @@ function ToolIcon({ name, className = '' }: { name: string; className?: string }
         <path d="M13.5 14c-2.2 0-4 1.8-4 4 0 1.1.5 2.2 1.3 2.9l1.7 1.4c.5.4.5 1.1 0 1.5l-1.7 1.4c-.8.7-1.3 1.8-1.3 2.9 0 2.2 1.8 4 4 4 1.5 0 3-.8 3.8-2.2l2.4-4.3c.5-.9.5-2 0-2.9l-2.4-4.3C16.5 14.8 15 14 13.5 14z" fill="#2684FF" />
       </svg>
     ),
-    // Communication
     slack: (
       <svg className={className} viewBox="0 0 40 40" fill="none">
         <rect width="40" height="40" rx="10" fill="#4A154B" />
@@ -42,14 +40,6 @@ function ToolIcon({ name, className = '' }: { name: string; className?: string }
         <circle cx="22" cy="28" r="3" fill="#fff" opacity="0.7" />
       </svg>
     ),
-    // Development
-    vscode: (
-      <svg className={className} viewBox="0 0 40 40" fill="none">
-        <rect width="40" height="40" rx="10" fill="#007ACC" />
-        <path d="M12 12l8 8-8 8" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M20 12l8 8-8 8" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.6" />
-      </svg>
-    ),
     azuredevops: (
       <svg className={className} viewBox="0 0 40 40" fill="none">
         <rect width="40" height="40" rx="10" fill="#0078D7" />
@@ -57,7 +47,6 @@ function ToolIcon({ name, className = '' }: { name: string; className?: string }
         <path d="M22 12l8 4-8 4V12z" fill="#fff" opacity="0.8" />
       </svg>
     ),
-    // AI Assistants
     claude: (
       <svg className={className} viewBox="0 0 40 40" fill="none">
         <rect width="40" height="40" rx="10" fill="#D97757" />
@@ -106,7 +95,6 @@ function ToolIcon({ name, className = '' }: { name: string; className?: string }
         <text x="20" y="24" textAnchor="middle" fill="#8B5CF6" fontSize="10" fontWeight="800" fontFamily="Inter, sans-serif">J</text>
       </svg>
     ),
-    // Frameworks
     nextjs: (
       <svg className={className} viewBox="0 0 40 40" fill="none">
         <rect width="40" height="40" rx="10" fill="#000" />
@@ -142,7 +130,6 @@ function ToolIcon({ name, className = '' }: { name: string; className?: string }
         <text x="20" y="24" textAnchor="middle" fill="#fff" fontSize="8" fontWeight="700" fontFamily="Inter, sans-serif">Fast</text>
       </svg>
     ),
-    // Cloud & Data
     vercel: (
       <svg className={className} viewBox="0 0 40 40" fill="none">
         <rect width="40" height="40" rx="10" fill="#000" />
@@ -155,14 +142,13 @@ function ToolIcon({ name, className = '' }: { name: string; className?: string }
         <path d="M20 10l-8 18h6l2-5h8l-2 5h6L20 10z" fill="#fff" />
       </svg>
     ),
-    azure: (
+    render: (
       <svg className={className} viewBox="0 0 40 40" fill="none">
-        <rect width="40" height="40" rx="10" fill="#0078D7" />
-        <path d="M12 26l4-14h4l-1 6h5l-6 10v-4h-6z" fill="#fff" />
-        <path d="M22 12l6 3-6 3V12z" fill="#fff" opacity="0.8" />
+        <rect width="40" height="40" rx="10" fill="#46E3B7" />
+        <path d="M13 26V14l7 6-7 6z" fill="#000" opacity="0.85" />
+        <path d="M20 20l7-6v12l-7-6z" fill="#000" opacity="0.6" />
       </svg>
     ),
-    // Analytics & QA
     posthog: (
       <svg className={className} viewBox="0 0 40 40" fill="none">
         <rect width="40" height="40" rx="10" fill="#1D4AFF" />
@@ -189,67 +175,62 @@ function ToolIcon({ name, className = '' }: { name: string; className?: string }
   return icons[name] || null
 }
 
-const toolCategories = [
-  {
-    label: 'Project Management',
-    tools: [
-      { name: 'JIRA', icon: 'jira' },
-      { name: 'Confluence', icon: 'confluence' },
-    ],
-  },
-  {
-    label: 'Communication',
-    tools: [
-      { name: 'Slack', icon: 'slack' },
-      { name: 'MS Teams', icon: 'teams' },
-    ],
-  },
-  {
-    label: 'Development',
-    tools: [
-      { name: 'VS Code', icon: 'vscode' },
-      { name: 'Azure DevOps', icon: 'azuredevops' },
-    ],
-  },
-  {
-    label: 'AI Assistants',
-    tools: [
-      { name: 'Claude', icon: 'claude' },
-      { name: 'ChatGPT', icon: 'chatgpt' },
-      { name: 'Copilot', icon: 'copilot' },
-      { name: 'Gemini', icon: 'gemini' },
-      { name: 'Codex', icon: 'codex' },
-      { name: 'OpenCode', icon: 'opencode' },
-      { name: 'Jules', icon: 'jules' },
-    ],
-  },
-  {
-    label: 'Frameworks & Languages',
-    tools: [
-      { name: 'Next.js', icon: 'nextjs' },
-      { name: 'React', icon: 'react' },
-      { name: 'Tailwind CSS', icon: 'tailwind' },
-      { name: 'Python', icon: 'python' },
-      { name: 'FastAPI', icon: 'fastapi' },
-    ],
-  },
-  {
-    label: 'Cloud & Data',
-    tools: [
-      { name: 'Vercel', icon: 'vercel' },
-      { name: 'Supabase', icon: 'supabase' },
-      { name: 'Microsoft Azure', icon: 'azure' },
-    ],
-  },
-  {
-    label: 'Analytics & QA',
-    tools: [
-      { name: 'PostHog', icon: 'posthog' },
-      { name: 'Sentry', icon: 'sentry' },
-      { name: 'Playwright', icon: 'playwright' },
-    ],
-  },
+const row1 = [
+  { name: 'JIRA', icon: 'jira' },
+  { name: 'Slack', icon: 'slack' },
+  { name: 'Claude', icon: 'claude' },
+  { name: 'Next.js', icon: 'nextjs' },
+  { name: 'Vercel', icon: 'vercel' },
+  { name: 'Sentry', icon: 'sentry' },
+  { name: 'PostHog', icon: 'posthog' },
+  { name: 'Azure DevOps', icon: 'azuredevops' },
 ]
+
+const row2 = [
+  { name: 'Confluence', icon: 'confluence' },
+  { name: 'MS Teams', icon: 'teams' },
+  { name: 'ChatGPT', icon: 'chatgpt' },
+  { name: 'React', icon: 'react' },
+  { name: 'Supabase', icon: 'supabase' },
+  { name: 'Playwright', icon: 'playwright' },
+  { name: 'Copilot', icon: 'copilot' },
+  { name: 'Render', icon: 'render' },
+]
+
+const row3 = [
+  { name: 'Gemini', icon: 'gemini' },
+  { name: 'Codex', icon: 'codex' },
+  { name: 'Tailwind CSS', icon: 'tailwind' },
+  { name: 'Python', icon: 'python' },
+  { name: 'FastAPI', icon: 'fastapi' },
+  { name: 'OpenCode', icon: 'opencode' },
+  { name: 'Jules', icon: 'jules' },
+]
+
+function MarqueeRow({ tools, reverse = false }: { tools: typeof row1; reverse?: boolean }) {
+  const doubled = [...tools, ...tools]
+
+  return (
+    <div className="relative overflow-hidden group">
+      <div
+        className={`flex gap-3 w-max ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
+        {doubled.map((tool, idx) => (
+          <div
+            key={idx}
+            className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 border border-gray-100 hover:border-glacier/30 hover:shadow-md hover:shadow-glacier/5 transition-all duration-300 shrink-0"
+          >
+            <ToolIcon name={tool.icon} className="w-8 h-8 shrink-0" />
+            <span className="text-sm font-semibold text-navy whitespace-nowrap">{tool.name}</span>
+          </div>
+        ))}
+      </div>
+      <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-off-white to-transparent pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-off-white to-transparent pointer-events-none" />
+    </div>
+  )
+}
 
 export default function ToolsWorkflow() {
   return (
@@ -270,27 +251,10 @@ export default function ToolsWorkflow() {
           </div>
         </FadeIn>
 
-        <div className="space-y-10">
-          {toolCategories.map((category, catIdx) => (
-            <FadeIn key={catIdx} delay={catIdx * 0.05}>
-              <div className="space-y-4">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-medium-gray">
-                  {category.label}
-                </h3>
-                <div className="flex gap-3 overflow-x-auto pb-2 -mx-6 px-6 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                  {category.tools.map((tool, toolIdx) => (
-                    <div
-                      key={toolIdx}
-                      className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 border border-gray-100 hover:border-glacier/30 hover:shadow-md hover:shadow-glacier/5 transition-all duration-300 snap-start shrink-0"
-                    >
-                      <ToolIcon name={tool.icon} className="w-8 h-8 shrink-0" />
-                      <span className="text-sm font-semibold text-navy whitespace-nowrap">{tool.name}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-          ))}
+        <div className="space-y-4">
+          <MarqueeRow tools={row1} />
+          <MarqueeRow tools={row2} reverse />
+          <MarqueeRow tools={row3} />
         </div>
 
       </div>

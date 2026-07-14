@@ -6,7 +6,7 @@
 # ── Deployment modes ─────────────────────────────────────────────────────────
 #   Auto:    push to main → production deploy
 #   Manual:  Actions → Run workflow → choose environment
-#             - production: deploys to adanacalpine.ca
+#             - production: deploys to adanacadvisory.ca
 #             - preview:    deploys to a one-off preview URL
 #
 # ── Prerequisites ────────────────────────────────────────────────────────────
@@ -14,6 +14,7 @@
 #     VERCEL_TOKEN       — Vercel dashboard → Settings → Tokens → Create
 #     VERCEL_ORG_ID      — team_PFN8aBk4T3KzjhaUoFIDJ5Az (from .vercel/project.json)
 #     VERCEL_PROJECT_ID  — prj_S92QOUmkhhnQtcJeSOFBYZtkz3qX (from .vercel/project.json)
+#     SENTRY_DSN         — Sentry dashboard → Settings → Projects → Client Keys (DSN)
 
 name: CI/CD
 
@@ -113,7 +114,7 @@ jobs:
             exit "$VERCEL_EXIT"
           fi
 
-          URL=$(echo "$OUTPUT" | grep -Eo 'https://[^ ]+\.(vercel\.app|adanacalpine\.ca)' | tail -1)
+          URL=$(cat /tmp/vercel_output.txt | grep -Eo 'https://[^ ]+\.(vercel\.app|adanacadvisory\.ca)' | tail -1)
           echo "DEPLOYMENT_URL=$URL" >> "$GITHUB_OUTPUT"
           echo "### Production deployment" >> "$GITHUB_STEP_SUMMARY"
           echo "**URL:** $URL" >> "$GITHUB_STEP_SUMMARY"

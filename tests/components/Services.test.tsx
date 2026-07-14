@@ -16,7 +16,7 @@ describe('Services', () => {
   it('renders both service titles', () => {
     render(<Services />)
     expect(screen.getByRole('heading', { level: 3, name: /backbase implementation/i })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { level: 3, name: /veripark implementation/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 3, name: /salesforce implementation/i })).toBeInTheDocument()
   })
 
   it('lists capabilities for Backbase', () => {
@@ -25,9 +25,10 @@ describe('Services', () => {
     expect(screen.getByText(/platform architecture/i)).toBeInTheDocument()
   })
 
-  it('lists capabilities for VeriPark', () => {
+  it('lists capabilities for Salesforce', () => {
     render(<Services />)
-    expect(screen.getAllByText(/verichannel/i).length).toBeGreaterThanOrEqual(1)
-    expect(screen.getAllByText(/veritouch crm/i).length).toBeGreaterThanOrEqual(1)
+    expect(screen.getAllByText(/financial services cloud/i).length).toBeGreaterThanOrEqual(1)
+    expect(screen.getByText(/case management & workflow automation/i)).toBeInTheDocument()
+    expect(screen.getByText(/data quality frameworks & deduplication/i)).toBeInTheDocument()
   })
 })

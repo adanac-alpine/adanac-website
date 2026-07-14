@@ -4,8 +4,10 @@ import Footer from '../../components/Footer'
 
 describe('Footer', () => {
   it('renders the company name', () => {
-    render(<Footer />)
-    expect(screen.getByText('Adanac Advisory Inc.')).toBeInTheDocument()
+    const { container } = render(<Footer />)
+    expect(screen.getByText('ADANAC')).toBeInTheDocument()
+    expect(screen.getByText('ADVISORY')).toBeInTheDocument()
+    expect(container.textContent).toContain('Adanac Advisory Inc.')
   })
 
   it('renders the location tagline', () => {
@@ -22,7 +24,7 @@ describe('Footer', () => {
 
   it('renders the email link', () => {
     render(<Footer />)
-    expect(screen.getByRole('link', { name: /email/i })).toHaveAttribute('href', 'mailto:sergey@adanacadvisory.ca')
+    expect(screen.getByRole('link', { name: /sergey@adanacadvisory.ca/i })).toHaveAttribute('href', 'mailto:sergey@adanacadvisory.ca')
   })
 
   it('renders the LinkedIn link', () => {

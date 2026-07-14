@@ -18,8 +18,11 @@ export default function Services() {
       ],
       icon: (
         <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="10" fill="#0052FF" />
-          <path d="M12 14h16v3H12zm0 5h12v3H12zm0 5h8v3H12z" fill="#fff" />
+          <rect width="40" height="40" rx="10" fill="#0A2540" />
+          <path d="M11 12h8c3.3 0 6 2.7 6 6s-2.7 6-6 6h-8V12z" fill="none" stroke="#00D4AA" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M11 18h8" stroke="#00D4AA" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M19 18c2.2 0 4 1.8 4 4s-1.8 4-4 4" fill="none" stroke="#00D4AA" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M25 14v12" stroke="#00D4AA" strokeWidth="2.5" strokeLinecap="round" />
         </svg>
       ),
     },
@@ -37,8 +40,27 @@ export default function Services() {
       icon: (
         <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
           <rect width="40" height="40" rx="10" fill="#00A1E0" />
-          <path d="M20 10c-3 0-5.5 1.5-7 3.5 1.5-0.5 3-0.5 5 0.5 1.5 0.8 3 2.5 4.5 2.5 1.5 0 3-1 4.5-2.5 2-1 3.5-1 5-0.5-1.5-2-4-3.5-7-3.5z" fill="#fff" opacity="0.9" />
-          <path d="M13 22c0-3 2.5-5.5 5.5-5.5S24 19 24 22s-2.5 5.5-5.5 5.5S13 25 13 22z" fill="#fff" />
+          <path d="M20.5 10c-2.2 0-4.2 1-5.5 2.6a6.1 6.1 0 0 0-3.5 5.6c0 3.4 2.7 6.1 6.1 6.1.8 0 1.6-.2 2.3-.5a5.9 5.9 0 0 0 5.2 3.2c3.3 0 6-2.7 6-6a5.9 5.9 0 0 0-5-5.8 7.5 7.5 0 0 0-5.6-4.6z" fill="#fff" />
+        </svg>
+      ),
+    },
+    {
+      title: 'VeriPark Implementation',
+      description:
+        'VeriPark VeriChannel and VeriTouch for credit unions — omnichannel customer journeys, digital onboarding, loan origination workflows, and front-back office integration. Deep experience with VeriChannel at Manitoba and Ontario credit unions.',
+      capabilities: [
+        'VeriChannel digital banking configuration',
+        'Omnichannel journey orchestration',
+        'Loan origination & underwriting workflows',
+        'Front-back office integration',
+        'Digital onboarding & KYC flows',
+      ],
+      icon: (
+        <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="10" fill="#6C2BD9" />
+          <path d="M10 26V14l5 6 5-6v12" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M22 14h3c1.7 0 3 1.3 3 3v1c0 1.7-1.3 3-3 3h-3" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M22 21h4" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" />
         </svg>
       ),
     },
@@ -57,12 +79,12 @@ export default function Services() {
               What I do
             </h2>
             <p className="text-dark-gray text-lg">
-              I specialize in two platform ecosystems: Backbase for digital banking and Salesforce for financial services CRM. That depth means I can deliver faster, catch issues earlier, and actually help your team — not just advise from the sidelines.
+              I specialize in three platform ecosystems: Backbase for digital banking, Salesforce for financial services CRM, and VeriPark for omnichannel customer journeys. That depth means I can deliver faster, catch issues earlier, and actually help your team — not just advise from the sidelines.
             </p>
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, idx) => (
             <FadeIn key={idx} delay={idx * 0.15}>
               <motion.div
