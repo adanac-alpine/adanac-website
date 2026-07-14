@@ -18,6 +18,10 @@
 
 name: CI/CD
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   push:
     branches: [main]
@@ -58,6 +62,9 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+      - name: Typecheck & Build
+        run: npm run build
 
       - name: Run tests
         run: npm test
