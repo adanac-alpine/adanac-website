@@ -27,6 +27,16 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isMobileMenuOpen])
+
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
@@ -58,7 +68,8 @@ export default function Navigation() {
               key="lockup"
               href="#hero"
               onClick={(e) => handleNavClick(e, '#hero')}
-              className="flex items-center"
+              aria-label="Adanac Advisory home"
+              className="flex items-center focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded-lg focus:outline-none"
               initial={{ opacity: 0, x: -8 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -8 }}
@@ -77,7 +88,7 @@ export default function Navigation() {
               key={link.name}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-white/85 hover:text-glacier font-medium text-sm tracking-wide transition-colors duration-200"
+              className="text-white/85 hover:text-glacier font-medium text-sm tracking-wide transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded-lg focus:outline-none"
             >
               {link.name}
             </a>
@@ -91,7 +102,8 @@ export default function Navigation() {
                 key="mobile-lockup"
                 href="#hero"
                 onClick={(e) => handleNavClick(e, '#hero')}
-                className="flex items-center"
+                aria-label="Adanac Advisory home"
+                className="flex items-center focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded-lg focus:outline-none"
                 initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -8 }}
@@ -104,8 +116,10 @@ export default function Navigation() {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-white hover:text-glacier focus:outline-none"
+            className="text-white hover:text-glacier focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded-lg focus:outline-none"
             aria-label="Toggle navigation menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-nav-menu"
           >
             {isMobileMenuOpen ? (
               <X className="h-6 w-6" strokeWidth={2} />
@@ -117,6 +131,8 @@ export default function Navigation() {
       </div>
 
       <div
+        id="mobile-nav-menu"
+        aria-hidden={!isMobileMenuOpen}
         className={`md:hidden absolute top-full left-0 w-full bg-navy/95 backdrop-blur-lg border-b border-white/10 transition-all duration-300 ease-in-out ${
           isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
         }`}
@@ -127,7 +143,8 @@ export default function Navigation() {
               key={link.name}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-white/85 hover:text-glacier font-medium text-base py-2 border-b border-white/5 transition-colors duration-200"
+              tabIndex={isMobileMenuOpen ? 0 : -1}
+              className="text-white/85 hover:text-glacier font-medium text-base py-2 border-b border-white/5 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded-lg focus:outline-none"
             >
               {link.name}
             </a>

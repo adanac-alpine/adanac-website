@@ -48,7 +48,7 @@ export default function Footer() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleScrollToSection(e, link.href)}
-                className="block text-sm text-white/60 hover:text-white transition-colors"
+                className="block text-sm text-white/60 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus-visible:ring-offset-navy rounded focus:outline-none"
               >
                 {link.name}
               </a>
@@ -58,17 +58,18 @@ export default function Footer() {
           {/* Contact */}
           <div className="md:col-span-4 space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-widest text-white/30">Contact</h4>
-            <a href="mailto:sergey@adanacadvisory.ca" className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors">
+            <a href="mailto:sergey@adanacadvisory.ca" className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus-visible:ring-offset-navy rounded focus:outline-none">
               <Mail className="w-4 h-4" strokeWidth={2} />
               sergey@adanacadvisory.ca
             </a>
-            <a href="https://linkedin.com/in/pochikovskiy" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+            <a href="https://linkedin.com/in/pochikovskiy" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus-visible:ring-offset-navy rounded focus:outline-none">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                 <rect width="4" height="12" x="2" y="9" />
                 <circle cx="4" cy="4" r="2" />
               </svg>
               linkedin.com/in/pochikovskiy
+              <span className="sr-only">(opens in a new tab)</span>
             </a>
           </div>
 
@@ -80,9 +81,9 @@ export default function Footer() {
             © {currentYear} Adanac Advisory Inc. All rights reserved.
           </div>
           <div className="flex gap-4">
-            <a href="/privacy" className="hover:text-white/60">Privacy Policy</a>
+            <a href="/privacy" className="hover:text-white/60 focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus-visible:ring-offset-navy rounded focus:outline-none">Privacy Policy</a>
             <span>·</span>
-            <a href="/terms" className="hover:text-white/60">Terms of Service</a>
+            <a href="/terms" className="hover:text-white/60 focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus-visible:ring-offset-navy rounded focus:outline-none">Terms of Service</a>
           </div>
         </div>
 
