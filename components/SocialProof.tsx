@@ -50,7 +50,7 @@ export default function SocialProof() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 rounded-lg font-semibold text-sm transition-colors duration-200 ${
+                className={`px-4 py-2 rounded-lg font-semibold text-sm transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus-visible:ring-offset-navy focus:outline-none ${
                   activeTab === tab
                     ? 'bg-white text-navy'
                     : 'bg-white/10 text-white/60 hover:bg-white/20 hover:text-white'
