@@ -33,7 +33,7 @@ export default function Scoutloop() {
                 <div className="flex items-center gap-4">
                   <ScoutloopMark className="w-12 h-12 text-forest" />
                   <div className="space-y-1">
-                    <span className="text-xs font-bold tracking-widest text-forest uppercase">
+                    <span className="text-xs font-bold tracking-widest text-glacier uppercase">
                       Built in BC
                     </span>
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight leading-tight">
@@ -60,7 +60,7 @@ export default function Scoutloop() {
                     { name: 'Python', icon: 'python' },
                     { name: 'FastAPI', icon: 'fastapi' },
                   ].map((tech) => (
-                    <div key={tech.name} className="flex items-center gap-1.5 bg-forest/5 text-forest rounded-lg px-2.5 py-1.5">
+                    <div key={tech.name} className="flex items-center gap-1.5 bg-glacier/5 text-glacier rounded-lg px-2.5 py-1.5">
                       <img
                         src={`/logos/tools/${tech.icon}.svg`}
                         alt={`${tech.name} logo`}
@@ -79,7 +79,7 @@ export default function Scoutloop() {
                   href="https://scoutloop.me"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-forest font-semibold hover:underline group"
+                  className="inline-flex items-center gap-2 text-glacier font-semibold hover:underline group"
                 >
                   Visit Scoutloop
                   <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -89,7 +89,7 @@ export default function Scoutloop() {
               </div>
 
               {/* Visual side — topo pattern + logo */}
-              <div className="bg-forest relative flex items-center justify-center p-12 min-h-[320px]">
+              <div className="bg-navy relative flex items-center justify-center p-12 min-h-[320px]">
                 {/* Subtle topo line pattern */}
                 <svg
                   className="absolute inset-0 w-full h-full opacity-10"

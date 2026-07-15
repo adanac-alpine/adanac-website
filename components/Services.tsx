@@ -6,6 +6,24 @@ import { FadeIn, StaggerChildren, StaggerItem } from './animation/FadeIn'
 export default function Services() {
   const services = [
     {
+      title: 'VeriPark Implementation',
+      description:
+        'VeriPark VeriChannel and VeriTouch for credit unions — omnichannel customer journeys, digital onboarding, loan origination workflows, and front-back office integration. Deep experience with VeriChannel at Manitoba and Ontario credit unions.',
+      capabilities: [
+        'VeriChannel digital banking configuration',
+        'Omnichannel journey orchestration',
+        'Loan origination & underwriting workflows',
+        'Front-back office integration',
+        'Digital onboarding & KYC flows',
+      ],
+      icon: (
+        <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="10" fill="#DF1E26" />
+          <path d="M10 20l5 5 15-15" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
+    },
+    {
       title: 'Backbase Implementation',
       description:
         'End-to-end delivery of Backbase digital banking — from commercial and retail banking channels to mobile apps. I act as BA, delivery lead, or product owner advisor to get your platform from architecture to production.',
@@ -42,24 +60,6 @@ export default function Services() {
         </svg>
       ),
     },
-    {
-      title: 'VeriPark Implementation',
-      description:
-        'VeriPark VeriChannel and VeriTouch for credit unions — omnichannel customer journeys, digital onboarding, loan origination workflows, and front-back office integration. Deep experience with VeriChannel at Manitoba and Ontario credit unions.',
-      capabilities: [
-        'VeriChannel digital banking configuration',
-        'Omnichannel journey orchestration',
-        'Loan origination & underwriting workflows',
-        'Front-back office integration',
-        'Digital onboarding & KYC flows',
-      ],
-      icon: (
-        <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="10" fill="#DF1E26" />
-          <path d="M10 20l5 5 15-15" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      ),
-    },
   ]
 
   return (
@@ -75,7 +75,7 @@ export default function Services() {
               What I do
             </h2>
             <p className="text-dark-gray text-lg">
-              I specialize in three platform ecosystems: Backbase for digital banking, Salesforce for financial services CRM, and VeriPark for omnichannel customer journeys. That depth means I can deliver faster, catch issues earlier, and actually help your team — not just advise from the sidelines.
+              I specialize in three platform ecosystems: Backbase commercial banking, Salesforce Financial Services Cloud, and VeriPark omnichannel (VeriTouch). That depth means I can deliver faster, catch issues earlier, and actually help your team — not just advise from the sidelines.
             </p>
           </div>
         </FadeIn>
