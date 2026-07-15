@@ -11,9 +11,9 @@ describe('Navigation', () => {
     expect(screen.getAllByRole('link', { name: /contact/i }).length).toBeGreaterThanOrEqual(1)
   })
 
-  it('renders the "Get in Touch" CTA button', () => {
+  it('renders the Contact link', () => {
     render(<Navigation />)
-    expect(screen.getAllByRole('link', { name: /get in touch/i }).length).toBeGreaterThanOrEqual(1)
+    expect(screen.getAllByRole('link', { name: /contact/i }).length).toBeGreaterThanOrEqual(1)
   })
 
   it('renders the mobile menu toggle', () => {

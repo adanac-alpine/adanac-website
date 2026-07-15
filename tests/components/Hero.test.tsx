@@ -10,7 +10,7 @@ describe('Hero', () => {
 
   it('renders the subtitle describing services', () => {
     render(<Hero />)
-    expect(screen.getByText(/backbase and veripark/i)).toBeInTheDocument()
+    expect(screen.getByText(/implementation consulting/i)).toBeInTheDocument()
   })
 
   it('renders "Get in touch" CTA button', () => {

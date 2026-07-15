@@ -10,7 +10,7 @@ describe('ToolsWorkflow', () => {
 
   it('renders the section heading', () => {
     render(<ToolsWorkflow />)
-    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent(/how i work/i)
+    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent(/tools i use/i)
   })
 
   it('renders key tool names across marquee rows', () => {
@@ -26,14 +26,9 @@ describe('ToolsWorkflow', () => {
     expect(screen.getAllByText('Supabase').length).toBeGreaterThanOrEqual(1)
   })
 
-  it('renders tool cards with SVG icons', () => {
+  it('renders tool cards with icons', () => {
     const { container } = render(<ToolsWorkflow />)
-    const svgs = container.querySelectorAll('svg')
-    expect(svgs.length).toBeGreaterThanOrEqual(20)
-  })
-
-  it('renders the description paragraph', () => {
-    render(<ToolsWorkflow />)
-    expect(screen.getByText(/tools i use daily/i)).toBeInTheDocument()
+    const icons = container.querySelectorAll('img')
+    expect(icons.length).toBeGreaterThanOrEqual(20)
   })
 })

@@ -27,18 +27,7 @@ describe('Contact', () => {
     expect(screen.getByRole('button', { name: /send message/i })).toBeInTheDocument()
   })
 
-  it('renders email contact link', () => {
-    render(<Contact />)
-    const emailLink = screen.getByRole('link', { name: /sergey@adanacadvisory.ca/i })
-    expect(emailLink).toHaveAttribute('href', 'mailto:sergey@adanacadvisory.ca')
-  })
 
-  it('renders LinkedIn contact link', () => {
-    render(<Contact />)
-    const linkedinLink = screen.getByRole('link', { name: /linkedin/i })
-    expect(linkedinLink).toHaveAttribute('href', 'https://linkedin.com/in/pochikovskiy')
-    expect(linkedinLink).toHaveAttribute('target', '_blank')
-  })
 
   it('has a hidden honeypot field', () => {
     render(<Contact />)

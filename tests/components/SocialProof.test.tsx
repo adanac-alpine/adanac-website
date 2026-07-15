@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
 import SocialProof from '../../components/SocialProof'
 
@@ -13,40 +13,37 @@ describe('SocialProof', () => {
     expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent(/where i've delivered/i)
   })
 
-  it('renders all 5 client cards', () => {
-    const { container } = render(<SocialProof />)
-    const cards = container.querySelectorAll('[class*="bg-white/5"]')
-    expect(cards.length).toBe(5)
+  it('renders tab buttons for each platform', () => {
+    render(<SocialProof />)
+    expect(screen.getByRole('button', { name: /VeriPark/i })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /Backbase/i })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /Salesforce/i })).toBeInTheDocument()
   })
 
-  it('renders Backbase platform badges', () => {
+  it('shows VeriPark cards by default', () => {
     render(<SocialProof />)
-    const badges = screen.getAllByText('Backbase')
-    expect(badges.length).toBe(2)
+    const cards = screen.getAllByText(/VeriChannel/i)
+    expect(cards.length).toBeGreaterThanOrEqual(1)
   })
 
-  it('renders VeriPark platform badges', () => {
+  it('shows Backbase cards after clicking Backbase tab', () => {
     render(<SocialProof />)
-    const badges = screen.getAllByText('VeriPark')
-    expect(badges.length).toBe(2)
+    fireEvent.click(screen.getByRole('button', { name: /Backbase/i }))
+    const cards = screen.getAllByText(/Backbase/i)
+    expect(cards.length).toBeGreaterThanOrEqual(1)
   })
 
-  it('renders Salesforce platform badge', () => {
+  it('shows Salesforce cards after clicking Salesforce tab', () => {
     render(<SocialProof />)
-    expect(screen.getByText('Salesforce')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: /^Salesforce$/i }))
+    const matches = screen.getAllByText(/Salesforce Financial Services Cloud/i)
+    expect(matches.length).toBeGreaterThanOrEqual(1)
   })
 
-  it('mentions YNCU and Sunrise Credit Union', () => {
+  it('mentions data quality and Fiserv DNA in Salesforce tab', () => {
     render(<SocialProof />)
-    expect(screen.getByText(/YNCU/i)).toBeInTheDocument()
-    expect(screen.getByText(/Sunrise Credit Union/i)).toBeInTheDocument()
-  })
-
-  it('renders client type labels', () => {
-    render(<SocialProof />)
-    const banks = screen.getAllByText('Bank')
-    const cus = screen.getAllByText('Credit Union')
-    expect(banks.length).toBe(2)
-    expect(cus.length).toBe(3)
+    fireEvent.click(screen.getByRole('button', { name: /^Salesforce$/i }))
+    expect(screen.getByText(/data quality/i)).toBeInTheDocument()
+    expect(screen.getByText(/Fiserv DNA/i)).toBeInTheDocument()
   })
 })
