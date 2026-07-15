@@ -1,0 +1,176 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link [ref=e3] [cursor=pointer]:
+      - /url: https://iconape.com
+      - img "iconape logo" [ref=e4]
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - generic [ref=e9] [cursor=pointer]: Icons& Logos
+          - list:
+            - listitem:
+              - generic:
+                - radio "All"
+                - generic: All
+            - listitem:
+              - generic:
+                - radio "Icons"
+                - generic: Icons
+            - listitem:
+              - generic:
+                - radio "Logos"
+                - generic: Logos
+        - generic [ref=e11]:
+          - textbox "Search Free Vectors..." [ref=e12]: JIRA
+          - button "search" [ref=e13] [cursor=pointer]:
+            - img "search" [ref=e14]
+    - navigation [ref=e16]:
+      - generic [ref=e17] [cursor=pointer]: 
+      - generic [ref=e19] [cursor=pointer]: 
+  - generic [ref=e21]:
+    - generic [ref=e23]:
+      - heading [level=1] [ref=e25]:
+        - text: JIRA
+        - link "JIRA" [ref=e26] [cursor=pointer]:
+          - /url: https://iconape.com/?s=JIRA
+      - generic [ref=e28]:
+        - link [ref=e29] [cursor=pointer]:
+          - /url: https://iconape.com/jira-3-logo-icon-svg-png.html
+          - img "jira ,Logo , icon , SVG jira" [ref=e30]
+        - text: 
+      - generic [ref=e32]:
+        - link [ref=e33] [cursor=pointer]:
+          - /url: https://iconape.com/ajira-airways-logo-logo-icon-svg-png.html
+          - img "Ajira Airways Logo ,Logo , icon , SVG Ajira Airways Logo" [ref=e34]
+        - text: 
+      - generic [ref=e36]:
+        - link [ref=e37] [cursor=pointer]:
+          - /url: https://iconape.com/jira-logo-logo-icon-svg-png.html
+          - img "Jira Logo ,Logo , icon , SVG Jira Logo" [ref=e38]
+        - text: 
+      - generic [ref=e40]:
+        - link [ref=e41] [cursor=pointer]:
+          - /url: https://iconape.com/jira-software-logo-2-logo-icon-svg-png.html
+          - img "Jira Software Logo ,Logo , icon , SVG Jira Software Logo" [ref=e42]
+        - text: 
+      - generic [ref=e44]:
+        - link [ref=e45] [cursor=pointer]:
+          - /url: https://iconape.com/jira-align-logo-logo-icon-svg-png.html
+          - img "Jira Align Logo ,Logo , icon , SVG Jira Align Logo" [ref=e46]
+        - text: 
+      - generic [ref=e48]:
+        - link [ref=e49] [cursor=pointer]:
+          - /url: https://iconape.com/jira-service-desk-logo-logo-icon-svg-png.html
+          - img "Jira Service desk Logo ,Logo , icon , SVG Jira Service desk Logo" [ref=e50]
+        - text: 
+      - generic [ref=e52]:
+        - link [ref=e53] [cursor=pointer]:
+          - /url: https://iconape.com/gojira-band-logo-logo-icon-svg-png.html
+          - img "Gojira (Band) Logo ,Logo , icon , SVG Gojira (Band) Logo" [ref=e54]
+        - text: 
+      - generic [ref=e56]:
+        - link [ref=e57] [cursor=pointer]:
+          - /url: https://iconape.com/hotel-jirahara-logo-logo-icon-svg-png.html
+          - img "Hotel Jirahara Logo ,Logo , icon , SVG Hotel Jirahara Logo" [ref=e58]
+        - text: 
+      - generic [ref=e60]:
+        - link [ref=e61] [cursor=pointer]:
+          - /url: https://iconape.com/jira-software-logo-logo-icon-svg-png.html
+          - img "Jira (Software) logo ,Logo , icon , SVG Jira (Software) logo" [ref=e62]
+        - text: 
+      - generic [ref=e64]:
+        - link [ref=e65] [cursor=pointer]:
+          - /url: https://iconape.com/jira-2-logo-icon-svg-png.html
+          - img "Jira ,Logo , icon , SVG Jira" [ref=e66]
+        - text: 
+      - generic [ref=e68]:
+        - link [ref=e69] [cursor=pointer]:
+          - /url: https://iconape.com/cib-jira-logo-icon-svg-png.html
+          - img "cib jira ,Logo , icon , SVG cib jira" [ref=e70]
+        - text: 
+      - generic [ref=e72]:
+        - link [ref=e73] [cursor=pointer]:
+          - /url: https://iconape.com/jira-logo-icon-svg-png.html
+          - img "jira ,Logo , icon , SVG jira" [ref=e74]
+        - text: 
+    - paragraph [ref=e77]:
+      - text: "keyboard shortcuts:"
+      - generic [ref=e78]:
+        - strong [ref=e79]: LEFT
+        - text: Previous
+      - generic [ref=e80]:
+        - strong [ref=e81]: Right
+        - text: Next
+  - generic [ref=e83]:
+    - generic [ref=e84]:
+      - text: Top
+      - link "svg Logos" [ref=e85] [cursor=pointer]:
+        - /url: https://iconape.com
+      - text: Searches
+    - link "New Logos rebrands" [ref=e86] [cursor=pointer]:
+      - /url: https://iconape.com/rebrands/
+    - link "tiktok Logo" [ref=e87] [cursor=pointer]:
+      - /url: https://iconape.com/tiktok-logo-2-logo-icon-svg-png.html
+    - link "facebook logo" [ref=e88] [cursor=pointer]:
+      - /url: https://iconape.com/facebook-f-logo-2019-logo-icon-svg-png.html
+    - link "Whatsapp png logo" [ref=e89] [cursor=pointer]:
+      - /url: https://iconape.com/whatsapp-icon-logo-logo-icon-svg-png.html
+    - link "download youtube logo" [ref=e90] [cursor=pointer]:
+      - /url: https://iconape.com/youtube-2017-icon-logo-logo-icon-svg-png.html
+    - link "Apple logo" [ref=e91] [cursor=pointer]:
+      - /url: https://iconape.com/cib-apple-logo-icon-svg-png.html
+    - link "transparent gmail logo" [ref=e92] [cursor=pointer]:
+      - /url: https://iconape.com/gmail-2-logo-icon-svg-png.html
+    - link "png instagram" [ref=e93] [cursor=pointer]:
+      - /url: https://iconape.com/instagram-3-logo-icon-svg-png.html
+    - link "Google Pay logo png" [ref=e94] [cursor=pointer]:
+      - /url: https://iconape.com/rebrands/google-pay-logo
+  - generic [ref=e95]:
+    - paragraph [ref=e96]: Warning All logos are copyrighted to their respective owners and are protected under international copyright laws. Without prior written permission it is not permitted reproduce, distribute, publish, transmit, modify, create derivative works from, or otherwise exploit any content.
+    - heading [level=3] [ref=e97]:
+      - link "Popular Logos" [ref=e98] [cursor=pointer]:
+        - /url: https://iconape.com/top-logos
+      - link "New Logogs Rebranding" [ref=e99] [cursor=pointer]:
+        - /url: https://iconape.com/rebrands
+    - generic [ref=e100]:
+      - generic [ref=e101]: IconApe© 2026 By Arbfonts
+      - generic [ref=e103]:
+        - text: Quick Links
+        - list [ref=e104]:
+          - listitem [ref=e105]:
+            - link "Logos download SVG" [ref=e106] [cursor=pointer]:
+              - /url: https://iconape.com
+          - listitem [ref=e107]:
+            - link "icon download svg" [ref=e108] [cursor=pointer]:
+              - /url: https://iconape.com
+          - listitem [ref=e109]:
+            - link "iconape Free Logos" [ref=e110] [cursor=pointer]:
+              - /url: https://iconape.com
+          - listitem [ref=e111]:
+            - link "Sitemap" [ref=e112] [cursor=pointer]:
+              - /url: https://iconape.com/iconape_sitemap.xml
+      - generic [ref=e113]:
+        - text: Networks
+        - list [ref=e114]:
+          - listitem [ref=e115]:
+            - link "Instagram logo outline" [ref=e116] [cursor=pointer]:
+              - /url: https://iconape.com/?s=Instagram
+          - listitem [ref=e117]:
+            - link "Facebook Icon outline" [ref=e118] [cursor=pointer]:
+              - /url: https://iconape.com/?s=Facebook
+      - generic [ref=e119]:
+        - text: Help & support
+        - list [ref=e120]:
+          - listitem [ref=e121]:
+            - link "Contact & Help" [ref=e122] [cursor=pointer]:
+              - /url: https://iconape.com/help
+          - listitem [ref=e123]:
+            - link "FAQ" [ref=e124] [cursor=pointer]:
+              - /url: https://iconape.com/fag
+          - listitem [ref=e125]:
+            - link "Terms of Service" [ref=e126] [cursor=pointer]:
+              - /url: https://iconape.com/terms
+          - listitem [ref=e127]:
+            - link "Privacy" [ref=e128] [cursor=pointer]:
+              - /url: https://iconape.com/privacy-policy
+  - text:             

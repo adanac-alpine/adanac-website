@@ -1,0 +1,284 @@
+- generic [active] [ref=f84e1]:
+  - generic [ref=f84e2]:
+    - link [ref=f84e3] [cursor=pointer]:
+      - /url: https://iconape.com
+      - img "iconape logo" [ref=f84e4]
+    - banner [ref=f84e5]:
+      - generic [ref=f84e7]:
+        - generic [ref=f84e8]:
+          - generic [ref=f84e9] [cursor=pointer]: Icons& Logos
+          - list:
+            - listitem:
+              - generic:
+                - radio "All"
+                - generic: All
+            - listitem:
+              - generic:
+                - radio "Icons"
+                - generic: Icons
+            - listitem:
+              - generic:
+                - radio "Logos"
+                - generic: Logos
+        - generic [ref=f84e11]:
+          - textbox "Search Free Vectors..." [ref=f84e12]
+          - button "search" [ref=f84e13] [cursor=pointer]:
+            - img "search" [ref=f84e14]
+    - navigation [ref=f84e16]:
+      - generic [ref=f84e17] [cursor=pointer]: 
+      - generic [ref=f84e19] [cursor=pointer]: 
+  - banner [ref=f84e21]
+  - generic [ref=f84e22]:
+    - generic [ref=f84e23]:
+      - generic [ref=f84e24]:
+        - generic [ref=f84e26]:
+          - heading [level=1] [ref=f84e28]:
+            - link "Microsoft Azure Logo Logo download png" [ref=f84e29] [cursor=pointer]:
+              - /url: https://iconape.com/microsoft-azure-logo-logo-icon-svg-png.html
+          - heading "Microsoft Azure Logo Logo download Png SVG" [level=2] [ref=f84e30]
+          - link [ref=f84e31] [cursor=pointer]:
+            - /url: https://iconape.com/wp-content/files/wi/196763/png/microsoft-azure-logo.png
+            - img "Microsoft Azure Logo" [ref=f84e32]
+        - generic [ref=f84e34]:
+          - link " svg Download" [ref=f84e35] [cursor=pointer]:
+            - /url: https://iconape.com/wp-content/files/wi/196763/svg/microsoft-azureicon-seeklogo.com.svg
+            - generic [ref=f84e36]: 
+            - text: svg Download
+          - link " world Logos" [ref=f84e37] [cursor=pointer]:
+            - /url: https://iconape.com/iconsets/world-logos
+            - generic [ref=f84e38]: 
+            - text: world Logos
+          - generic [ref=f84e39] [cursor=pointer]:
+            - generic [ref=f84e40]: 
+            - text: share
+          - generic [ref=f84e41] [cursor=pointer]: Copy
+          - paragraph [ref=f84e44]:
+            - text: Warning All logos are copyrighted to their respective owners and are protected under international copyright laws. Without prior written permission it is not permitted reproduce, distribute, publish, transmit, modify,
+            - link "create" [ref=f84e45] [cursor=pointer]:
+              - /url: "#"
+            - text: derivative works from, or otherwise exploit any content.
+        - generic [ref=f84e50]:
+          - link [ref=f84e51] [cursor=pointer]:
+            - /url: https://iconape.com/content/content
+            - img "Microsoft Azure Logo" [ref=f84e52]
+          - generic [ref=f84e53]:
+            - link "Iconape" [ref=f84e54] [cursor=pointer]:
+              - /url: https://iconape.com/content/content
+            - heading "Microsoft Azure Logo Logo Icon Download svg" [level=2] [ref=f84e55]
+            - paragraph [ref=f84e56]: Microsoft Azure Logo Logo vector,Microsoft Azure Logo icon Download as SVG ,transparent, png , psd , pdf Ai ,vector free.
+            - paragraph
+      - heading " Users Also Downloaded These svg logos" [level=2] [ref=f84e62]:
+        - generic [ref=f84e63]: 
+        - text: Users Also Downloaded These
+        - link "svg logos" [ref=f84e64] [cursor=pointer]:
+          - /url: https://iconape.com
+      - generic [ref=f84e65]:
+        - link "MSI (Micro-Star International) Logo" [ref=f84e66] [cursor=pointer]:
+          - /url: https://iconape.com/msi-micro-star-international-logo-logo-icon-svg-png.html
+        - link "Suez Environnement Logo" [ref=f84e67] [cursor=pointer]:
+          - /url: https://iconape.com/suez-environnement-logo-logo-icon-svg-png.html
+        - link "F.L.Smidth Logo" [ref=f84e68] [cursor=pointer]:
+          - /url: https://iconape.com/f-l-smidth-logo-logo-icon-svg-png.html
+        - link "ORMAN MÜHENDİSLERİ ODASI Logo" [ref=f84e69] [cursor=pointer]:
+          - /url: https://iconape.com/orman-muhendisleri-odasi-logo-logo-icon-svg-png.html
+        - link "Salvatore Robuschi Logo" [ref=f84e70] [cursor=pointer]:
+          - /url: https://iconape.com/salvatore-robuschi-logo-logo-icon-svg-png.html
+    - generic [ref=f84e71]:
+      - heading "Similar Logos " [level=2] [ref=f84e72]:
+        - text: Similar
+        - generic [ref=f84e73]:
+          - text: Logos
+          - generic [ref=f84e74]: 
+      - generic [ref=f84e76]:
+        - link [ref=f84e77] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-edge-logo-logo-icon-svg-png.html
+          - img "Microsoft Edge Logo ,Logo , icon , SVG Microsoft Edge Logo" [ref=f84e78]
+        - text: 
+      - generic [ref=f84e80]:
+        - link [ref=f84e81] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-outlook-logo-logo-icon-svg-png.html
+          - img "Microsoft Outlook Logo ,Logo , icon , SVG Microsoft Outlook Logo" [ref=f84e82]
+        - text: 
+      - generic [ref=f84e84]:
+        - link [ref=f84e85] [cursor=pointer]:
+          - /url: https://iconape.com/prestige-av-creative-services-logo-logo-icon-svg-png.html
+          - img "Prestige AV & Creative Services Logo ,Logo , icon , SVG Prestige AV & Creative Services Logo" [ref=f84e86]
+        - text: 
+      - generic [ref=f84e88]:
+        - link [ref=f84e89] [cursor=pointer]:
+          - /url: https://iconape.com/leidos-logo-logo-icon-svg-png.html
+          - img "Leidos Logo ,Logo , icon , SVG Leidos Logo" [ref=f84e90]
+        - text: 
+      - generic [ref=f84e92]:
+        - link [ref=f84e93] [cursor=pointer]:
+          - /url: https://iconape.com/windows-10-icon-logo-logo-icon-svg-png.html
+          - img "Windows 10 Icon Logo ,Logo , icon , SVG Windows 10 Icon Logo" [ref=f84e94]
+        - text: 
+      - generic [ref=f84e96]:
+        - link [ref=f84e97] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-office-365-logo-logo-icon-svg-png.html
+          - img "Microsoft Office 365 Logo ,Logo , icon , SVG Microsoft Office 365 Logo" [ref=f84e98]
+        - text: 
+      - generic [ref=f84e100]:
+        - link [ref=f84e101] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-onedrive-logo-logo-icon-svg-png.html
+          - img "Microsoft OneDrive Logo ,Logo , icon , SVG Microsoft OneDrive Logo" [ref=f84e102]
+        - text: 
+      - generic [ref=f84e104]:
+        - link [ref=f84e105] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-excel-2010-logo-logo-icon-svg-png.html
+          - img "Microsoft Excel 2010 Logo ,Logo , icon , SVG Microsoft Excel 2010 Logo" [ref=f84e106]
+        - text: 
+      - generic [ref=f84e108]:
+        - link [ref=f84e109] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-certified-systems-engineer-logo-logo-icon-svg-png.html
+          - img "Microsoft Certified Systems Engineer Logo ,Logo , icon , SVG Microsoft Certified Systems Engineer Logo" [ref=f84e110]
+        - text: 
+      - generic [ref=f84e112]:
+        - link [ref=f84e113] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-internet-explorer-9-logo-logo-icon-svg-png.html
+          - img "Microsoft Internet Explorer 9 Logo ,Logo , icon , SVG Microsoft Internet Explorer 9 Logo" [ref=f84e114]
+        - text: 
+      - generic [ref=f84e116]:
+        - link [ref=f84e117] [cursor=pointer]:
+          - /url: https://iconape.com/windows-azure-logo-logo-icon-svg-png.html
+          - img "Windows Azure Logo ,Logo , icon , SVG Windows Azure Logo" [ref=f84e118]
+        - text: 
+      - generic [ref=f84e120]:
+        - link [ref=f84e121] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-office-logo-logo-icon-svg-png.html
+          - img "Microsoft Office Logo ,Logo , icon , SVG Microsoft Office Logo" [ref=f84e122]
+        - text: 
+      - generic [ref=f84e124]:
+        - link [ref=f84e125] [cursor=pointer]:
+          - /url: https://iconape.com/onenote-logo-logo-icon-svg-png.html
+          - img "OneNote Logo ,Logo , icon , SVG OneNote Logo" [ref=f84e126]
+        - text: 
+      - generic [ref=f84e128]:
+        - link [ref=f84e129] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-office-2004-logo-logo-icon-svg-png.html
+          - img "Microsoft Office 2004 Logo ,Logo , icon , SVG Microsoft Office 2004 Logo" [ref=f84e130]
+        - text: 
+      - generic [ref=f84e132]:
+        - link [ref=f84e133] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-partner-network-logo-logo-icon-svg-png.html
+          - img "Microsoft Partner Network Logo ,Logo , icon , SVG Microsoft Partner Network Logo" [ref=f84e134]
+        - text: 
+      - generic [ref=f84e136]:
+        - link [ref=f84e137] [cursor=pointer]:
+          - /url: https://iconape.com/bing-new-2016-logo-logo-icon-svg-png.html
+          - img "bing new 2016 Logo ,Logo , icon , SVG bing new 2016 Logo" [ref=f84e138]
+        - text: 
+      - generic [ref=f84e140]:
+        - link [ref=f84e141] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-edge-icon-logo-logo-icon-svg-png.html
+          - img "Microsoft Edge Icon Logo ,Logo , icon , SVG Microsoft Edge Icon Logo" [ref=f84e142]
+        - text: 
+      - generic [ref=f84e144]:
+        - link [ref=f84e145] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-net-logo-logo-icon-svg-png.html
+          - img "Microsoft .NET Logo ,Logo , icon , SVG Microsoft .NET Logo" [ref=f84e146]
+        - text: 
+      - generic [ref=f84e148]:
+        - link [ref=f84e149] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-powerpoint-2013-logo-logo-icon-svg-png.html
+          - img "Microsoft PowerPoint 2013 Logo ,Logo , icon , SVG Microsoft PowerPoint 2013 Logo" [ref=f84e150]
+        - text: 
+      - generic [ref=f84e152]:
+        - link [ref=f84e153] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-windows-powered-logo-logo-icon-svg-png.html
+          - img "Microsoft Windows Powered Logo ,Logo , icon , SVG Microsoft Windows Powered Logo" [ref=f84e154]
+        - text: 
+      - generic [ref=f84e156]:
+        - link [ref=f84e157] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-system-center-logo-logo-icon-svg-png.html
+          - img "Microsoft System Center Logo ,Logo , icon , SVG Microsoft System Center Logo" [ref=f84e158]
+        - text: 
+      - generic [ref=f84e160]:
+        - link [ref=f84e161] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-visual-studio-2005-logo-logo-icon-svg-png.html
+          - img "Microsoft Visual Studio 2005 Logo ,Logo , icon , SVG Microsoft Visual Studio 2005 Logo" [ref=f84e162]
+        - text: 
+      - generic [ref=f84e164]:
+        - link [ref=f84e165] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-exchange-server-logo-logo-icon-svg-png.html
+          - img "Microsoft Exchange Server Logo ,Logo , icon , SVG Microsoft Exchange Server Logo" [ref=f84e166]
+        - text: 
+      - generic [ref=f84e168]:
+        - link [ref=f84e169] [cursor=pointer]:
+          - /url: https://iconape.com/microsoft-windows-8-logo-logo-icon-svg-png.html
+          - img "Microsoft Windows 8 Logo ,Logo , icon , SVG Microsoft Windows 8 Logo" [ref=f84e170]
+        - text: 
+  - generic [ref=f84e172]:
+    - generic [ref=f84e173]:
+      - text: Top
+      - link "svg Logos" [ref=f84e174] [cursor=pointer]:
+        - /url: https://iconape.com
+      - text: Searches
+    - link "New Logos rebrands" [ref=f84e175] [cursor=pointer]:
+      - /url: https://iconape.com/rebrands/
+    - link "tiktok Logo" [ref=f84e176] [cursor=pointer]:
+      - /url: https://iconape.com/tiktok-logo-2-logo-icon-svg-png.html
+    - link "facebook logo" [ref=f84e177] [cursor=pointer]:
+      - /url: https://iconape.com/facebook-f-logo-2019-logo-icon-svg-png.html
+    - link "Whatsapp png logo" [ref=f84e178] [cursor=pointer]:
+      - /url: https://iconape.com/whatsapp-icon-logo-logo-icon-svg-png.html
+    - link "download youtube logo" [ref=f84e179] [cursor=pointer]:
+      - /url: https://iconape.com/youtube-2017-icon-logo-logo-icon-svg-png.html
+    - link "Apple logo" [ref=f84e180] [cursor=pointer]:
+      - /url: https://iconape.com/cib-apple-logo-icon-svg-png.html
+    - link "transparent gmail logo" [ref=f84e181] [cursor=pointer]:
+      - /url: https://iconape.com/gmail-2-logo-icon-svg-png.html
+    - link "png instagram" [ref=f84e182] [cursor=pointer]:
+      - /url: https://iconape.com/instagram-3-logo-icon-svg-png.html
+    - link "Google Pay logo png" [ref=f84e183] [cursor=pointer]:
+      - /url: https://iconape.com/rebrands/google-pay-logo
+  - generic [ref=f84e184]:
+    - paragraph [ref=f84e185]: Warning All logos are copyrighted to their respective owners and are protected under international copyright laws. Without prior written permission it is not permitted reproduce, distribute, publish, transmit, modify, create derivative works from, or otherwise exploit any content.
+    - heading [level=3] [ref=f84e186]:
+      - link "Popular Logos" [ref=f84e187] [cursor=pointer]:
+        - /url: https://iconape.com/top-logos
+      - link "New Logogs Rebranding" [ref=f84e188] [cursor=pointer]:
+        - /url: https://iconape.com/rebrands
+    - generic [ref=f84e189]:
+      - generic [ref=f84e190]: IconApe© 2026 By Arbfonts
+      - generic [ref=f84e192]:
+        - text: Quick Links
+        - list [ref=f84e193]:
+          - listitem [ref=f84e194]:
+            - link "Logos download SVG" [ref=f84e195] [cursor=pointer]:
+              - /url: https://iconape.com
+          - listitem [ref=f84e196]:
+            - link "icon download svg" [ref=f84e197] [cursor=pointer]:
+              - /url: https://iconape.com
+          - listitem [ref=f84e198]:
+            - link "iconape Free Logos" [ref=f84e199] [cursor=pointer]:
+              - /url: https://iconape.com
+          - listitem [ref=f84e200]:
+            - link "Sitemap" [ref=f84e201] [cursor=pointer]:
+              - /url: https://iconape.com/iconape_sitemap.xml
+      - generic [ref=f84e202]:
+        - text: Networks
+        - list [ref=f84e203]:
+          - listitem [ref=f84e204]:
+            - link "Instagram logo outline" [ref=f84e205] [cursor=pointer]:
+              - /url: https://iconape.com/?s=Instagram
+          - listitem [ref=f84e206]:
+            - link "Facebook Icon outline" [ref=f84e207] [cursor=pointer]:
+              - /url: https://iconape.com/?s=Facebook
+      - generic [ref=f84e208]:
+        - text: Help & support
+        - list [ref=f84e209]:
+          - listitem [ref=f84e210]:
+            - link "Contact & Help" [ref=f84e211] [cursor=pointer]:
+              - /url: https://iconape.com/help
+          - listitem [ref=f84e212]:
+            - link "FAQ" [ref=f84e213] [cursor=pointer]:
+              - /url: https://iconape.com/fag
+          - listitem [ref=f84e214]:
+            - link "Terms of Service" [ref=f84e215] [cursor=pointer]:
+              - /url: https://iconape.com/terms
+          - listitem [ref=f84e216]:
+            - link "Privacy" [ref=f84e217] [cursor=pointer]:
+              - /url: https://iconape.com/privacy-policy
+  - text:             

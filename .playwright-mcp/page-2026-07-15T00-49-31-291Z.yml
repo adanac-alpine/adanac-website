@@ -1,0 +1,441 @@
+- generic [ref=f1e2]:
+  - navigation [ref=f1e3]:
+    - generic [ref=f1e5]:
+      - link "About" [ref=f1e6] [cursor=pointer]:
+        - /url: "#about"
+      - link "Services" [ref=f1e7] [cursor=pointer]:
+        - /url: "#services"
+      - link "Tools" [ref=f1e8] [cursor=pointer]:
+        - /url: "#tools"
+      - link "Contact" [ref=f1e9] [cursor=pointer]:
+        - /url: "#contact"
+      - link "Get in Touch" [ref=f1e10] [cursor=pointer]:
+        - /url: "#contact"
+  - main [ref=f1e11]:
+    - generic [ref=f1e15]:
+      - generic [ref=f1e21]:
+        - generic [ref=f1e22]:
+          - generic [ref=f1e23]: ADANAC
+          - generic [ref=f1e24]: ADVISORY
+        - generic [ref=f1e25]: INC.
+      - heading "Launch your digital banking platform." [level=1] [ref=f1e26]
+      - paragraph [ref=f1e27]: Implementation consulting for credit unions, banks, and FinTechs. I help financial institutions go from digital strategy to production — on time, on budget.
+      - generic [ref=f1e28]:
+        - button "Get in touch" [ref=f1e29] [cursor=pointer]
+        - link "Learn more" [ref=f1e30] [cursor=pointer]:
+          - /url: "#about"
+    - generic [ref=f1e34]:
+      - generic [ref=f1e35]:
+        - generic [ref=f1e37]:
+          - text: About
+          - heading "Bridging the gap between digital strategy and platform execution" [level=2] [ref=f1e38]
+        - generic [ref=f1e39]:
+          - paragraph [ref=f1e41]: 16 years in financial services — from credit unions to enterprise commercial banking. I help financial institutions go from digital strategy to production on Backbase and VeriPark.
+          - paragraph [ref=f1e43]: "My experience spans the full spectrum: a small FinTech startup, a Canadian credit union, a fast-growing bank in Belarus, and high-scale enterprise commercial banking in North America. That range means I understand the constraints and realities at every level — from a 35,000-member credit union to a top-6 Canadian bank."
+      - generic [ref=f1e45]:
+        - heading "■ Credentials" [level=3] [ref=f1e46]:
+          - generic [ref=f1e47]: ■
+          - text: Credentials
+        - generic [ref=f1e48]:
+          - generic [ref=f1e49]:
+            - heading "Education" [level=4] [ref=f1e50]
+            - generic [ref=f1e51]:
+              - generic [ref=f1e52]:
+                - img [ref=f1e53]:
+                  - generic [ref=f1e56]: UBC
+                  - generic [ref=f1e57]: Sauder
+                - generic [ref=f1e58]: MBA — UBC Sauder School of Business
+              - generic [ref=f1e59]:
+                - img [ref=f1e60]:
+                  - generic [ref=f1e63]: MFin
+                  - generic [ref=f1e64]: BSUE
+                - generic [ref=f1e65]: Master of Finance — Belarus State University of Economics
+          - generic [ref=f1e66]:
+            - heading "Certifications" [level=4] [ref=f1e67]
+            - generic [ref=f1e68]:
+              - generic [ref=f1e69]:
+                - img [ref=f1e70]:
+                  - generic [ref=f1e73]: CBAP
+                  - generic [ref=f1e74]: IIBA
+                - generic [ref=f1e75]: CBAP (Certified Business Analysis Professional)
+              - generic [ref=f1e76]:
+                - img [ref=f1e77]:
+                  - generic [ref=f1e80]: CSPO
+                  - generic [ref=f1e81]: Scrum
+                - generic [ref=f1e82]: CSPO (Certified Scrum Product Owner)
+              - generic [ref=f1e83]:
+                - img [ref=f1e84]:
+                  - generic [ref=f1e87]: BACKBASE
+                  - generic [ref=f1e88]: Certified
+                - generic [ref=f1e89]: Backbase Certified Consultant
+              - generic [ref=f1e90]:
+                - img [ref=f1e91]:
+                  - generic [ref=f1e94]: SF ADMIN
+                  - generic [ref=f1e95]: Certified
+                - generic [ref=f1e96]: Salesforce Certified Administrator
+          - generic [ref=f1e97]:
+            - heading "Teaching & Community" [level=4] [ref=f1e98]
+            - generic [ref=f1e99]:
+              - generic [ref=f1e100]:
+                - img [ref=f1e101]:
+                  - generic [ref=f1e103]: UCW
+                  - generic [ref=f1e104]: Sessional
+                - generic [ref=f1e105]: Sessional Instructor — University Canada West
+              - generic [ref=f1e106]:
+                - img [ref=f1e107]:
+                  - generic [ref=f1e109]: IIBA
+                  - generic [ref=f1e110]: VP Prof Dev
+                - generic [ref=f1e111]: VP of Professional Development — IIBA
+    - generic [ref=f1e115]:
+      - generic [ref=f1e117]:
+        - text: Track Record
+        - heading "Where I've delivered" [level=2] [ref=f1e118]
+        - paragraph [ref=f1e119]: I've worked with banks and credit unions across North America to deliver production-ready digital banking platforms.
+      - generic [ref=f1e121]:
+        - generic [ref=f1e123]:
+          - generic [ref=f1e124]:
+            - generic [ref=f1e125]: Backbase
+            - generic [ref=f1e126]: Bank
+          - paragraph [ref=f1e127]: Delivered commercial banking digital channels for a top-6 Canadian bank — recognized as one of Backbase's most successful commercial banking implementations in North America.
+        - generic [ref=f1e129]:
+          - generic [ref=f1e130]:
+            - generic [ref=f1e131]: Backbase
+            - generic [ref=f1e132]: Bank
+          - paragraph [ref=f1e133]: "Contributed to digital banking platform delivery for a $200B+ US bank — J.D. Power's #1 ranked mobile banking app for customer satisfaction."
+        - generic [ref=f1e135]:
+          - generic [ref=f1e136]:
+            - generic [ref=f1e137]: VeriPark
+            - generic [ref=f1e138]: Credit Union
+          - paragraph [ref=f1e139]: Delivery lead for VeriChannel digital banking implementation at a Manitoba credit union serving 35,000+ members across 19 branches.
+        - generic [ref=f1e141]:
+          - generic [ref=f1e142]:
+            - generic [ref=f1e143]: VeriPark
+            - generic [ref=f1e144]: Credit Union
+          - paragraph [ref=f1e145]: Product owner advisor for VeriChannel rollout at an Ontario credit union with 65,000+ members and $3.5B in assets under administration.
+        - generic [ref=f1e147]:
+          - generic [ref=f1e148]:
+            - generic [ref=f1e149]: Salesforce
+            - generic [ref=f1e150]: Credit Union
+          - paragraph [ref=f1e151]: Salesforce Financial Services Cloud certified — currently leading data quality, case management automation, and multiple workstreams at YNCU, plus data synchronization with Fiserv DNA at Sunrise Credit Union.
+    - generic [ref=f1e153]:
+      - generic [ref=f1e155]:
+        - text: Services
+        - heading "What I do" [level=2] [ref=f1e156]
+        - paragraph [ref=f1e157]: "I specialize in three platform ecosystems: Backbase commercial banking, Salesforce Financial Services Cloud, and VeriPark omnichannel (VeriTouch). That depth means I can deliver faster, catch issues earlier, and actually help your team — not just advise from the sidelines."
+      - generic [ref=f1e158]:
+        - generic [ref=f1e161]:
+          - generic [ref=f1e166]:
+            - heading "VeriPark Implementation" [level=3] [ref=f1e167]
+            - paragraph [ref=f1e168]: VeriPark VeriChannel and VeriTouch for credit unions — omnichannel customer journeys, digital onboarding, loan origination workflows, and front-back office integration. Deep experience with VeriChannel at Manitoba and Ontario credit unions.
+          - generic [ref=f1e169]:
+            - generic [ref=f1e170]: What I deliver
+            - list [ref=f1e171]:
+              - listitem [ref=f1e172]:
+                - generic [ref=f1e174]: VeriChannel digital banking configuration
+              - listitem [ref=f1e175]:
+                - generic [ref=f1e177]: Omnichannel journey orchestration
+              - listitem [ref=f1e178]:
+                - generic [ref=f1e180]: Loan origination & underwriting workflows
+              - listitem [ref=f1e181]:
+                - generic [ref=f1e183]: Front-back office integration
+              - listitem [ref=f1e184]:
+                - generic [ref=f1e186]: Digital onboarding & KYC flows
+        - generic [ref=f1e189]:
+          - generic [ref=f1e195]:
+            - heading "Backbase Implementation" [level=3] [ref=f1e196]
+            - paragraph [ref=f1e197]: End-to-end delivery of Backbase digital banking — from commercial and retail banking channels to mobile apps. I act as BA, delivery lead, or product owner advisor to get your platform from architecture to production.
+          - generic [ref=f1e198]:
+            - generic [ref=f1e199]: What I deliver
+            - list [ref=f1e200]:
+              - listitem [ref=f1e201]:
+                - generic [ref=f1e203]: Business & technical requirements gathering
+              - listitem [ref=f1e204]:
+                - generic [ref=f1e206]: Platform architecture and configuration
+              - listitem [ref=f1e207]:
+                - generic [ref=f1e209]: Core banking system integration
+              - listitem [ref=f1e210]:
+                - generic [ref=f1e212]: UAT coordination and testing
+              - listitem [ref=f1e213]:
+                - generic [ref=f1e215]: Go-live support and post-launch optimization
+        - generic [ref=f1e218]:
+          - generic [ref=f1e223]:
+            - heading "Salesforce Implementation" [level=3] [ref=f1e224]
+            - paragraph [ref=f1e225]: Salesforce Financial Services Cloud and Service Cloud for credit unions — member data unification, case management automation, advisor consoles, and data quality frameworks. SF certified, currently delivering at YNCU and Sunrise Credit Union.
+          - generic [ref=f1e226]:
+            - generic [ref=f1e227]: What I deliver
+            - list [ref=f1e228]:
+              - listitem [ref=f1e229]:
+                - generic [ref=f1e231]: Financial Services Cloud configuration
+              - listitem [ref=f1e232]:
+                - generic [ref=f1e234]: Case management & workflow automation
+              - listitem [ref=f1e235]:
+                - generic [ref=f1e237]: Data quality frameworks & deduplication
+              - listitem [ref=f1e238]:
+                - generic [ref=f1e240]: Core banking data synchronization (Fiserv DNA)
+              - listitem [ref=f1e241]:
+                - generic [ref=f1e243]: User training & adoption support
+    - generic [ref=f1e245]:
+      - generic [ref=f1e247]:
+        - text: How I Work
+        - heading "From first call to production" [level=2] [ref=f1e248]
+      - generic [ref=f1e250]:
+        - generic [ref=f1e255]:
+          - generic [ref=f1e260]: Step 01
+          - heading "Discovery" [level=3] [ref=f1e262]
+          - paragraph [ref=f1e263]: I learn your business, your members, and your current technology landscape. Together we define what success looks like and build a roadmap to get there.
+        - generic [ref=f1e268]:
+          - generic [ref=f1e273]: Step 02
+          - heading "Implementation" [level=3] [ref=f1e275]
+          - paragraph [ref=f1e276]: Hands-on delivery — platform configuration, system integration, data migration, and custom development. I work alongside your team as part of the delivery, not just an advisor pointing at slides.
+        - generic [ref=f1e279]:
+          - generic [ref=f1e286]: Step 03
+          - heading "Launch & Support" [level=3] [ref=f1e288]
+          - paragraph [ref=f1e289]: Testing, training, go-live support, and post-launch optimization. I stay involved until the platform is running smoothly and your team is confident.
+    - generic [ref=f1e291]:
+      - generic [ref=f1e293]:
+        - text: Tools & Workflow
+        - heading "Tools I use" [level=2] [ref=f1e294]
+      - generic [ref=f1e295]:
+        - generic [ref=f1e297]:
+          - generic [ref=f1e298]:
+            - img "jira logo" [ref=f1e299]
+            - generic [ref=f1e300]: JIRA
+          - generic [ref=f1e301]:
+            - img "confluence logo" [ref=f1e302]
+            - generic [ref=f1e303]: Confluence
+          - generic [ref=f1e304]:
+            - img "slack logo" [ref=f1e305]
+            - generic [ref=f1e306]: Slack
+          - generic [ref=f1e307]:
+            - img "teams logo" [ref=f1e308]
+            - generic [ref=f1e309]: MS Teams
+          - generic [ref=f1e310]:
+            - img "claude logo" [ref=f1e311]
+            - generic [ref=f1e312]: Claude
+          - generic [ref=f1e313]:
+            - img "chatgpt logo" [ref=f1e314]
+            - generic [ref=f1e315]: ChatGPT
+          - generic [ref=f1e316]:
+            - img "copilot logo" [ref=f1e317]
+            - generic [ref=f1e318]: Copilot
+          - generic [ref=f1e319]:
+            - img "gemini logo" [ref=f1e320]
+            - generic [ref=f1e321]: Gemini
+          - generic [ref=f1e322]:
+            - img "opencode logo" [ref=f1e323]
+            - generic [ref=f1e324]: OpenCode
+          - generic [ref=f1e325]:
+            - img "jules logo" [ref=f1e326]
+            - generic [ref=f1e327]: Jules
+          - generic [ref=f1e328]:
+            - img "jira logo" [ref=f1e329]
+            - generic [ref=f1e330]: JIRA
+          - generic [ref=f1e331]:
+            - img "confluence logo" [ref=f1e332]
+            - generic [ref=f1e333]: Confluence
+          - generic [ref=f1e334]:
+            - img "slack logo" [ref=f1e335]
+            - generic [ref=f1e336]: Slack
+          - generic [ref=f1e337]:
+            - img "teams logo" [ref=f1e338]
+            - generic [ref=f1e339]: MS Teams
+          - generic [ref=f1e340]:
+            - img "claude logo" [ref=f1e341]
+            - generic [ref=f1e342]: Claude
+          - generic [ref=f1e343]:
+            - img "chatgpt logo" [ref=f1e344]
+            - generic [ref=f1e345]: ChatGPT
+          - generic [ref=f1e346]:
+            - img "copilot logo" [ref=f1e347]
+            - generic [ref=f1e348]: Copilot
+          - generic [ref=f1e349]:
+            - img "gemini logo" [ref=f1e350]
+            - generic [ref=f1e351]: Gemini
+          - generic [ref=f1e352]:
+            - img "opencode logo" [ref=f1e353]
+            - generic [ref=f1e354]: OpenCode
+          - generic [ref=f1e355]:
+            - img "jules logo" [ref=f1e356]
+            - generic [ref=f1e357]: Jules
+        - generic [ref=f1e359]:
+          - generic [ref=f1e360]:
+            - img "azuredevops logo" [ref=f1e361]
+            - generic [ref=f1e362]: Azure DevOps
+          - generic [ref=f1e363]:
+            - img "nextjs logo" [ref=f1e364]
+            - generic [ref=f1e365]: Next.js
+          - generic [ref=f1e366]:
+            - img "react logo" [ref=f1e367]
+            - generic [ref=f1e368]: React
+          - generic [ref=f1e369]:
+            - img "tailwind logo" [ref=f1e370]
+            - generic [ref=f1e371]: Tailwind CSS
+          - generic [ref=f1e372]:
+            - img "python logo" [ref=f1e373]
+            - generic [ref=f1e374]: Python
+          - generic [ref=f1e375]:
+            - img "fastapi logo" [ref=f1e376]
+            - generic [ref=f1e377]: FastAPI
+          - generic [ref=f1e378]:
+            - img "vercel logo" [ref=f1e379]
+            - generic [ref=f1e380]: Vercel
+          - generic [ref=f1e381]:
+            - img "supabase logo" [ref=f1e382]
+            - generic [ref=f1e383]: Supabase
+          - generic [ref=f1e384]:
+            - img "render logo" [ref=f1e385]
+            - generic [ref=f1e386]: Render
+          - generic [ref=f1e387]:
+            - img "posthog logo" [ref=f1e388]
+            - generic [ref=f1e389]: PostHog
+          - generic [ref=f1e390]:
+            - img "sentry logo" [ref=f1e391]
+            - generic [ref=f1e392]: Sentry
+          - generic [ref=f1e393]:
+            - img "playwright logo" [ref=f1e394]
+            - generic [ref=f1e395]: Playwright
+          - generic [ref=f1e396]:
+            - img "azuredevops logo" [ref=f1e397]
+            - generic [ref=f1e398]: Azure DevOps
+          - generic [ref=f1e399]:
+            - img "nextjs logo" [ref=f1e400]
+            - generic [ref=f1e401]: Next.js
+          - generic [ref=f1e402]:
+            - img "react logo" [ref=f1e403]
+            - generic [ref=f1e404]: React
+          - generic [ref=f1e405]:
+            - img "tailwind logo" [ref=f1e406]
+            - generic [ref=f1e407]: Tailwind CSS
+          - generic [ref=f1e408]:
+            - img "python logo" [ref=f1e409]
+            - generic [ref=f1e410]: Python
+          - generic [ref=f1e411]:
+            - img "fastapi logo" [ref=f1e412]
+            - generic [ref=f1e413]: FastAPI
+          - generic [ref=f1e414]:
+            - img "vercel logo" [ref=f1e415]
+            - generic [ref=f1e416]: Vercel
+          - generic [ref=f1e417]:
+            - img "supabase logo" [ref=f1e418]
+            - generic [ref=f1e419]: Supabase
+          - generic [ref=f1e420]:
+            - img "render logo" [ref=f1e421]
+            - generic [ref=f1e422]: Render
+          - generic [ref=f1e423]:
+            - img "posthog logo" [ref=f1e424]
+            - generic [ref=f1e425]: PostHog
+          - generic [ref=f1e426]:
+            - img "sentry logo" [ref=f1e427]
+            - generic [ref=f1e428]: Sentry
+          - generic [ref=f1e429]:
+            - img "playwright logo" [ref=f1e430]
+            - generic [ref=f1e431]: Playwright
+    - generic [ref=f1e435]:
+      - generic [ref=f1e437]:
+        - text: Why Me
+        - heading "What I bring to your project" [level=2] [ref=f1e438]
+      - generic [ref=f1e440]:
+        - generic [ref=f1e442]:
+          - heading "Vendor Liaison" [level=3] [ref=f1e449]
+          - paragraph [ref=f1e450]: I speak both languages — the vendor's technical team and your business stakeholders. I translate between them so nothing gets lost.
+        - generic [ref=f1e452]:
+          - heading "Hands-On Delivery" [level=3] [ref=f1e456]
+          - paragraph [ref=f1e457]: I don't just advise from the sidelines. I configure, I test, I sit in the room with your team during UAT. Delivery, not decks.
+        - generic [ref=f1e459]:
+          - heading "Coaching & Team Building" [level=3] [ref=f1e464]
+          - paragraph [ref=f1e465]: I've hired and coached new consultants at Modes. I help your team build internal capability, not dependency.
+        - generic [ref=f1e467]:
+          - heading "Bilingual" [level=3] [ref=f1e473]
+          - paragraph [ref=f1e474]: English and Russian. Useful when working with diverse teams and international stakeholders.
+    - generic [ref=f1e479]:
+      - generic [ref=f1e480]:
+        - generic [ref=f1e481]:
+          - img "Scoutloop" [ref=f1e482]
+          - generic [ref=f1e484]:
+            - text: Built in BC
+            - heading "Scoutloop" [level=2] [ref=f1e485]
+        - paragraph [ref=f1e486]: "I spend as much time as I can in the BC backcountry — trailrunning, hiking, and ski touring. Scoutloop came from a real need: knowing what conditions actually look like before you drive three hours to a trailhead."
+        - paragraph [ref=f1e487]: It pulls weather, avalanche danger, road closures, and fire bans into one pre-trip briefing. Built with the same modern stack I bring to client work — and built using AI-assisted development workflows with Claude, Codex, Gemini, and OpenCode.
+        - generic [ref=f1e488]:
+          - generic [ref=f1e489]:
+            - img "Next.js logo" [ref=f1e490]
+            - generic [ref=f1e491]: Next.js
+          - generic [ref=f1e492]:
+            - img "React logo" [ref=f1e493]
+            - generic [ref=f1e494]: React
+          - generic [ref=f1e495]:
+            - img "Supabase logo" [ref=f1e496]
+            - generic [ref=f1e497]: Supabase
+          - generic [ref=f1e498]:
+            - img "Vercel logo" [ref=f1e499]
+            - generic [ref=f1e500]: Vercel
+          - generic [ref=f1e501]:
+            - img "Tailwind logo" [ref=f1e502]
+            - generic [ref=f1e503]: Tailwind
+          - generic [ref=f1e504]:
+            - img "Python logo" [ref=f1e505]
+            - generic [ref=f1e506]: Python
+          - generic [ref=f1e507]:
+            - img "FastAPI logo" [ref=f1e508]
+            - generic [ref=f1e509]: FastAPI
+        - link "Visit Scoutloop" [ref=f1e510] [cursor=pointer]:
+          - /url: https://scoutloop.me
+      - generic [ref=f1e516]:
+        - img "Scoutloop" [ref=f1e517]
+        - generic [ref=f1e519]:
+          - paragraph [ref=f1e520]: Know before you go.
+          - paragraph [ref=f1e521]: scoutloop.me
+    - generic [ref=f1e523]:
+      - generic [ref=f1e525]:
+        - text: Contact
+        - heading "Let's talk" [level=2] [ref=f1e526]
+        - paragraph [ref=f1e527]: Have a digital banking project in mind? I'd love to hear about it. Drop me a message and I'll get back to you within 24 hours.
+      - generic [ref=f1e530]:
+        - generic [ref=f1e531]:
+          - generic [ref=f1e532]:
+            - generic [ref=f1e533]: Name
+            - textbox "Name" [ref=f1e534]:
+              - /placeholder: Your name
+          - generic [ref=f1e535]:
+            - generic [ref=f1e536]: Email
+            - textbox "Email" [ref=f1e537]:
+              - /placeholder: you@example.com
+        - generic [ref=f1e538]:
+          - generic [ref=f1e539]: Message
+          - textbox "Message" [ref=f1e540]:
+            - /placeholder: Tell me about your project...
+        - button "Send Message" [ref=f1e541] [cursor=pointer]
+  - contentinfo [ref=f1e542]:
+    - generic [ref=f1e545]:
+      - generic [ref=f1e546]:
+        - generic [ref=f1e547]:
+          - generic [ref=f1e552]:
+            - generic [ref=f1e553]:
+              - generic [ref=f1e554]: ADANAC
+              - generic [ref=f1e555]: ADVISORY
+            - generic [ref=f1e556]: INC.
+          - paragraph [ref=f1e557]: Strategic Technology Consulting — British Columbia
+        - generic [ref=f1e558]:
+          - heading "Navigate" [level=4] [ref=f1e559]
+          - link "About" [ref=f1e560] [cursor=pointer]:
+            - /url: "#about"
+          - link "Services" [ref=f1e561] [cursor=pointer]:
+            - /url: "#services"
+          - link "Tools" [ref=f1e562] [cursor=pointer]:
+            - /url: "#tools"
+          - link "Contact" [ref=f1e563] [cursor=pointer]:
+            - /url: "#contact"
+        - generic [ref=f1e564]:
+          - heading "Contact" [level=4] [ref=f1e565]
+          - link "sergey@adanacadvisory.ca" [ref=f1e566] [cursor=pointer]:
+            - /url: mailto:sergey@adanacadvisory.ca
+          - link "linkedin.com/in/pochikovskiy" [ref=f1e570] [cursor=pointer]:
+            - /url: https://linkedin.com/in/pochikovskiy
+      - generic [ref=f1e575]:
+        - generic [ref=f1e576]: © 2026 Adanac Advisory Inc. All rights reserved.
+        - generic [ref=f1e577]:
+          - link "Privacy Policy" [ref=f1e578] [cursor=pointer]:
+            - /url: /privacy
+          - generic [ref=f1e579]: ·
+          - link "Terms of Service" [ref=f1e580] [cursor=pointer]:
+            - /url: /terms

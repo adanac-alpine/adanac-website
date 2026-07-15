@@ -1,0 +1,125 @@
+- generic [active] [ref=f126e1]:
+  - generic [ref=f126e2]:
+    - link [ref=f126e3] [cursor=pointer]:
+      - /url: https://iconape.com
+      - img "iconape logo" [ref=f126e4]
+    - banner [ref=f126e5]:
+      - generic [ref=f126e7]:
+        - generic [ref=f126e8]:
+          - generic [ref=f126e9] [cursor=pointer]: Icons& Logos
+          - list:
+            - listitem:
+              - generic:
+                - radio "All"
+                - generic: All
+            - listitem:
+              - generic:
+                - radio "Icons"
+                - generic: Icons
+            - listitem:
+              - generic:
+                - radio "Logos"
+                - generic: Logos
+        - generic [ref=f126e11]:
+          - textbox "Search Free Vectors..." [ref=f126e12]: ChatGPT
+          - button "search" [ref=f126e13] [cursor=pointer]:
+            - img "search" [ref=f126e14]
+    - navigation [ref=f126e16]:
+      - generic [ref=f126e17] [cursor=pointer]: 
+      - generic [ref=f126e19] [cursor=pointer]: 
+  - generic [ref=f126e21]:
+    - generic [ref=f126e23]:
+      - heading [level=1] [ref=f126e25]:
+        - text: ChatGPT
+        - link "ChatGPT" [ref=f126e26] [cursor=pointer]:
+          - /url: https://iconape.com/?s=ChatGPT
+      - paragraph [ref=f126e27]
+      - paragraph [ref=f126e28]: "Oops! We couldn’t find results for your search: ChatGPT"
+    - paragraph [ref=f126e31]:
+      - text: "keyboard shortcuts:"
+      - generic [ref=f126e32]:
+        - strong [ref=f126e33]: LEFT
+        - text: Previous
+      - generic [ref=f126e34]:
+        - strong [ref=f126e35]: Right
+        - text: Next
+      - link "Dictionaries & Encyclopedias" [ref=f126e36] [cursor=pointer]:
+        - generic [ref=f126e37]: Dictionaries
+        - text: "& Encyclopedias"
+  - generic [ref=f126e42]:
+    - generic [ref=f126e43]:
+      - text: Top
+      - link "svg Logos" [ref=f126e44] [cursor=pointer]:
+        - /url: https://iconape.com
+      - text: Searches
+    - link "New Logos rebrands" [ref=f126e45] [cursor=pointer]:
+      - /url: https://iconape.com/rebrands/
+    - link "tiktok Logo" [ref=f126e46] [cursor=pointer]:
+      - /url: https://iconape.com/tiktok-logo-2-logo-icon-svg-png.html
+    - link "facebook logo" [ref=f126e47] [cursor=pointer]:
+      - /url: https://iconape.com/facebook-f-logo-2019-logo-icon-svg-png.html
+    - link "Whatsapp png logo" [ref=f126e48] [cursor=pointer]:
+      - /url: https://iconape.com/whatsapp-icon-logo-logo-icon-svg-png.html
+    - link "download youtube logo" [ref=f126e49] [cursor=pointer]:
+      - /url: https://iconape.com/youtube-2017-icon-logo-logo-icon-svg-png.html
+    - link "Apple logo" [ref=f126e50] [cursor=pointer]:
+      - /url: https://iconape.com/cib-apple-logo-icon-svg-png.html
+    - link "transparent gmail logo" [ref=f126e51] [cursor=pointer]:
+      - /url: https://iconape.com/gmail-2-logo-icon-svg-png.html
+    - link "png instagram" [ref=f126e52] [cursor=pointer]:
+      - /url: https://iconape.com/instagram-3-logo-icon-svg-png.html
+    - link "Google Pay logo png" [ref=f126e53] [cursor=pointer]:
+      - /url: https://iconape.com/rebrands/google-pay-logo
+  - generic [ref=f126e54]:
+    - paragraph [ref=f126e55]:
+      - text: Warning All logos are copyrighted to their respective owners and are protected under international copyright laws. Without prior written permission it is not permitted reproduce, distribute, publish, transmit, modify,
+      - link "create" [ref=f126e56] [cursor=pointer]:
+        - /url: "#"
+      - text: derivative works from, or otherwise exploit any content.
+    - heading [level=3] [ref=f126e59]:
+      - link "Popular Logos" [ref=f126e60] [cursor=pointer]:
+        - /url: https://iconape.com/top-logos
+      - link "New Logogs Rebranding" [ref=f126e61] [cursor=pointer]:
+        - /url: https://iconape.com/rebrands
+    - generic [ref=f126e62]:
+      - generic [ref=f126e63]: IconApe© 2026 By Arbfonts
+      - generic [ref=f126e65]:
+        - text: Quick Links
+        - list [ref=f126e66]:
+          - listitem [ref=f126e67]:
+            - link "Logos download SVG" [ref=f126e68] [cursor=pointer]:
+              - /url: https://iconape.com
+          - listitem [ref=f126e69]:
+            - link "icon download svg" [ref=f126e70] [cursor=pointer]:
+              - /url: https://iconape.com
+          - listitem [ref=f126e71]:
+            - link "iconape Free Logos" [ref=f126e72] [cursor=pointer]:
+              - /url: https://iconape.com
+          - listitem [ref=f126e73]:
+            - link "Sitemap" [ref=f126e74] [cursor=pointer]:
+              - /url: https://iconape.com/iconape_sitemap.xml
+      - generic [ref=f126e75]:
+        - text: Networks
+        - list [ref=f126e76]:
+          - listitem [ref=f126e77]:
+            - link "Instagram logo outline" [ref=f126e78] [cursor=pointer]:
+              - /url: https://iconape.com/?s=Instagram
+          - listitem [ref=f126e79]:
+            - link "Facebook Icon outline" [ref=f126e80] [cursor=pointer]:
+              - /url: https://iconape.com/?s=Facebook
+      - generic [ref=f126e81]:
+        - text: Help & support
+        - list [ref=f126e82]:
+          - listitem [ref=f126e83]:
+            - link "Contact & Help" [ref=f126e84] [cursor=pointer]:
+              - /url: https://iconape.com/help
+          - listitem [ref=f126e85]:
+            - link "FAQ" [ref=f126e86] [cursor=pointer]:
+              - /url: https://iconape.com/fag
+          - listitem [ref=f126e87]:
+            - link "Terms of Service" [ref=f126e88] [cursor=pointer]:
+              - /url: https://iconape.com/terms
+          - listitem [ref=f126e89]:
+            - link "Privacy" [ref=f126e90] [cursor=pointer]:
+              - /url: https://iconape.com/privacy-policy
+  - text:             

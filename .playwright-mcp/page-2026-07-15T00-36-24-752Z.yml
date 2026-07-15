@@ -1,0 +1,168 @@
+- generic [active] [ref=f34e1]:
+  - generic [ref=f34e2]:
+    - link [ref=f34e3] [cursor=pointer]:
+      - /url: https://iconape.com
+      - img "iconape logo" [ref=f34e4]
+    - banner [ref=f34e5]:
+      - generic [ref=f34e7]:
+        - generic [ref=f34e8]:
+          - generic [ref=f34e9] [cursor=pointer]: Icons& Logos
+          - list:
+            - listitem:
+              - generic:
+                - radio "All"
+                - generic: All
+            - listitem:
+              - generic:
+                - radio "Icons"
+                - generic: Icons
+            - listitem:
+              - generic:
+                - radio "Logos"
+                - generic: Logos
+        - generic [ref=f34e11]:
+          - textbox "Search Free Vectors..." [ref=f34e12]: claude
+          - button "search" [ref=f34e13] [cursor=pointer]:
+            - img "search" [ref=f34e14]
+    - navigation [ref=f34e16]:
+      - generic [ref=f34e17] [cursor=pointer]: 
+      - generic [ref=f34e19] [cursor=pointer]: 
+  - generic [ref=f34e21]:
+    - generic [ref=f34e23]:
+      - heading [level=1] [ref=f34e25]:
+        - text: claude
+        - link "claude" [ref=f34e26] [cursor=pointer]:
+          - /url: https://iconape.com/?s=claude
+      - generic [ref=f34e28]:
+        - link [ref=f34e29] [cursor=pointer]:
+          - /url: https://iconape.com/fc-saint-claude-logo-logo-icon-svg-png.html
+          - img "FC Saint-Claude Logo ,Logo , icon , SVG FC Saint-Claude Logo" [ref=f34e30]
+        - text: 
+      - generic [ref=f34e32]:
+        - link [ref=f34e33] [cursor=pointer]:
+          - /url: https://iconape.com/vereadora-claudete-alves-logo-logo-icon-svg-png.html
+          - img "Vereadora Claudete Alves Logo ,Logo , icon , SVG Vereadora Claudete Alves Logo" [ref=f34e34]
+        - text: 
+      - generic [ref=f34e36]:
+        - link [ref=f34e37] [cursor=pointer]:
+          - /url: https://iconape.com/jean-claude-aubry-shopping-professional-logo-logo-icon-svg-png.html
+          - img "Jean Claude Aubry Shopping Professional Logo ,Logo , icon , SVG Jean Claude Aubry Shopping Professional Logo" [ref=f34e38]
+        - text: 
+      - generic [ref=f34e40]:
+        - link [ref=f34e41] [cursor=pointer]:
+          - /url: https://iconape.com/claudecir-rogerio-de-lima-logo-logo-icon-svg-png.html
+          - img "Claudecir Rogério de Lima Logo ,Logo , icon , SVG Claudecir Rogério de Lima Logo" [ref=f34e42]
+        - text: 
+      - generic [ref=f34e44]:
+        - link [ref=f34e45] [cursor=pointer]:
+          - /url: https://iconape.com/universite-claude-bernard-lyon1-logo-icon-svg-png.html
+          - img "Universite Claude Bernard Lyon1 ,Logo , icon , SVG Universite Claude Bernard Lyon1" [ref=f34e46]
+        - text: 
+      - generic [ref=f34e48]:
+        - link [ref=f34e49] [cursor=pointer]:
+          - /url: https://iconape.com/jean-claude-poitras-logo-icon-svg-png.html
+          - img "Jean Claude Poitras ,Logo , icon , SVG Jean Claude Poitras" [ref=f34e50]
+        - text: 
+      - generic [ref=f34e52]:
+        - link [ref=f34e53] [cursor=pointer]:
+          - /url: https://iconape.com/groupe-jean-claude-darmon-logo-icon-svg-png.html
+          - img "Groupe Jean Claude Darmon ,Logo , icon , SVG Groupe Jean Claude Darmon" [ref=f34e54]
+        - text: 
+      - generic [ref=f34e56]:
+        - link [ref=f34e57] [cursor=pointer]:
+          - /url: https://iconape.com/claude-neon-logo-icon-svg-png.html
+          - img "Claude Neon ,Logo , icon , SVG Claude Neon" [ref=f34e58]
+        - text: 
+      - generic [ref=f34e60]:
+        - link [ref=f34e61] [cursor=pointer]:
+          - /url: https://iconape.com/claude-neon-logo-logo-icon-svg-png.html
+          - img "Claude Neon logo ,Logo , icon , SVG Claude Neon logo" [ref=f34e62]
+        - text: 
+      - generic [ref=f34e64]:
+        - link [ref=f34e65] [cursor=pointer]:
+          - /url: https://iconape.com/claude-neon-1217-logo-icon-svg-png.html
+          - img "Claude Neon 1217 ,Logo , icon , SVG Claude Neon 1217" [ref=f34e66]
+        - text: 
+    - generic [ref=f34e67]:
+      - paragraph [ref=f34e69]:
+        - text: "keyboard shortcuts:"
+        - generic [ref=f34e70]:
+          - strong [ref=f34e71]: LEFT
+          - text: Previous
+        - generic [ref=f34e72]:
+          - strong [ref=f34e73]: Right
+          - text: Next
+      - insertion [ref=f34e75]
+  - generic [ref=f34e78]:
+    - generic [ref=f34e79]:
+      - text: Top
+      - link "svg Logos" [ref=f34e80] [cursor=pointer]:
+        - /url: https://iconape.com
+      - text: Searches
+    - link "New Logos rebrands" [ref=f34e81] [cursor=pointer]:
+      - /url: https://iconape.com/rebrands/
+    - link "tiktok Logo" [ref=f34e82] [cursor=pointer]:
+      - /url: https://iconape.com/tiktok-logo-2-logo-icon-svg-png.html
+    - link "facebook logo" [ref=f34e83] [cursor=pointer]:
+      - /url: https://iconape.com/facebook-f-logo-2019-logo-icon-svg-png.html
+    - link "Whatsapp png logo" [ref=f34e84] [cursor=pointer]:
+      - /url: https://iconape.com/whatsapp-icon-logo-logo-icon-svg-png.html
+    - link "download youtube logo" [ref=f34e85] [cursor=pointer]:
+      - /url: https://iconape.com/youtube-2017-icon-logo-logo-icon-svg-png.html
+    - link "Apple logo" [ref=f34e86] [cursor=pointer]:
+      - /url: https://iconape.com/cib-apple-logo-icon-svg-png.html
+    - link "transparent gmail logo" [ref=f34e87] [cursor=pointer]:
+      - /url: https://iconape.com/gmail-2-logo-icon-svg-png.html
+    - link "png instagram" [ref=f34e88] [cursor=pointer]:
+      - /url: https://iconape.com/instagram-3-logo-icon-svg-png.html
+    - link "Google Pay logo png" [ref=f34e89] [cursor=pointer]:
+      - /url: https://iconape.com/rebrands/google-pay-logo
+  - generic [ref=f34e90]:
+    - paragraph [ref=f34e91]: Warning All logos are copyrighted to their respective owners and are protected under international copyright laws. Without prior written permission it is not permitted reproduce, distribute, publish, transmit, modify, create derivative works from, or otherwise exploit any content.
+    - heading [level=3] [ref=f34e92]:
+      - link "Popular Logos" [ref=f34e93] [cursor=pointer]:
+        - /url: https://iconape.com/top-logos
+      - link "New Logogs Rebranding" [ref=f34e94] [cursor=pointer]:
+        - /url: https://iconape.com/rebrands
+    - generic [ref=f34e95]:
+      - generic [ref=f34e96]: IconApe© 2026 By Arbfonts
+      - generic [ref=f34e98]:
+        - text: Quick Links
+        - list [ref=f34e99]:
+          - listitem [ref=f34e100]:
+            - link "Logos download SVG" [ref=f34e101] [cursor=pointer]:
+              - /url: https://iconape.com
+          - listitem [ref=f34e102]:
+            - link "icon download svg" [ref=f34e103] [cursor=pointer]:
+              - /url: https://iconape.com
+          - listitem [ref=f34e104]:
+            - link "iconape Free Logos" [ref=f34e105] [cursor=pointer]:
+              - /url: https://iconape.com
+          - listitem [ref=f34e106]:
+            - link "Sitemap" [ref=f34e107] [cursor=pointer]:
+              - /url: https://iconape.com/iconape_sitemap.xml
+      - generic [ref=f34e108]:
+        - text: Networks
+        - list [ref=f34e109]:
+          - listitem [ref=f34e110]:
+            - link "Instagram logo outline" [ref=f34e111] [cursor=pointer]:
+              - /url: https://iconape.com/?s=Instagram
+          - listitem [ref=f34e112]:
+            - link "Facebook Icon outline" [ref=f34e113] [cursor=pointer]:
+              - /url: https://iconape.com/?s=Facebook
+      - generic [ref=f34e114]:
+        - text: Help & support
+        - list [ref=f34e115]:
+          - listitem [ref=f34e116]:
+            - link "Contact & Help" [ref=f34e117] [cursor=pointer]:
+              - /url: https://iconape.com/help
+          - listitem [ref=f34e118]:
+            - link "FAQ" [ref=f34e119] [cursor=pointer]:
+              - /url: https://iconape.com/fag
+          - listitem [ref=f34e120]:
+            - link "Terms of Service" [ref=f34e121] [cursor=pointer]:
+              - /url: https://iconape.com/terms
+          - listitem [ref=f34e122]:
+            - link "Privacy" [ref=f34e123] [cursor=pointer]:
+              - /url: https://iconape.com/privacy-policy
+  - text:             

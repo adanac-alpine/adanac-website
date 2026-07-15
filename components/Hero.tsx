@@ -59,7 +59,7 @@ export default function Hero() {
 
         <motion.h1
           variants={item}
-          className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mt-4"
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mt-4"
         >
           Launch your digital banking platform.
         </motion.h1>
