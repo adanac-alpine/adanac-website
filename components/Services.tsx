@@ -18,7 +18,7 @@ const SERVICES_DATA = [
       'Digital onboarding & KYC flows',
     ],
     icon: (
-      <img src="/logos/veripark.svg" alt="VeriPark logo" className="w-10 h-10 object-contain" loading="lazy" decoding="async" />
+      <Image src="/logos/veripark.svg" alt="VeriPark logo" className="w-10 h-10 object-contain" loading="lazy" decoding="async" width={40} height={40} />
     ),
   },
   {
@@ -48,7 +48,7 @@ const SERVICES_DATA = [
       'User training & adoption support',
     ],
     icon: (
-      <img src="/logos/salesforce.svg" alt="Salesforce logo" className="w-10 h-10 object-contain" loading="lazy" decoding="async" />
+      <Image src="/logos/salesforce.svg" alt="Salesforce logo" className="w-10 h-10 object-contain" loading="lazy" decoding="async" width={40} height={40} />
     ),
   },
 ]

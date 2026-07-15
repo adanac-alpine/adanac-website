@@ -1,22 +1,25 @@
 'use client'
 
+import Image from 'next/image'
 import { FadeIn } from './animation/FadeIn'
 
 function TechLogo({ name, label, className = '' }: { name: string; label: string; className?: string }) {
   const src = `/logos/${name}.svg`
-  const fallbacks = [`/logos/${name}.png`, `/logos/${name}.jpg`]
   return (
-    <img
+    <Image
       src={src}
       alt={`${label} logo`}
       className={className}
       loading="lazy"
       decoding="async"
+      width={120}
+      height={40}
       onError={(e) => {
-        const target = e.target as HTMLImageElement
-        const currentIdx = fallbacks.indexOf(target.src)
+        const target = e.currentTarget as HTMLImageElement;
+        const fallbacks = [`/logos/${name}.png`, `/logos/${name}.jpg`];
+        const currentIdx = fallbacks.findIndex(f => f === target.src);
         if (currentIdx < fallbacks.length - 1) {
-          target.src = fallbacks[currentIdx + 1]
+          target.src = fallbacks[currentIdx + 1];
         }
       }}
     />

@@ -1,21 +1,24 @@
 'use client'
 
+import Image from 'next/image'
 import { FadeIn } from './animation/FadeIn'
 
 function ToolIcon({ name, className = '' }: { name: string; className?: string }) {
   const src = `/logos/tools/${name}.svg`
   return (
-    <img
-      src={src}
-      alt={`${name} logo`}
-      className={className}
-      loading="lazy"
-      decoding="async"
-      onError={(e) => {
-        const target = e.target as HTMLImageElement
-        target.style.display = 'none'
-      }}
-    />
+    <Image
+        src={src}
+        alt={`${name} logo`}
+        className={className}
+        loading="lazy"
+        decoding="async"
+        width={40}
+        height={40}
+        onError={(e) => {
+          const target = e.currentTarget as HTMLImageElement;
+          target.style.display = 'none';
+        }}
+      />
   )
 }
 
