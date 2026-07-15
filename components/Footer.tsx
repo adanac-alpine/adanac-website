@@ -18,9 +18,9 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative overflow-hidden bg-navy text-white/60 py-16 border-t-[3px] border-glacier z-10">
+    <footer className="relative overflow-hidden bg-navy text-white/60 py-16 min-h-screen md:min-h-[60vh] border-t-[3px] border-glacier z-10">
       <TrianglePattern variant="dark" opacity={0.08} className="absolute inset-0 w-full h-full" />
-      <div className="relative z-10 container mx-auto px-6 md:px-12">
+      <div className="relative z-10 container mx-auto px-6 md:px-12 h-full flex flex-col justify-center">
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
 

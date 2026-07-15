@@ -38,7 +38,7 @@ export default function Services() {
     {
       title: 'Salesforce Implementation',
       description:
-        'Salesforce Financial Services Cloud and Service Cloud for credit unions — member data unification, case management automation, advisor consoles, and data quality frameworks. SF certified, currently delivering at YNCU and Sunrise Credit Union.',
+        'Salesforce Financial Services Cloud and Service Cloud for credit unions — member data unification, case management automation, advisor consoles, and data quality frameworks. SF certified, currently delivering at multiple Canadian credit unions.',
       capabilities: [
         'Financial Services Cloud configuration',
         'Case management & workflow automation',

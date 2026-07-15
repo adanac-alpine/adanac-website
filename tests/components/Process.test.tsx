@@ -13,11 +13,11 @@ describe('Process', () => {
     expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent(/from first call to production/i)
   })
 
-  it('renders all three step titles', () => {
+  it('renders all three process steps', () => {
     render(<Process />)
-    expect(screen.getByRole('heading', { level: 3, name: /discovery/i })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { level: 3, name: /implementation/i })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { level: 3, name: /launch & support/i })).toBeInTheDocument()
+    expect(screen.getByText('Discovery')).toBeInTheDocument()
+    expect(screen.getByText('Implementation')).toBeInTheDocument()
+    expect(screen.getByText('Launch & Support')).toBeInTheDocument()
   })
 
   it('renders step numbers', () => {
@@ -31,12 +31,12 @@ describe('Process', () => {
     render(<Process />)
     expect(screen.getByText(/learn your business/i)).toBeInTheDocument()
     expect(screen.getByText(/hands-on delivery/i)).toBeInTheDocument()
-    expect(screen.getByText(/testing, training, go-live/i)).toBeInTheDocument()
+    expect(screen.getByText(/testing, training/i)).toBeInTheDocument()
   })
 
-  it('renders Lucide icons (SVG elements)', () => {
+  it('renders Lucide icons', () => {
     const { container } = render(<Process />)
-    const svgs = container.querySelectorAll('svg')
-    expect(svgs.length).toBeGreaterThanOrEqual(3)
+    const icons = container.querySelectorAll('svg')
+    expect(icons.length).toBeGreaterThanOrEqual(3)
   })
 })

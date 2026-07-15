@@ -82,13 +82,6 @@ export default function Navigation() {
               {link.name}
             </a>
           ))}
-          <a
-            href="#contact"
-            onClick={(e) => handleNavClick(e, '#contact')}
-            className="bg-glacier hover:bg-glacier/90 text-white font-semibold text-xs tracking-wider uppercase px-4 py-2.5 rounded transition-all duration-200 shadow-md shadow-glacier/20"
-          >
-            Get in Touch
-          </a>
         </div>
 
         <div className="flex items-center gap-3 md:hidden">
@@ -139,13 +132,6 @@ export default function Navigation() {
               {link.name}
             </a>
           ))}
-          <a
-            href="#contact"
-            onClick={(e) => handleNavClick(e, '#contact')}
-            className="bg-glacier hover:bg-glacier/90 text-white font-semibold text-sm text-center tracking-wider uppercase py-3 rounded mt-2 transition-all duration-200 shadow-md shadow-glacier/20"
-          >
-            Get in Touch
-          </a>
         </div>
       </div>
     </nav>

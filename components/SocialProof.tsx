@@ -14,7 +14,8 @@ const projects = {
     { description: "Contributed to digital banking platform delivery for a $200B+ US bank — J.D. Power's #1 ranked mobile banking app for customer satisfaction.", type: 'Bank' },
   ],
   Salesforce: [
-    { description: 'Salesforce Financial Services Cloud certified — currently leading data quality, case management automation, and multiple workstreams at YNCU, plus data synchronization with Fiserv DNA at Sunrise Credit Union.', type: 'Credit Union' },
+    { description: 'Leading data quality and case management automation across multiple workstreams on Salesforce Financial Services Cloud at a mid-sized Ontario credit union.', type: 'Credit Union' },
+    { description: 'Implemented Fiserv DNA data synchronization and integration workflows at a Manitoba credit union on Salesforce Financial Services Cloud.', type: 'Credit Union' },
   ],
 }
 

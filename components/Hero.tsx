@@ -35,7 +35,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-navy text-white overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center justify-center bg-navy text-white overflow-hidden pt-20 pb-20"
     >
       {/* Brand triangle pattern background */}
       <TrianglePattern variant="dark" opacity={0.04} className="absolute inset-0 w-full h-full" />
