@@ -17,10 +17,7 @@ export default function Services() {
         'Digital onboarding & KYC flows',
       ],
       icon: (
-        <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="10" fill="#DF1E26" />
-          <path d="M10 20l5 5 15-15" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+        <img src="/logos/veripark.svg" alt="VeriPark logo" className="w-10 h-10 object-contain" />
       ),
     },
     {
@@ -35,11 +32,7 @@ export default function Services() {
         'Go-live support and post-launch optimization',
       ],
       icon: (
-        <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="10" fill="#0A2540" />
-          <path d="M9 10h4.5v10.5c0 2.5 1.5 4 4 4h1.5V10h4.5v15h-6c-4 0-6.5-2.5-6.5-7V10z" fill="#00D4AA" />
-          <path d="M23 10h4.5v15H23V10z" fill="#00D4AA" />
-        </svg>
+        <img src="/logos/backbase.jpg" alt="Backbase logo" className="w-10 h-10 object-contain" />
       ),
     },
     {
@@ -54,10 +47,7 @@ export default function Services() {
         'User training & adoption support',
       ],
       icon: (
-        <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="10" fill="#00A1E0" />
-          <path d="M20.5 8c-3.5 0-6.5 1.5-8.5 4 1.5-1 3.5-1.5 5.5-1.5 4 0 7.5 2 9.5 5 1.5-1 3.5-1.5 5.5-1.5 5 0 9 3.5 9 8s-4 8-9 8c-1 0-2-.1-3-.3-2 3-5.5 5.5-9.5 5.5-2 0-4-.5-5.5-1.5-2 4-6 7-11 7s-9-3-11-7c-1 .5-2 .5-3 .5-4.5 0-8-3-8-7.5 0-3.5 2.5-6.5 6-8-.5-1.5-1-3-1-5C1 5 5.5 0 11.5 0c3.5 0 6.5 1.5 8.5 4-.5-.5-1-.5-1-.5-.5.5.5 4.5.5 4.5z" fill="#fff" />
-        </svg>
+        <img src="/logos/salesforce.svg" alt="Salesforce logo" className="w-10 h-10 object-contain" />
       ),
     },
   ]
