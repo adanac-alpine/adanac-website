@@ -4,7 +4,7 @@ import { FadeIn } from './animation/FadeIn'
 
 function TechLogo({ name, label, className = '' }: { name: string; label: string; className?: string }) {
   const src = `/logos/${name}.svg`
-  const fallbackSrc = `/logos/${name}.png`
+  const fallbacks = [`/logos/${name}.png`, `/logos/${name}.jpg`]
   return (
     <img
       src={src}
@@ -12,8 +12,9 @@ function TechLogo({ name, label, className = '' }: { name: string; label: string
       className={className}
       onError={(e) => {
         const target = e.target as HTMLImageElement
-        if (target.src !== fallbackSrc) {
-          target.src = fallbackSrc
+        const currentIdx = fallbacks.indexOf(target.src)
+        if (currentIdx < fallbacks.length - 1) {
+          target.src = fallbacks[currentIdx + 1]
         }
       }}
     />

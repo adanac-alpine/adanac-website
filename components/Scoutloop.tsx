@@ -50,11 +50,28 @@ export default function Scoutloop() {
                   It pulls weather, avalanche danger, road closures, and fire bans into one pre-trip briefing. Built with the same modern stack I bring to client work — and built using AI-assisted development workflows with Claude, Codex, Gemini, and OpenCode.
                 </p>
 
-                <div className="flex flex-wrap gap-2">
-                  {['Next.js', 'React', 'Supabase', 'Vercel', 'Tailwind', 'Python', 'FastAPI'].map((tech) => (
-                    <span key={tech} className="text-xs bg-forest/5 text-forest font-semibold px-2.5 py-1 rounded">
-                      {tech}
-                    </span>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    { name: 'Next.js', icon: 'nextjs' },
+                    { name: 'React', icon: 'react' },
+                    { name: 'Supabase', icon: 'supabase' },
+                    { name: 'Vercel', icon: 'vercel' },
+                    { name: 'Tailwind', icon: 'tailwind' },
+                    { name: 'Python', icon: 'python' },
+                    { name: 'FastAPI', icon: 'fastapi' },
+                  ].map((tech) => (
+                    <div key={tech.name} className="flex items-center gap-1.5 bg-forest/5 text-forest rounded-lg px-2.5 py-1.5">
+                      <img
+                        src={`/logos/tools/${tech.icon}.svg`}
+                        alt={`${tech.name} logo`}
+                        className="w-4 h-4 shrink-0"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement
+                          target.style.display = 'none'
+                        }}
+                      />
+                      <span className="text-xs font-semibold">{tech.name}</span>
+                    </div>
                   ))}
                 </div>
 

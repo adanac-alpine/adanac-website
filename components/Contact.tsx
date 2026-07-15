@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FadeIn } from './animation/FadeIn'
-import { Mail } from 'lucide-react'
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -166,26 +165,7 @@ export default function Contact() {
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.2}>
-          <div className="mt-8 flex flex-wrap gap-6 justify-center text-sm text-dark-gray">
-            <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-glacier" strokeWidth={2} />
-              <a href="mailto:sergey@adanacadvisory.ca" className="font-semibold hover:text-glacier transition-colors">
-                sergey@adanacadvisory.ca
-              </a>
-            </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-4 h-4 text-glacier" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                <rect width="4" height="12" x="2" y="9" />
-                <circle cx="4" cy="4" r="2" />
-              </svg>
-              <a href="https://linkedin.com/in/pochikovskiy" target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-glacier transition-colors">
-                linkedin.com/in/pochikovskiy
-              </a>
-            </div>
-          </div>
-        </FadeIn>
+
 
       </div>
     </section>

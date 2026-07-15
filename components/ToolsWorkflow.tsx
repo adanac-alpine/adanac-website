@@ -26,7 +26,6 @@ const row1 = [
   { name: 'ChatGPT', icon: 'chatgpt' },
   { name: 'Copilot', icon: 'copilot' },
   { name: 'Gemini', icon: 'gemini' },
-  { name: 'Codex', icon: 'codex' },
   { name: 'OpenCode', icon: 'opencode' },
   { name: 'Jules', icon: 'jules' },
 ]
@@ -82,11 +81,8 @@ export default function ToolsWorkflow() {
               Tools & Workflow
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight leading-tight">
-              How I work
+              Tools I use
             </h2>
-            <p className="text-dark-gray text-lg">
-              The tools I use daily to deliver projects, communicate with teams, and build products.
-            </p>
           </div>
         </FadeIn>
 
