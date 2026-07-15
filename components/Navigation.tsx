@@ -13,12 +13,20 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      const scrolled = window.scrollY > 20
+      setIsScrolled((prev) => {
+        if (prev !== scrolled) return scrolled
+        return prev
+      })
 
       const hero = document.querySelector('#hero')
       if (hero) {
         const heroBottom = hero.getBoundingClientRect().bottom
-        setPastHero(heroBottom <= 64)
+        const isPast = heroBottom <= 64
+        setPastHero((prev) => {
+          if (prev !== isPast) return isPast
+          return prev
+        })
       }
     }
 

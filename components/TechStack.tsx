@@ -10,6 +10,8 @@ function TechLogo({ name, label, className = '' }: { name: string; label: string
       src={src}
       alt={`${label} logo`}
       className={className}
+      loading="lazy"
+      decoding="async"
       onError={(e) => {
         const target = e.target as HTMLImageElement
         const currentIdx = fallbacks.indexOf(target.src)

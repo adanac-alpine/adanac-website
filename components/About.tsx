@@ -3,102 +3,112 @@
 import { motion } from 'framer-motion'
 import { FadeIn, StaggerChildren, StaggerItem } from './animation/FadeIn'
 
+// Helper to render static credential logo components
 function CredentialLogo({ name, className = '' }: { name: string; className?: string }) {
-  const logos: Record<string, JSX.Element> = {
-    cbap: (
-      <svg className={className} viewBox="0 0 40 40" fill="none">
-        <rect width="40" height="40" rx="8" fill="#1a2332" />
-        <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#d95f26" strokeWidth="1.5" />
-        <text x="20" y="17" textAnchor="middle" fill="#d95f26" fontSize="8" fontWeight="800" fontFamily="Inter, sans-serif">CBAP</text>
-        <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">IIBA</text>
-      </svg>
-    ),
-    cspo: (
-      <svg className={className} viewBox="0 0 40 40" fill="none">
-        <rect width="40" height="40" rx="8" fill="#1a2332" />
-        <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#2d6a4f" strokeWidth="1.5" />
-        <text x="20" y="17" textAnchor="middle" fill="#2d6a4f" fontSize="8" fontWeight="800" fontFamily="Inter, sans-serif">CSPO</text>
-        <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">Scrum</text>
-      </svg>
-    ),
-    backbase: (
-      <svg className={className} viewBox="0 0 40 40" fill="none">
-        <rect width="40" height="40" rx="8" fill="#1a2332" />
-        <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#00D4AA" strokeWidth="1.5" />
-        <text x="20" y="17" textAnchor="middle" fill="#00D4AA" fontSize="6" fontWeight="800" fontFamily="Inter, sans-serif">BACKBASE</text>
-        <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">Certified</text>
-      </svg>
-    ),
-    sfadmin: (
-      <svg className={className} viewBox="0 0 40 40" fill="none">
-        <rect width="40" height="40" rx="8" fill="#1a2332" />
-        <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#00A1E0" strokeWidth="1.5" />
-        <text x="20" y="17" textAnchor="middle" fill="#00A1E0" fontSize="6" fontWeight="800" fontFamily="Inter, sans-serif">SF ADMIN</text>
-        <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">Certified</text>
-      </svg>
-    ),
-    ubc: (
-      <svg className={className} viewBox="0 0 40 40" fill="none">
-        <rect width="40" height="40" rx="8" fill="#1a2332" />
-        <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#4a90d9" strokeWidth="1.5" />
-        <text x="20" y="17" textAnchor="middle" fill="#ffffff" fontSize="8" fontWeight="800" fontFamily="Inter, sans-serif">UBC</text>
-        <text x="20" y="27" textAnchor="middle" fill="#4a90d9" fontSize="5" fontFamily="Inter, sans-serif">Sauder</text>
-      </svg>
-    ),
-    mfin: (
-      <svg className={className} viewBox="0 0 40 40" fill="none">
-        <rect width="40" height="40" rx="8" fill="#1a2332" />
-        <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#4a90d9" strokeWidth="1.5" />
-        <text x="20" y="17" textAnchor="middle" fill="#4a90d9" fontSize="8" fontWeight="800" fontFamily="Inter, sans-serif">MFin</text>
-        <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">BSUE</text>
-      </svg>
-    ),
-    ucw: (
-      <svg className={className} viewBox="0 0 40 40" fill="none">
-        <rect width="40" height="40" rx="8" fill="#1a2332" />
-        <text x="20" y="16" textAnchor="middle" fill="#ffffff" fontSize="7" fontWeight="700" fontFamily="Inter, sans-serif">UCW</text>
-        <text x="20" y="26" textAnchor="middle" fill="#4a90d9" fontSize="5" fontFamily="Inter, sans-serif">Sessional</text>
-      </svg>
-    ),
-    iiba: (
-      <svg className={className} viewBox="0 0 40 40" fill="none">
-        <rect width="40" height="40" rx="8" fill="#1a2332" />
-        <text x="20" y="16" textAnchor="middle" fill="#d95f26" fontSize="7" fontWeight="700" fontFamily="Inter, sans-serif">IIBA</text>
-        <text x="20" y="26" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">VP Prof Dev</text>
-      </svg>
-    ),
+  switch (name) {
+    case 'cbap':
+      return (
+        <svg className={className} viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="8" fill="#1a2332" />
+          <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#d95f26" strokeWidth="1.5" />
+          <text x="20" y="17" textAnchor="middle" fill="#d95f26" fontSize="8" fontWeight="800" fontFamily="Inter, sans-serif">CBAP</text>
+          <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">IIBA</text>
+        </svg>
+      )
+    case 'cspo':
+      return (
+        <svg className={className} viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="8" fill="#1a2332" />
+          <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#2d6a4f" strokeWidth="1.5" />
+          <text x="20" y="17" textAnchor="middle" fill="#2d6a4f" fontSize="8" fontWeight="800" fontFamily="Inter, sans-serif">CSPO</text>
+          <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">Scrum</text>
+        </svg>
+      )
+    case 'backbase':
+      return (
+        <svg className={className} viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="8" fill="#1a2332" />
+          <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#00D4AA" strokeWidth="1.5" />
+          <text x="20" y="17" textAnchor="middle" fill="#00D4AA" fontSize="6" fontWeight="800" fontFamily="Inter, sans-serif">BACKBASE</text>
+          <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">Certified</text>
+        </svg>
+      )
+    case 'sfadmin':
+      return (
+        <svg className={className} viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="8" fill="#1a2332" />
+          <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#00A1E0" strokeWidth="1.5" />
+          <text x="20" y="17" textAnchor="middle" fill="#00A1E0" fontSize="6" fontWeight="800" fontFamily="Inter, sans-serif">SF ADMIN</text>
+          <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">Certified</text>
+        </svg>
+      )
+    case 'ubc':
+      return (
+        <svg className={className} viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="8" fill="#1a2332" />
+          <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#4a90d9" strokeWidth="1.5" />
+          <text x="20" y="17" textAnchor="middle" fill="#ffffff" fontSize="8" fontWeight="800" fontFamily="Inter, sans-serif">UBC</text>
+          <text x="20" y="27" textAnchor="middle" fill="#4a90d9" fontSize="5" fontFamily="Inter, sans-serif">Sauder</text>
+        </svg>
+      )
+    case 'mfin':
+      return (
+        <svg className={className} viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="8" fill="#1a2332" />
+          <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#4a90d9" strokeWidth="1.5" />
+          <text x="20" y="17" textAnchor="middle" fill="#4a90d9" fontSize="8" fontWeight="800" fontFamily="Inter, sans-serif">MFin</text>
+          <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">BSUE</text>
+        </svg>
+      )
+    case 'ucw':
+      return (
+        <svg className={className} viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="8" fill="#1a2332" />
+          <text x="20" y="16" textAnchor="middle" fill="#ffffff" fontSize="7" fontWeight="700" fontFamily="Inter, sans-serif">UCW</text>
+          <text x="20" y="26" textAnchor="middle" fill="#4a90d9" fontSize="5" fontFamily="Inter, sans-serif">Sessional</text>
+        </svg>
+      )
+    case 'iiba':
+      return (
+        <svg className={className} viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="8" fill="#1a2332" />
+          <text x="20" y="16" textAnchor="middle" fill="#d95f26" fontSize="7" fontWeight="700" fontFamily="Inter, sans-serif">IIBA</text>
+          <text x="20" y="26" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">VP Prof Dev</text>
+        </svg>
+      )
+    default:
+      return null
   }
-
-  return logos[name] || null
 }
 
-export default function About() {
-  const credentialGroups = [
-    {
-      title: 'Education',
-      items: [
-        { text: 'MBA — UBC Sauder School of Business', logo: 'ubc' },
-        { text: 'Master of Finance — Belarus State University of Economics', logo: 'mfin' },
-      ],
-    },
-    {
-      title: 'Certifications',
-      items: [
-        { text: 'CBAP (Certified Business Analysis Professional)', logo: 'cbap' },
-        { text: 'CSPO (Certified Scrum Product Owner)', logo: 'cspo' },
-        { text: 'Backbase Certified Consultant', logo: 'backbase' },
-        { text: 'Salesforce Certified Administrator', logo: 'sfadmin' },
-      ],
-    },
-    {
-      title: 'Teaching & Community',
-      items: [
-        { text: 'Sessional Instructor — University Canada West', logo: 'ucw' },
-        { text: 'VP of Professional Development — IIBA', logo: 'iiba' },
-      ],
-    },
-  ]
+// Move static credential groups array outside of the component to prevent recreation on every render cycle.
+const CREDENTIAL_GROUPS_DATA = [
+  {
+    title: 'Education',
+    items: [
+      { text: 'MBA — UBC Sauder School of Business', logo: 'ubc' },
+      { text: 'Master of Finance — Belarus State University of Economics', logo: 'mfin' },
+    ],
+  },
+  {
+    title: 'Certifications',
+    items: [
+      { text: 'CBAP (Certified Business Analysis Professional)', logo: 'cbap' },
+      { text: 'CSPO (Certified Scrum Product Owner)', logo: 'cspo' },
+      { text: 'Backbase Certified Consultant', logo: 'backbase' },
+      { text: 'Salesforce Certified Administrator', logo: 'sfadmin' },
+    ],
+  },
+  {
+    title: 'Teaching & Community',
+    items: [
+      { text: 'Sessional Instructor — University Canada West', logo: 'ucw' },
+      { text: 'VP of Professional Development — IIBA', logo: 'iiba' },
+    ],
+  },
+]
 
+export default function About() {
   return (
     <section id="about" className="py-24 bg-off-white overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
@@ -137,7 +147,7 @@ export default function About() {
               </h3>
 
               <div className="space-y-6">
-                {credentialGroups.map((group, groupIdx) => (
+                {CREDENTIAL_GROUPS_DATA.map((group, groupIdx) => (
                   <div key={groupIdx} className="space-y-3">
                     <h4 className="text-xs font-bold uppercase tracking-wider text-glacier">
                       {group.title}

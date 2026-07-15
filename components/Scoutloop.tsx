@@ -65,6 +65,8 @@ export default function Scoutloop() {
                         src={`/logos/tools/${tech.icon}.svg`}
                         alt={`${tech.name} logo`}
                         className="w-4 h-4 shrink-0"
+                        loading="lazy"
+                        decoding="async"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement
                           target.style.display = 'none'
