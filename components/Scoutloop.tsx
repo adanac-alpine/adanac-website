@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { FadeIn } from './animation/FadeIn'
 
 function ScoutloopMark({ className = '' }: { className?: string }) {
@@ -61,12 +62,15 @@ export default function Scoutloop() {
                     { name: 'FastAPI', icon: 'fastapi' },
                   ].map((tech) => (
                     <div key={tech.name} className="flex items-center gap-1.5 bg-glacier/5 text-glacier rounded-lg px-2.5 py-1.5">
-                      <img
+                      <Image
                         src={`/logos/tools/${tech.icon}.svg`}
                         alt={`${tech.name} logo`}
+                        width={16}
+                        height={16}
                         className="w-4 h-4 shrink-0"
+                        loading="lazy"
                         onError={(e) => {
-                          const target = e.target as HTMLImageElement
+                          const target = e.currentTarget as HTMLImageElement
                           target.style.display = 'none'
                         }}
                       />

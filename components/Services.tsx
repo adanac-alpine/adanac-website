@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { FadeIn, StaggerChildren, StaggerItem } from './animation/FadeIn'
 
 export default function Services() {
@@ -17,7 +18,7 @@ export default function Services() {
         'Digital onboarding & KYC flows',
       ],
       icon: (
-        <img src="/logos/veripark.svg" alt="VeriPark logo" className="w-10 h-10 object-contain" />
+        <Image src="/logos/veripark.svg" alt="VeriPark logo" width={40} height={40} className="w-10 h-10 object-contain" loading="lazy" />
       ),
     },
     {
@@ -32,7 +33,7 @@ export default function Services() {
         'Go-live support and post-launch optimization',
       ],
       icon: (
-        <img src="/logos/backbase.jpg" alt="Backbase logo" className="w-10 h-10 object-contain" />
+        <Image src="/logos/backbase.jpg" alt="Backbase logo" width={40} height={40} className="w-10 h-10 object-contain" loading="lazy" />
       ),
     },
     {
@@ -47,7 +48,7 @@ export default function Services() {
         'User training & adoption support',
       ],
       icon: (
-        <img src="/logos/salesforce.svg" alt="Salesforce logo" className="w-10 h-10 object-contain" />
+        <Image src="/logos/salesforce.svg" alt="Salesforce logo" width={40} height={40} className="w-10 h-10 object-contain" loading="lazy" />
       ),
     },
   ]

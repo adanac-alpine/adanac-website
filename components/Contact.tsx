@@ -141,13 +141,13 @@ export default function Contact() {
               </div>
 
               {status === 'success' && (
-                <div className="p-4 bg-forest/10 border border-forest text-sm font-semibold rounded-lg text-forest">
+                <div role="status" aria-live="polite" className="p-4 bg-forest/10 border border-forest text-sm font-semibold rounded-lg text-forest">
                   Thank you! I&apos;ll be in touch.
                 </div>
               )}
 
               {status === 'error' && (
-                <div className="p-4 bg-red-50 border border-red-200 text-sm font-semibold rounded-lg text-red-700">
+                <div role="alert" aria-live="assertive" className="p-4 bg-red-50 border border-red-200 text-sm font-semibold rounded-lg text-red-700">
                   Something went wrong. Please try again or email me directly.
                 </div>
               )}
