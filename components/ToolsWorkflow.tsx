@@ -9,6 +9,8 @@ function ToolIcon({ name, className = '' }: { name: string; className?: string }
       src={src}
       alt={`${name} logo`}
       className={className}
+      loading="lazy"
+      decoding="async"
       onError={(e) => {
         const target = e.target as HTMLImageElement
         target.style.display = 'none'

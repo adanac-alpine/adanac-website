@@ -1,3 +1,5 @@
+const ADANAC_PATH_D = "M 100,20 L 186,188 L 148,188 L 131,130 L 69,130 L 52,188 L 14,188 Z M 100,56 L 131,130 L 69,130 Z M 131,130 L 156,130 L 168,152 L 138,152 Z";
+
 export default function AdanacMark({
   size = 200,
   fill = "#ffffff",
@@ -30,11 +32,7 @@ export default function AdanacMark({
       <path
         fillRule="evenodd"
         fill={fill}
-        d={[
-          "M 100,20 L 186,188 L 148,188 L 131,130 L 69,130 L 52,188 L 14,188 Z",
-          "M 100,56 L 131,130 L 69,130 Z",
-          "M 131,130 L 156,130 L 168,152 L 138,152 Z",
-        ].join(" ")}
+        d={ADANAC_PATH_D}
       />
     </svg>
   );
