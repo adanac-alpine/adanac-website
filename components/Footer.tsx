@@ -42,7 +42,6 @@ export default function Footer() {
               { name: 'About', href: '#about' },
               { name: 'Services', href: '#services' },
               { name: 'How I Work', href: '#process' },
-              { name: 'Tools', href: '#tools' },
               { name: 'Contact', href: '#contact' },
             ].map((link) => (
               <a
