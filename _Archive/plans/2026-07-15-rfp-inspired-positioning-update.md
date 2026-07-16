@@ -1,3 +1,5 @@
+> Archived (Jul 2026) — completed. All tasks implemented, tested, deployed.
+
 # Website Positioning Update — RFP-Inspired Improvements
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.

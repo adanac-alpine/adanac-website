@@ -109,8 +109,8 @@ Light, clean, modern — similar to Aequilibrium's approachability with Modes' p
 
 **Layout:** Three platform cards
 
-- VeriPark Implementation
-- Backbase Implementation
+- VeriChannel Migration
+- Backbase Delivery
 - Salesforce Implementation
 
 ---
@@ -143,7 +143,7 @@ Two rows of tool logos scrolling in opposite directions.
 
 **Layout:** 4-card grid
 
-- Vendor Liaison, Hands-On Delivery, Coaching & Team Building, Bilingual
+- Multi-Vendor Governance, Hands-On Delivery, Coaching & Team Building, Bilingual
 
 ---
 
