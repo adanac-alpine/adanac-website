@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Reframe the website around the PM/BA/PO positioning revealed in the Modes RFP — governance, migration delivery, multi-vendor coordination, and Discovery as an entry-point service. No client names.
+**Goal:** Reframe the website around migration delivery, governance, and BA expertise. No client names.
 
 **Architecture:** Content-only changes across 4 existing components. No new components, no new files, no structural changes.
 
@@ -10,9 +10,9 @@
 
 ---
 
-### Task 1: Reframe Services section — migration pattern + governance + Discovery
+### Task 1: Reframe Services section — migration pattern + governance
 
-**Why:** The RFP positions Sergey as a "Delivery Manager & Senior Business Analyst" who leads governance, RAID, vendor coordination, and scope management across multi-vendor VeriChannel migrations. The current website says "implementation" but doesn't capture the migration or governance angle. Discovery is a natural gateway service mentioned in the RFP as a prior engagement type.
+**Why:** The current website says "Implementation" but doesn't capture the migration or governance angle. Need to reframe around what Sergey actually does: Senior BA/PO on migration projects with governance woven in. Discovery is NOT a separate service — it was done at Modes, not sold independently. Program Governance is NOT a separate service — it's part of what happens during implementations.
 
 **Files:**
 - Modify: `components/Services.tsx` (SERVICES_DATA array + intro paragraph)
@@ -21,74 +21,51 @@
 
 Replace the `SERVICES_DATA` array and intro paragraph in `components/Services.tsx`.
 
-**New SERVICES_DATA** (4 services):
+**New SERVICES_DATA** (3 services — same count as current):
 
 1. **VeriChannel Migration** (replaces "VeriPark Implementation")
    - Description: Migrating digital banking from legacy platforms to VeriPark VeriChannel — scope classification, phased delivery, and production cutover for credit unions.
-   - Capabilities:
-     - Migration scope classification (Phase 1 / Phase 2)
-     - Requirements validation & FRD review
-     - UAT coordination & go-live readiness
-     - Post-launch stabilization support
-     - Legacy platform deconversion planning
+   - Capabilities (7 — original 5 + 2 governance bullets):
+     1. Migration scope classification (Phase 1 / Phase 2)
+     2. Requirements validation & FRD review
+     3. UAT coordination & go-live readiness
+     4. Post-launch stabilization support
+     5. Legacy platform deconversion planning
+     6. Multi-vendor RAID management & escalation
+     7. Weekly status reporting & PMO alignment
    - Icon: keep existing `/logos/veripark.svg`
 
-2. **Program Governance** (new)
-   - Description: Multi-vendor delivery coordination — RAID management, weekly status reporting, dependency tracking, and PMO alignment across VeriPark, core banking, and third-party vendors.
-   - Capabilities:
-     - RAID log management & escalation
-     - Weekly status reporting & PMO alignment
-     - Vendor & third-party coordination
-     - Dependency management across workstreams
-     - Release governance & production readiness reviews
-   - Icon: use `Shield` from lucide-react (represents governance/oversight)
-
-3. **Backbase Delivery** (reframed from "Backbase Implementation")
-   - Description: End-to-end delivery of Backbase digital banking — from commercial and retail banking channels to mobile apps. I act as BA, delivery lead, or product owner advisor to get your platform from architecture to production.
+2. **Backbase Delivery** (reframed from "Backbase Implementation")
+   - Description: Senior BA with deep Backbase platform expertise — requirements validation, UAT coordination, and stakeholder alignment for commercial banking digital channels.
    - Capabilities: keep existing 5 capabilities (already good)
    - Icon: keep existing `/logos/backbase.jpg`
 
-4. **Digital Strategy & Discovery** (new)
-   - Description: Systems architecture assessment, digital maturity evaluation, and transformation roadmap — the starting point for institutions exploring digital banking modernization.
+3. **Salesforce Implementation** (keep, reframe description)
+   - Description: Salesforce Financial Services Cloud for credit unions — requirements coordination, stakeholder management, data quality frameworks, and case management automation. SF certified, currently delivering at multiple Canadian credit unions.
    - Capabilities:
-     - Systems architecture documentation
-     - Digital maturity assessment
-     - Transformation roadmap development
-     - Technology evaluation & vendor shortlisting
-     - Business case development
-   - Icon: use `Search` from lucide-react (already used in Process.tsx)
+     1. Financial Services Cloud configuration
+     2. Case management & workflow automation
+     3. Data quality frameworks & deduplication
+     4. Requirements coordination & stakeholder management
+     5. User training & adoption support
+   - Icon: keep existing `/logos/salesforce.svg`
 
 **New intro paragraph:**
 ```
 I help credit unions and banks migrate to modern digital banking platforms — managing the governance, scope, and vendor coordination that determines whether a project lands on time or derails. From Discovery through production cutover, I own the delivery.
 ```
 
-- [ ] **Step 2: Update import statement**
-
-Add `Shield` and `Search` to the lucide-react import (currently no lucide imports in Services.tsx — icons were inline JSX). Add:
-```tsx
-import { Shield, Search } from 'lucide-react'
-```
-
-Replace the inline JSX icon blocks in SERVICES_DATA with:
-```tsx
-icon: <Image src="/logos/veripark.svg" ... />  // keep as-is for VeriPark
-icon: <Shield className="w-6 h-6" strokeWidth={1.5} />  // for Program Governance
-icon: <Image src="/logos/backbase.jpg" ... />  // keep as-is for Backbase
-icon: <Search className="w-6 h-6" strokeWidth={1.5} />  // for Discovery
-```
-
-- [ ] **Step 3: Run tests**
+- [ ] **Step 2: Run tests**
 
 ```bash
 npm run test -- --run
 ```
 
-- [ ] **Step 4: Commit**
+- [ ] **Step 3: Commit**
 
 ```bash
 git add components/Services.tsx
-git commit -m "feat: reframe Services around migration, governance, and Discovery"
+git commit -m "feat: reframe Services around migration, governance, and BA positioning"
 ```
 
 ---
@@ -129,14 +106,14 @@ git commit -m "feat: upgrade Vendor Liaison to Multi-Vendor Governance in Why Me
 
 ### Task 3: Anonymize SocialProof project descriptions
 
-**Why:** The current SocialProof section references specific bank names ("top-6 Canadian bank", "$200B+ US bank") and "J.D. Power's #1 ranked" which could identify the client. These need to be anonymized while keeping the credibility signals. Also, the Salesforce tab content references "Fiserv DNA data synchronization" which is integration work — reframe around PM/BA/PO activities.
+**Why:** The current SocialProof section references specific bank names ("top-6 Canadian bank", "$200B+ US bank") and "J.D. Power's #1 ranked" which could identify the client. These need to be anonymized while keeping useful scale/context. Backbase entries should reflect BA role, not "delivered" or "contributed to delivery". Salesforce entries should reframe around PM/BA activities (requirements coordination, stakeholder management) rather than Fiserv DNA integration work. VeriPark stays as "Delivery lead" — that role is accurate.
 
 **Files:**
-- Modify: `components/SocialProof.tsx` (projects object)
+- Modify: `components/SocialProof.tsx` (projects object — tabs stay the same)
 
 - [ ] **Step 1: Rewrite project descriptions**
 
-Replace the `projects` object:
+Replace the `projects` object. Tabs remain `['VeriPark', 'Backbase', 'Salesforce']` — do NOT replace Salesforce with Governance.
 
 ```tsx
 const projects = {
@@ -145,25 +122,14 @@ const projects = {
     { description: 'Product owner advisor for VeriChannel rollout at a Canadian credit union — phased delivery planning, requirements validation, and go-live stabilization.', type: 'Credit Union' },
   ],
   Backbase: [
-    { description: "BA and delivery lead for Backbase commercial banking digital channels at a major Canadian bank — requirements gathering, UAT coordination, and production cutover.", type: 'Bank' },
-    { description: "Product owner advisor for Backbase digital banking platform delivery at a top-tier US bank — scope management, stakeholder alignment, and post-launch optimization.", type: 'Bank' },
+    { description: "BA for Backbase commercial banking digital channels at a major Canadian bank — requirements gathering, UAT coordination, and stakeholder alignment.", type: 'Bank' },
+    { description: "BA supporting Backbase digital banking platform delivery at a top-tier US bank — scope management, requirements validation, and post-launch optimization.", type: 'Bank' },
   ],
-  Governance: [
-    { description: 'Program governance across multi-vendor digital banking ecosystems — weekly status reporting, RAID and dependency management, and PMO alignment for credit unions migrating to modern platforms.', type: 'Credit Unions' },
-    { description: 'Scope management and requirements validation across phased delivery programs — Phase 1/Phase 2 classification, FRD review, and vendor coordination.', type: 'Banks & Credit Unions' },
+  Salesforce: [
+    { description: 'Requirements coordination and stakeholder management across Salesforce Financial Services Cloud workstreams at a mid-sized Ontario credit union — data quality frameworks and case management automation.', type: 'Credit Union' },
+    { description: 'PM/BA on Salesforce Financial Services Cloud delivery at a Manitoba credit union — requirements gathering, workflow automation, and user adoption support.', type: 'Credit Union' },
   ],
 }
-```
-
-- [ ] **Step 2: Update tabs array**
-
-Change from:
-```tsx
-const tabs = ['VeriPark', 'Backbase', 'Salesforce'] as const
-```
-to:
-```tsx
-const tabs = ['VeriPark', 'Backbase', 'Governance'] as const
 ```
 
 - [ ] **Step 3: Run tests**
@@ -172,7 +138,7 @@ const tabs = ['VeriPark', 'Backbase', 'Governance'] as const
 npm run test -- --run
 ```
 
-Note: The SocialProof test (`tests/components/SocialProof.test.tsx`) likely checks for tab content. It will need updating too (see Task 5).
+Note: The SocialProof test (`tests/components/SocialProof.test.tsx`) checks for Salesforce tab content. It will need updating (see Task 5).
 
 - [ ] **Step 4: Commit**
 
@@ -185,7 +151,7 @@ git commit -m "feat: anonymize SocialProof, replace Salesforce tab with Governan
 
 ### Task 4: Update About section copy for governance positioning
 
-**Why:** The About section's intro copy currently emphasizes platform expertise ("Backbase and VeriPark"). It should also reflect the governance/delivery management positioning. The phrase "digital strategy to production" is good but can be tightened.
+**Why:** The About section's intro copy currently emphasizes platform expertise ("Backbase and VeriPark"). It should also reflect the governance/delivery management positioning.
 
 **Files:**
 - Modify: `components/About.tsx` (paragraphs in StaggerChildren)
@@ -218,27 +184,31 @@ git commit -m "feat: update About copy to reflect governance and migration posit
 
 ### Task 5: Update tests for changed content
 
-**Why:** Tests assert specific text content that will change (e.g., SocialProof tabs, Services copy). Fix tests to match new content.
+**Why:** Tests assert specific text content that will change (e.g., SocialProof tabs, Services copy, WhatIBring titles). Fix tests to match new content.
 
 **Files:**
 - Modify: `tests/components/SocialProof.test.tsx`
 - Modify: `tests/components/Services.test.tsx`
 - Modify: `tests/components/WhatIBring.test.tsx`
 
-- [ ] **Step 1: Check which tests need updating**
+- [ ] **Step 1: Run tests to see what fails**
 
-Run tests first to see what fails:
 ```bash
 npm run test -- --run
 ```
 
 - [ ] **Step 2: Update SocialProof tests**
 
-If tests check for "Salesforce" tab content, update to check for "Governance" tab instead. The test likely checks for tab rendering and project card content.
+Current test checks for "Salesforce" tab button and "Salesforce Financial Services Cloud" content. Change to:
+- Tab button: check for "Governance" instead of "Salesforce"
+- Content: check for governance-related text instead of Fiserv DNA/data quality
+- Remove the "mentions data quality and Fiserv DNA in Salesforce tab" test
 
 - [ ] **Step 3: Update Services tests**
 
-If tests check for "VeriPark Implementation" or "Salesforce Implementation" titles, update to new titles ("VeriChannel Migration", "Program Governance", "Digital Strategy & Discovery").
+Current test checks for "Salesforce Implementation" title. The card still exists but test may need adjusting if title text changed. Also:
+- Add check for "VeriChannel Migration" title
+- Keep "Backbase Delivery" check (title unchanged)
 
 - [ ] **Step 4: Update WhatIBring tests**
 
@@ -276,9 +246,9 @@ vercel --prod --yes
 - [ ] **Step 3: Visual verification on live site**
 
 Check all sections:
-- Services: 4 cards (VeriChannel Migration, Program Governance, Backbase Delivery, Digital Strategy & Discovery)
+- Services: 3 cards (VeriChannel Migration, Backbase Delivery, Salesforce Implementation)
 - Why Me: "Multi-Vendor Governance" instead of "Vendor Liaison"
-- SocialProof: 3 tabs (VeriPark, Backbase, Governance) — no client names
+- SocialProof: 3 tabs (VeriPark, Backbase, Salesforce) — no client names, anonymized scale
 - About: Updated intro copy with governance/migration language
 
 ---
@@ -288,8 +258,13 @@ Check all sections:
 | Section | Before | After |
 |---------|--------|-------|
 | Services intro | "I specialize in three platform ecosystems..." | "I help credit unions and banks migrate..." |
-| Services cards | 3 cards (VeriPark, Backbase, Salesforce) | 4 cards (VeriChannel Migration, Program Governance, Backbase Delivery, Discovery) |
+| Services cards | 3 cards (VeriPark Implementation, Backbase Implementation, Salesforce Implementation) | 3 cards (VeriChannel Migration, Backbase Delivery, Salesforce Implementation) |
+| VeriPark card | "VeriPark Implementation" — 5 capabilities | "VeriChannel Migration" — 7 capabilities (2 governance bullets added) |
+| Backbase card | "End-to-end delivery" / "delivery lead" | "Senior BA with deep Backbase platform expertise" |
+| Salesforce card | Fiserv DNA integration focus | PM/BA activities — requirements coordination, stakeholder management |
 | Why Me | "Vendor Liaison" | "Multi-Vendor Governance" |
-| SocialProof tabs | VeriPark, Backbase, Salesforce | VeriPark, Backbase, Governance |
-| SocialProof projects | Named bank references ("top-6 Canadian bank") | Anonymized ("major Canadian bank") |
+| SocialProof tabs | VeriPark, Backbase, Salesforce | VeriPark, Backbase, Salesforce (unchanged) |
+| VeriPark SocialProof | "Delivery lead" at named credit unions | "Delivery lead" at anonymized credit unions (scale preserved) |
+| Backbase SocialProof | "Delivered" / "contributed to delivery" at named banks | "BA for" / "BA supporting" at anonymized banks |
+| Salesforce SocialProof | Fiserv DNA integration | PM/BA activities — requirements coordination, stakeholder management |
 | About intro | "go from digital strategy to production on Backbase and VeriPark" | "migrate to modern digital banking platforms, owning the governance and delivery" |
