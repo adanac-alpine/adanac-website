@@ -6,20 +6,20 @@ import TrianglePattern from './brand/TrianglePattern'
 
 const projects = {
   VeriPark: [
-    { description: 'BA for VeriChannel digital banking migration at a Canadian credit union — scope classification, RAID governance, and vendor coordination across VeriPark, Central 1, and third-party integrations.', type: 'Credit Union' },
+    { description: 'Delivery lead for VeriChannel digital banking migration at a Canadian credit union — scope classification, RAID governance, and vendor coordination across VeriPark, Central 1, and third-party integrations.', type: 'Credit Union' },
     { description: 'Product owner advisor for VeriChannel rollout at a Canadian credit union — phased delivery planning, requirements validation, and go-live stabilization.', type: 'Credit Union' },
   ],
   Backbase: [
     { description: "BA for Backbase commercial banking digital channels at a major Canadian bank — requirements gathering, UAT coordination, and stakeholder alignment.", type: 'Bank' },
     { description: "BA supporting Backbase digital banking platform delivery at a top-tier US bank — scope management, requirements validation, and post-launch optimization.", type: 'Bank' },
   ],
-  Governance: [
-    { description: 'Program governance across multi-vendor digital banking ecosystems — weekly status reporting, RAID and dependency management, and PMO alignment for credit unions migrating to modern platforms.', type: 'Credit Unions' },
-    { description: 'Requirements coordination and stakeholder management across phased delivery programs — Phase 1/Phase 2 classification, FRD review, and vendor coordination.', type: 'Banks & Credit Unions' },
+  Salesforce: [
+    { description: 'Requirements coordination and stakeholder management across Salesforce Financial Services Cloud workstreams at a mid-sized Ontario credit union — data quality frameworks and case management automation.', type: 'Credit Union' },
+    { description: 'PM/BA on Salesforce Financial Services Cloud delivery at a Manitoba credit union — requirements gathering, workflow automation, and user adoption support.', type: 'Credit Union' },
   ],
 }
 
-const tabs = ['VeriPark', 'Backbase', 'Governance'] as const
+const tabs = ['VeriPark', 'Backbase', 'Salesforce'] as const
 
 export default function SocialProof() {
   const [activeTab, setActiveTab] = useState<string>('VeriPark')
