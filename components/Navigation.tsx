@@ -90,7 +90,7 @@ export default function Navigation() {
               href="#hero"
               onClick={(e) => handleNavClick(e, '#hero')}
               aria-label="Adanac Advisory home"
-              className="hidden md:flex items-center focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded-lg focus:outline-none"
+              className="flex items-center focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded-lg focus:outline-none"
               initial={{ opacity: 0, x: -8 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -8 }}
@@ -117,24 +117,6 @@ export default function Navigation() {
         </div>
 
         <div className="flex items-center gap-3 md:hidden">
-          <AnimatePresence>
-            {pastHero && !nearFooter && (
-              <motion.a
-                key="mobile-lockup"
-                href="#hero"
-                onClick={(e) => handleNavClick(e, '#hero')}
-                aria-label="Adanac Advisory home"
-                className="flex items-center focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded-lg focus:outline-none"
-                initial={{ opacity: 0, x: -8 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -8 }}
-                transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
-              >
-                <AdanacMark size={20} tile={false} fill="#ffffff" />
-              </motion.a>
-            )}
-          </AnimatePresence>
-
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="text-white hover:text-glacier focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded-lg focus:outline-none"
