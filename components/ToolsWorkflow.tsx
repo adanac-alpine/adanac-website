@@ -7,18 +7,17 @@ function ToolIcon({ name, className = '' }: { name: string; className?: string }
   const src = `/logos/tools/${name}.svg`
   return (
     <Image
-        src={src}
-        alt={`${name} logo`}
-        className={className}
-        loading="lazy"
-        decoding="async"
-        width={40}
-        height={40}
-        onError={(e) => {
-          const target = e.currentTarget as HTMLImageElement;
-          target.style.display = 'none';
-        }}
-      />
+      src={src}
+      alt={`${name} logo`}
+      width={32}
+      height={32}
+      className={`${className} object-contain`}
+      loading="lazy"
+      onError={(e) => {
+        const target = e.currentTarget as HTMLImageElement
+        target.style.display = 'none'
+      }}
+    />
   )
 }
 

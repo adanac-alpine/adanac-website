@@ -1,27 +1,29 @@
 'use client'
 
 import Image from 'next/image'
+import { useState } from 'react'
 import { FadeIn } from './animation/FadeIn'
 
 function TechLogo({ name, label, className = '' }: { name: string; label: string; className?: string }) {
-  const src = `/logos/${name}.svg`
+  const [src, setSrc] = useState(`/logos/${name}.svg`)
+
+  const handleError = () => {
+    if (src === `/logos/${name}.svg`) {
+      setSrc(`/logos/${name}.png`)
+    } else if (src === `/logos/${name}.png`) {
+      setSrc(`/logos/${name}.jpg`)
+    }
+  }
+
   return (
     <Image
       src={src}
       alt={`${label} logo`}
+      width={120}
+      height={32}
       className={className}
       loading="lazy"
-      decoding="async"
-      width={120}
-      height={40}
-      onError={(e) => {
-        const target = e.currentTarget as HTMLImageElement;
-        const fallbacks = [`/logos/${name}.png`, `/logos/${name}.jpg`];
-        const currentIdx = fallbacks.findIndex(f => f === target.src);
-        if (currentIdx < fallbacks.length - 1) {
-          target.src = fallbacks[currentIdx + 1];
-        }
-      }}
+      onError={handleError}
     />
   )
 }
