@@ -15,7 +15,7 @@ describe('Services', () => {
 
   it('renders both service titles', () => {
     render(<Services />)
-    expect(screen.getByRole('heading', { level: 3, name: /backbase implementation/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 3, name: /backbase delivery/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 3, name: /salesforce implementation/i })).toBeInTheDocument()
   })
 

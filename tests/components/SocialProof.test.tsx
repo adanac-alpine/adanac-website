@@ -17,7 +17,7 @@ describe('SocialProof', () => {
     render(<SocialProof />)
     expect(screen.getByRole('button', { name: /VeriPark/i })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /Backbase/i })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /Salesforce/i })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /Governance/i })).toBeInTheDocument()
   })
 
   it('shows VeriPark cards by default', () => {
@@ -33,17 +33,17 @@ describe('SocialProof', () => {
     expect(cards.length).toBeGreaterThanOrEqual(1)
   })
 
-  it('shows Salesforce cards after clicking Salesforce tab', () => {
+  it('shows Governance cards after clicking Governance tab', () => {
     render(<SocialProof />)
-    fireEvent.click(screen.getByRole('button', { name: /^Salesforce$/i }))
-    const matches = screen.getAllByText(/Salesforce Financial Services Cloud/i)
-    expect(matches.length).toBeGreaterThanOrEqual(1)
+    fireEvent.click(screen.getByRole('button', { name: /Governance/i }))
+    const cards = screen.getAllByText(/governance/i)
+    expect(cards.length).toBeGreaterThanOrEqual(1)
   })
 
-  it('mentions data quality and Fiserv DNA in Salesforce tab', () => {
+  it('mentions RAID and dependency management in Governance tab', () => {
     render(<SocialProof />)
-    fireEvent.click(screen.getByRole('button', { name: /^Salesforce$/i }))
-    expect(screen.getByText(/data quality/i)).toBeInTheDocument()
-    expect(screen.getByText(/Fiserv DNA/i)).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: /Governance/i }))
+    expect(screen.getByText(/RAID/i)).toBeInTheDocument()
+    expect(screen.getByText(/dependency/i)).toBeInTheDocument()
   })
 })

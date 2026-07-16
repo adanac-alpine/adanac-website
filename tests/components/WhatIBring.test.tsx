@@ -15,7 +15,7 @@ describe('WhatIBring', () => {
 
   it('renders all four differentiator titles', () => {
     render(<WhatIBring />)
-    expect(screen.getByRole('heading', { level: 3, name: /vendor liaison/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 3, name: /multi-vendor governance/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 3, name: /hands-on delivery/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 3, name: /coaching & team building/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 3, name: /bilingual/i })).toBeInTheDocument()
@@ -23,7 +23,7 @@ describe('WhatIBring', () => {
 
   it('renders descriptions for each differentiator', () => {
     render(<WhatIBring />)
-    expect(screen.getByText(/both languages/i)).toBeInTheDocument()
+    expect(screen.getByText(/RAID management/i)).toBeInTheDocument()
     expect(screen.getByText(/don't just advise/i)).toBeInTheDocument()
     expect(screen.getByText(/hired and coached/i)).toBeInTheDocument()
     expect(screen.getByText(/english and russian/i)).toBeInTheDocument()
