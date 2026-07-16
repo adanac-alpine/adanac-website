@@ -6,20 +6,20 @@ import TrianglePattern from './brand/TrianglePattern'
 
 const projects = {
   VeriPark: [
-    { description: 'Delivery lead for VeriChannel digital banking implementation at a Manitoba credit union serving 35,000+ members across 19 branches.', type: 'Credit Union' },
-    { description: 'Product owner advisor for VeriChannel rollout at an Ontario credit union with 65,000+ members and $3.5B in assets under administration.', type: 'Credit Union' },
+    { description: 'BA for VeriChannel digital banking migration at a Canadian credit union — scope classification, RAID governance, and vendor coordination across VeriPark, Central 1, and third-party integrations.', type: 'Credit Union' },
+    { description: 'Product owner advisor for VeriChannel rollout at a Canadian credit union — phased delivery planning, requirements validation, and go-live stabilization.', type: 'Credit Union' },
   ],
   Backbase: [
-    { description: "Delivered commercial banking digital channels for a top-6 Canadian bank — recognized as one of Backbase's most successful commercial banking implementations in North America.", type: 'Bank' },
-    { description: "Contributed to digital banking platform delivery for a $200B+ US bank — J.D. Power's #1 ranked mobile banking app for customer satisfaction.", type: 'Bank' },
+    { description: "BA for Backbase commercial banking digital channels at a major Canadian bank — requirements gathering, UAT coordination, and stakeholder alignment.", type: 'Bank' },
+    { description: "BA supporting Backbase digital banking platform delivery at a top-tier US bank — scope management, requirements validation, and post-launch optimization.", type: 'Bank' },
   ],
-  Salesforce: [
-    { description: 'Leading data quality and case management automation across multiple workstreams on Salesforce Financial Services Cloud at a mid-sized Ontario credit union.', type: 'Credit Union' },
-    { description: 'Implemented Fiserv DNA data synchronization and integration workflows at a Manitoba credit union on Salesforce Financial Services Cloud.', type: 'Credit Union' },
+  Governance: [
+    { description: 'Program governance across multi-vendor digital banking ecosystems — weekly status reporting, RAID and dependency management, and PMO alignment for credit unions migrating to modern platforms.', type: 'Credit Unions' },
+    { description: 'Requirements coordination and stakeholder management across phased delivery programs — Phase 1/Phase 2 classification, FRD review, and vendor coordination.', type: 'Banks & Credit Unions' },
   ],
 }
 
-const tabs = ['VeriPark', 'Backbase', 'Salesforce'] as const
+const tabs = ['VeriPark', 'Backbase', 'Governance'] as const
 
 export default function SocialProof() {
   const [activeTab, setActiveTab] = useState<string>('VeriPark')
