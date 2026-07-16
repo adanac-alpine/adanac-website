@@ -1,84 +1,18 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { FadeIn, StaggerChildren, StaggerItem } from './animation/FadeIn'
 
-// Helper to render static credential logo components
-function CredentialLogo({ name, className = '' }: { name: string; className?: string }) {
-  switch (name) {
-    case 'cbap':
-      return (
-        <svg className={className} viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="8" fill="#1a2332" />
-          <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#d95f26" strokeWidth="1.5" />
-          <text x="20" y="17" textAnchor="middle" fill="#d95f26" fontSize="8" fontWeight="800" fontFamily="Inter, sans-serif">CBAP</text>
-          <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">IIBA</text>
-        </svg>
-      )
-    case 'cspo':
-      return (
-        <svg className={className} viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="8" fill="#1a2332" />
-          <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#2d6a4f" strokeWidth="1.5" />
-          <text x="20" y="17" textAnchor="middle" fill="#2d6a4f" fontSize="8" fontWeight="800" fontFamily="Inter, sans-serif">CSPO</text>
-          <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">Scrum</text>
-        </svg>
-      )
-    case 'backbase':
-      return (
-        <svg className={className} viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="8" fill="#1a2332" />
-          <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#00D4AA" strokeWidth="1.5" />
-          <text x="20" y="17" textAnchor="middle" fill="#00D4AA" fontSize="6" fontWeight="800" fontFamily="Inter, sans-serif">BACKBASE</text>
-          <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">Certified</text>
-        </svg>
-      )
-    case 'sfadmin':
-      return (
-        <svg className={className} viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="8" fill="#1a2332" />
-          <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#00A1E0" strokeWidth="1.5" />
-          <text x="20" y="17" textAnchor="middle" fill="#00A1E0" fontSize="6" fontWeight="800" fontFamily="Inter, sans-serif">SF ADMIN</text>
-          <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">Certified</text>
-        </svg>
-      )
-    case 'ubc':
-      return (
-        <svg className={className} viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="8" fill="#1a2332" />
-          <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#4a90d9" strokeWidth="1.5" />
-          <text x="20" y="17" textAnchor="middle" fill="#ffffff" fontSize="8" fontWeight="800" fontFamily="Inter, sans-serif">UBC</text>
-          <text x="20" y="27" textAnchor="middle" fill="#4a90d9" fontSize="5" fontFamily="Inter, sans-serif">Sauder</text>
-        </svg>
-      )
-    case 'mfin':
-      return (
-        <svg className={className} viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="8" fill="#1a2332" />
-          <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#4a90d9" strokeWidth="1.5" />
-          <text x="20" y="17" textAnchor="middle" fill="#4a90d9" fontSize="8" fontWeight="800" fontFamily="Inter, sans-serif">MFin</text>
-          <text x="20" y="27" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">BSUE</text>
-        </svg>
-      )
-    case 'ucw':
-      return (
-        <svg className={className} viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="8" fill="#1a2332" />
-          <text x="20" y="16" textAnchor="middle" fill="#ffffff" fontSize="7" fontWeight="700" fontFamily="Inter, sans-serif">UCW</text>
-          <text x="20" y="26" textAnchor="middle" fill="#4a90d9" fontSize="5" fontFamily="Inter, sans-serif">Sessional</text>
-        </svg>
-      )
-    case 'iiba':
-      return (
-        <svg className={className} viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="8" fill="#1a2332" />
-          <text x="20" y="16" textAnchor="middle" fill="#d95f26" fontSize="7" fontWeight="700" fontFamily="Inter, sans-serif">IIBA</text>
-          <text x="20" y="26" textAnchor="middle" fill="#ffffff" fontSize="5" fontFamily="Inter, sans-serif">VP Prof Dev</text>
-        </svg>
-      )
-    default:
-      return null
-  }
+const LOGO_MAP: Record<string, { src: string; width: number; height: number }> = {
+  cbap: { src: '/logos/certs/cbap.png', width: 400, height: 400 },
+  cspo: { src: '/logos/certs/cspo.png', width: 757, height: 765 },
+  backbase: { src: '/logos/certs/backbase.jpg', width: 474, height: 474 },
+  sfadmin: { src: '/logos/certs/sfadmin.png', width: 1893, height: 1855 },
+  ubc: { src: '/logos/certs/ubc.jpg', width: 1430, height: 760 },
+  mfin: { src: '/logos/certs/mfin.png', width: 350, height: 250 },
+  ucw: { src: '/logos/certs/ucw.png', width: 1200, height: 318 },
+  iiba: { src: '/logos/certs/iiba.jpg', width: 900, height: 900 },
 }
 
 // Move static credential groups array outside of the component to prevent recreation on every render cycle.
@@ -162,7 +96,16 @@ export default function About() {
                           transition={{ delay: 0.4 + groupIdx * 0.15 + itemIdx * 0.08, duration: 0.4 }}
                           className="flex items-center gap-3"
                         >
-                          {item.logo && <CredentialLogo name={item.logo} className="w-10 h-10 shrink-0" />}
+                          {item.logo && LOGO_MAP[item.logo] && (
+                            <Image
+                              src={LOGO_MAP[item.logo].src}
+                              alt={`${item.text} logo`}
+                              width={LOGO_MAP[item.logo].width}
+                              height={LOGO_MAP[item.logo].height}
+                              className="w-10 h-10 shrink-0 rounded-lg object-contain"
+                              loading="lazy"
+                            />
+                          )}
                           {!item.logo && <span className="mt-1 flex h-1.5 w-1.5 shrink-0 rounded-full bg-forest" />}
                           <span className="text-dark-gray text-sm sm:text-base font-medium">
                             {item.text}
