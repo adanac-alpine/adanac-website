@@ -7,8 +7,8 @@ import TrianglePattern from './brand/TrianglePattern'
 export default function WhatIBring() {
   const differentiators = [
     {
-      title: 'Vendor Liaison',
-      description: "I speak both languages — the vendor's technical team and your business stakeholders. I translate between them so nothing gets lost.",
+      title: 'Multi-Vendor Governance',
+      description: "Digital banking projects involve VeriPark, core banking vendors, payment processors, and internal teams. I coordinate across all of them — RAID management, dependency tracking, and escalation — so nothing falls through the cracks.",
       icon: <Handshake className="w-6 h-6" strokeWidth={1.5} />,
     },
     {
