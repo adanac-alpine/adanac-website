@@ -26,7 +26,7 @@ export default function Process() {
   ]
 
   return (
-    <section className="py-24 bg-off-white">
+    <section id="process" className="py-24 bg-off-white">
       <div className="container mx-auto px-6 md:px-12">
 
         <FadeIn>

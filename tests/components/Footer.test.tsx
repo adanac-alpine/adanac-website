@@ -18,6 +18,7 @@ describe('Footer', () => {
     render(<Footer />)
     expect(screen.getByRole('link', { name: /about/i })).toHaveAttribute('href', '#about')
     expect(screen.getByRole('link', { name: /services/i })).toHaveAttribute('href', '#services')
+    expect(screen.getByRole('link', { name: /how i work/i })).toHaveAttribute('href', '#process')
     expect(screen.getByRole('link', { name: /tools/i })).toHaveAttribute('href', '#tools')
     expect(screen.getByRole('link', { name: /contact/i })).toHaveAttribute('href', '#contact')
   })

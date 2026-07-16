@@ -9,6 +9,7 @@ import { Menu, X } from 'lucide-react'
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [pastHero, setPastHero] = useState(false)
+  const [nearFooter, setNearFooter] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -21,10 +22,20 @@ export default function Navigation() {
 
       const hero = document.querySelector('#hero')
       if (hero) {
-        const heroBottom = hero.getBoundingClientRect().bottom
-        const isPast = heroBottom <= 64
+        const heroTop = hero.getBoundingClientRect().top
+        const isPast = heroTop <= -64
         setPastHero((prev) => {
           if (prev !== isPast) return isPast
+          return prev
+        })
+      }
+
+      const footer = document.querySelector('footer')
+      if (footer) {
+        const footerTop = footer.getBoundingClientRect().top
+        const isNear = footerTop <= window.innerHeight
+        setNearFooter((prev) => {
+          if (prev !== isNear) return isNear
           return prev
         })
       }
@@ -48,7 +59,7 @@ export default function Navigation() {
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
-    { name: 'Tools', href: '#tools' },
+    { name: 'How I Work', href: '#process' },
     { name: 'Contact', href: '#contact' },
   ]
 
@@ -64,6 +75,8 @@ export default function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        nearFooter ? 'opacity-0 pointer-events-none' : ''
+      } ${
         isScrolled
           ? 'bg-navy/90 backdrop-blur-md shadow-lg border-b border-white/10 py-4'
           : 'bg-transparent py-6'
@@ -71,13 +84,13 @@ export default function Navigation() {
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
         <AnimatePresence>
-          {pastHero && (
+          {pastHero && !nearFooter && (
             <motion.a
               key="lockup"
               href="#hero"
               onClick={(e) => handleNavClick(e, '#hero')}
               aria-label="Adanac Advisory home"
-              className="flex items-center focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded-lg focus:outline-none"
+              className="hidden md:flex items-center focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded-lg focus:outline-none"
               initial={{ opacity: 0, x: -8 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -8 }}
@@ -105,7 +118,7 @@ export default function Navigation() {
 
         <div className="flex items-center gap-3 md:hidden">
           <AnimatePresence>
-            {pastHero && (
+            {pastHero && !nearFooter && (
               <motion.a
                 key="mobile-lockup"
                 href="#hero"

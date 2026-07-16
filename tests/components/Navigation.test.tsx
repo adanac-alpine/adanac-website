@@ -8,6 +8,7 @@ describe('Navigation', () => {
     // Desktop and mobile navs both render these links
     expect(screen.getAllByRole('link', { name: /about/i }).length).toBeGreaterThanOrEqual(1)
     expect(screen.getAllByRole('link', { name: /services/i }).length).toBeGreaterThanOrEqual(1)
+    expect(screen.getAllByRole('link', { name: /how i work/i }).length).toBeGreaterThanOrEqual(1)
     expect(screen.getAllByRole('link', { name: /contact/i }).length).toBeGreaterThanOrEqual(1)
   })
 

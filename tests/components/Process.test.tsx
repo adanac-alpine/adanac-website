@@ -8,6 +8,12 @@ describe('Process', () => {
     expect(screen.getByText('How I Work')).toBeInTheDocument()
   })
 
+  it('has the correct section id for navigation', () => {
+    render(<Process />)
+    const section = document.querySelector('#process')
+    expect(section).toBeInTheDocument()
+  })
+
   it('renders the section heading', () => {
     render(<Process />)
     expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent(/from first call to production/i)
