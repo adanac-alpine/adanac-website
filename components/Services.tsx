@@ -7,24 +7,26 @@ import { FadeIn, StaggerChildren, StaggerItem } from './animation/FadeIn'
 // Move static services array outside of the component to prevent recreation on every render cycle.
 const SERVICES_DATA = [
   {
-    title: 'VeriPark Implementation',
+    title: 'VeriChannel Migration',
     description:
-      'VeriPark VeriChannel and VeriTouch for credit unions — omnichannel customer journeys, digital onboarding, loan origination workflows, and front-back office integration. Deep experience with VeriChannel at Manitoba and Ontario credit unions.',
+      'Migrating digital banking from legacy platforms to VeriPark VeriChannel — scope classification, phased delivery, and production cutover for credit unions.',
     capabilities: [
-      'VeriChannel digital banking configuration',
-      'Omnichannel journey orchestration',
-      'Loan origination & underwriting workflows',
-      'Front-back office integration',
-      'Digital onboarding & KYC flows',
+      'Migration scope classification (Phase 1 / Phase 2)',
+      'Requirements validation & FRD review',
+      'UAT coordination & go-live readiness',
+      'Post-launch stabilization support',
+      'Legacy platform deconversion planning',
+      'Multi-vendor RAID management & escalation',
+      'Weekly status reporting & PMO alignment',
     ],
     icon: (
       <Image src="/logos/veripark.svg" alt="VeriPark logo" className="w-10 h-10 object-contain" loading="lazy" decoding="async" width={40} height={40} />
     ),
   },
   {
-    title: 'Backbase Implementation',
+    title: 'Backbase Delivery',
     description:
-      'End-to-end delivery of Backbase digital banking — from commercial and retail banking channels to mobile apps. I act as BA, delivery lead, or product owner advisor to get your platform from architecture to production.',
+      'Senior BA with deep Backbase platform expertise — requirements validation, UAT coordination, and stakeholder alignment for commercial banking digital channels.',
     capabilities: [
       'Business & technical requirements gathering',
       'Platform architecture and configuration',
@@ -39,12 +41,12 @@ const SERVICES_DATA = [
   {
     title: 'Salesforce Implementation',
     description:
-      'Salesforce Financial Services Cloud and Service Cloud for credit unions — member data unification, case management automation, advisor consoles, and data quality frameworks. SF certified, currently delivering at multiple Canadian credit unions.',
+      'Salesforce Financial Services Cloud for credit unions — requirements coordination, stakeholder management, data quality frameworks, and case management automation. SF certified, currently delivering at multiple Canadian credit unions.',
     capabilities: [
       'Financial Services Cloud configuration',
       'Case management & workflow automation',
       'Data quality frameworks & deduplication',
-      'Core banking data synchronization (Fiserv DNA)',
+      'Requirements coordination & stakeholder management',
       'User training & adoption support',
     ],
     icon: (
@@ -67,7 +69,7 @@ export default function Services() {
               What I do
             </h2>
             <p className="text-dark-gray text-lg">
-              I specialize in three platform ecosystems: Backbase commercial banking, Salesforce Financial Services Cloud, and VeriPark omnichannel (VeriTouch). That depth means I can deliver faster, catch issues earlier, and actually help your team — not just advise from the sidelines.
+              I help credit unions and banks migrate to modern digital banking platforms — managing the governance, scope, and vendor coordination that determines whether a project lands on time or derails. From Discovery through production cutover, I own the delivery.
             </p>
           </div>
         </FadeIn>
