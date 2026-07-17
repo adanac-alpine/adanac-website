@@ -27,7 +27,7 @@
 
 ## Deploy
 
-Vercel-GitHub integration is broken. Always deploy via CLI:
+Push to GitHub — Vercel auto-deploys. Use CLI only for urgent hotfixes:
 
 ```bash
 npm run build && vercel --prod --yes
@@ -41,13 +41,12 @@ npm run build && vercel --prod --yes
 - **Library:** React Testing Library
 - **Location:** `tests/components/`
 - **Naming:** `tests/components/[Component].test.tsx`
-- **Count:** 66 tests across 11 files
+- **Count:** all tests must pass — run `npm run test -- --run` to verify
 
 ---
 
 ## Key Constraints
 
-- **No auto-deploy** — GitHub integration broken, use CLI only
 - **Anonymize clients** — never mention YNCU, Sunrise, or other client names
 - **Protected files** — AGENTS.md, project-rules.md require approval to modify
 - **No new dependencies** — without explicit approval

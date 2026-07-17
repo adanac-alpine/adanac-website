@@ -32,7 +32,7 @@ Single-page landing page for Adanac Advisory Inc. — fintech digital transforma
 1. **Spec first.** Read `specs/index.md` and the relevant `spec-` file before writing code.
    `context-*` files are authoritative — follow them exactly, never infer alternatives.
 2. **Test before commit.** Run `npm run test -- --run` and `npm run build` before every commit.
-3. **Deploy via CLI only.** `vercel --prod --yes` — GitHub integration is broken.
+3. **Push to GitHub.** Vercel auto-deploys on push. Use `vercel --prod --yes` only for urgent hotfixes.
 4. **End every task with a summary:**
    - **What shipped** — concise bullets of changes
    - **Next steps** — what the user must do (if anything)
@@ -43,7 +43,7 @@ Single-page landing page for Adanac Advisory Inc. — fintech digital transforma
 
 ## Hard rules
 
-- **Deploy via CLI only** — `vercel --prod --yes` (GitHub integration broken)
+- **Push to GitHub** — Vercel auto-deploys. Use `vercel --prod --yes` only for urgent hotfixes.
 - **No structural changes without approval** — component reordering, new sections, new dependencies
 - **Tests must pass before commit** — `npm run test -- --run`
 - **Build must pass before deploy** — `npm run build`
@@ -56,4 +56,4 @@ Single-page landing page for Adanac Advisory Inc. — fintech digital transforma
 - Run `npm run test -- --run` before every commit.
 - Fix tests, never production code, to make tests pass.
 - Naming: `tests/components/[Component].test.tsx`
-- 66 tests across 11 files — all must pass.
+- All tests must pass — check `project-rules.md` for current count.
