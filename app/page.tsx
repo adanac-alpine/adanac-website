@@ -6,6 +6,7 @@ import Services from '@/components/Services'
 import Process from '@/components/Process'
 import ToolsWorkflow from '@/components/ToolsWorkflow'
 import WhatIBring from '@/components/WhatIBring'
+import Scoutloop from '@/components/Scoutloop'
 
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
@@ -22,7 +23,7 @@ export default function Home() {
         <Process />
         <ToolsWorkflow />
         <WhatIBring />
-
+        <Scoutloop />
         <Contact />
       </main>
       <Footer />
