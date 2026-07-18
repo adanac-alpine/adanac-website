@@ -63,7 +63,7 @@ export default function About() {
             <StaggerChildren stagger={0.12} className="text-dark-gray text-base sm:text-lg leading-relaxed space-y-6">
               <StaggerItem>
                 <p className="font-medium text-navy/95 text-lg sm:text-xl">
-                  I'm Sergey Pochikovskiy — 16 years in financial services, from credit unions to enterprise commercial banking. I help financial institutions migrate to modern digital banking platforms, owning the governance and delivery from Discovery through production.
+                  {"I'm"} Sergey Pochikovskiy — 16 years in financial services, from credit unions to enterprise commercial banking. I help financial institutions migrate to modern digital banking platforms, owning the governance and delivery from Discovery through production.
                 </p>
               </StaggerItem>
               <StaggerItem>
