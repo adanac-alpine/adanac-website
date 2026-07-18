@@ -95,11 +95,14 @@ Light, clean, modern — similar to Aequilibrium's approachability with Modes' p
 
 ---
 
-### 2. About
+### 2. About Me
 
 **Layout:** Two-column on desktop, stacked on mobile
 
 **Content:**
+- **Headshot:** Professional photo in credentials card
+- **Name:** Sergey Pochikovskiy (introduced in first line of copy)
+- **LinkedIn:** Icon + link in credentials card
 - **Bio:** 16 years in financial services
 - **Credentials:** Education, Certifications, Teaching & Community
 
@@ -238,7 +241,7 @@ Personal project showcase with tech stack logos.
 | Content | ✅ Done | All copy finalized |
 | Brand System | ✅ Done | TrianglePattern, AdanacMark, AdanacWordmark |
 | Hero | ✅ Done | With CTA + Learn more |
-| About | ✅ Done | Bio + credentials grid |
+| About Me | ✅ Done | Name, headshot, LinkedIn, bio + credentials grid |
 | Services | ✅ Done | 3 platform cards |
 | SocialProof | ✅ Done | Tabbed project showcase |
 | Process | ✅ Done | 3-step flow |
@@ -249,7 +252,7 @@ Personal project showcase with tech stack logos.
 | Contact | ✅ Done | Formspree form |
 | Footer | ✅ Done | Full-screen navy |
 | Navigation | ✅ Done | Fixed nav + scroll-reveal |
-| Testing | ✅ Done | 66 tests across 11 files |
+| Testing | ✅ Done | All tests pass |
 | SEO | ✅ Done | Sitemap, OG, meta |
 | Sentry | ✅ Done | Error monitoring |
 | Deploy | ✅ Done | Production live |
