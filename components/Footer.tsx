@@ -27,72 +27,66 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
 
             {/* Brand column */}
-            <StaggerItem>
-              <div className="md:col-span-5 space-y-4">
-                <div className="flex items-center gap-3">
-                  <AdanacMark size={32} fill="#ffffff" tile={false} />
-                  <AdanacWordmark color="#ffffff" incColor="rgba(255,255,255,0.35)" fontSize={14} showInc={true} />
-                </div>
-                <p className="text-sm text-white/40 leading-relaxed">
-                  Strategic Technology Consulting — British Columbia
-                </p>
+            <StaggerItem className="md:col-span-5 space-y-4">
+              <div className="flex items-center gap-3">
+                <AdanacMark size={32} fill="#ffffff" tile={false} />
+                <AdanacWordmark color="#ffffff" incColor="rgba(255,255,255,0.35)" fontSize={14} showInc={true} />
               </div>
+              <p className="text-sm text-white/40 leading-relaxed">
+                Strategic Technology Consulting — British Columbia
+              </p>
             </StaggerItem>
 
             {/* Nav links */}
-            <StaggerItem>
-              <div className="md:col-span-3 space-y-3">
-                <h4 className="text-xs font-bold uppercase tracking-widest text-white/30">Navigate</h4>
-                {[
-                  { name: 'About', href: '#about' },
-                  { name: 'Services', href: '#services' },
-                  { name: 'How I Work', href: '#process' },
-                  { name: 'Contact', href: '#contact' },
-                ].map((link) => (
-                  <motion.a
-                    key={link.name}
-                    href={link.href}
-                    onClick={(e) => handleScrollToSection(e, link.href)}
-                    whileHover={{ x: 4 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-                    className="block text-sm text-white/60 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus-visible:ring-offset-navy rounded focus:outline-none"
-                  >
-                    {link.name}
-                  </motion.a>
-                ))}
-              </div>
+            <StaggerItem className="md:col-span-3 space-y-3">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-white/30">Navigate</h4>
+              {[
+                { name: 'About', href: '#about' },
+                { name: 'Services', href: '#services' },
+                { name: 'How I Work', href: '#process' },
+                { name: 'Contact', href: '#contact' },
+              ].map((link) => (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => handleScrollToSection(e, link.href)}
+                  whileHover={{ x: 4 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                  className="block text-sm text-white/60 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus-visible:ring-offset-navy rounded focus:outline-none"
+                >
+                  {link.name}
+                </motion.a>
+              ))}
             </StaggerItem>
 
             {/* Contact */}
-            <StaggerItem>
-              <div className="md:col-span-4 space-y-3">
-                <h4 className="text-xs font-bold uppercase tracking-widest text-white/30">Contact</h4>
-                <motion.a
-                  href="mailto:sergey@adanacadvisory.ca"
-                  whileHover={{ x: 4 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-                  className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus-visible:ring-offset-navy rounded focus:outline-none"
-                >
-                  <Mail className="w-4 h-4" strokeWidth={2} />
-                  sergey@adanacadvisory.ca
-                </motion.a>
-                <motion.a
-                  href="https://linkedin.com/in/pochikovskiy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ x: 4 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-                  className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus-visible:ring-offset-navy rounded focus:outline-none"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                    <rect width="4" height="12" x="2" y="9" />
-                    <circle cx="4" cy="4" r="2" />
-                  </svg>
-                  linkedin.com/in/pochikovskiy
-                  <span className="sr-only">(opens in a new tab)</span>
-                </motion.a>
-              </div>
+            <StaggerItem className="md:col-span-4 space-y-3">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-white/30">Contact</h4>
+              <motion.a
+                href="mailto:sergey@adanacadvisory.ca"
+                whileHover={{ x: 4 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus-visible:ring-offset-navy rounded focus:outline-none"
+              >
+                <Mail className="w-4 h-4" strokeWidth={2} />
+                sergey@adanacadvisory.ca
+              </motion.a>
+              <motion.a
+                href="https://linkedin.com/in/pochikovskiy"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: 4 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus-visible:ring-offset-navy rounded focus:outline-none"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect width="4" height="12" x="2" y="9" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+                linkedin.com/in/pochikovskiy
+                <span className="sr-only">(opens in a new tab)</span>
+              </motion.a>
             </StaggerItem>
 
           </div>
