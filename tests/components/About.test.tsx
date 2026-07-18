@@ -42,7 +42,7 @@ describe('About', () => {
     render(<About />)
     expect(screen.getByText('Education')).toBeInTheDocument()
     expect(screen.getByText('Certifications')).toBeInTheDocument()
-    expect(screen.getByText('Teaching & Community')).toBeInTheDocument()
+    expect(screen.getByText('Teaching & Community Involvement')).toBeInTheDocument()
   })
 
   it('lists MBA from UBC Sauder', () => {

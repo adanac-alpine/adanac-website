@@ -34,10 +34,11 @@ const CREDENTIAL_GROUPS_DATA = [
     ],
   },
   {
-    title: 'Teaching & Community',
+    title: 'Teaching & Community Involvement',
     items: [
       { text: 'Sessional Instructor — University Canada West', logo: 'ucw' },
       { text: 'VP of Professional Development — IIBA', logo: 'iiba' },
+      { text: 'Product BC Mentor' },
     ],
   },
 ]
