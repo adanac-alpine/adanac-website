@@ -52,7 +52,7 @@ export default function About() {
             <FadeIn>
               <div className="space-y-4">
                 <span className="text-xs font-bold tracking-widest text-glacier uppercase">
-                  About
+                  About Me
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight leading-tight">
                   Bridging the gap between digital strategy and platform execution
@@ -63,7 +63,7 @@ export default function About() {
             <StaggerChildren stagger={0.12} className="text-dark-gray text-base sm:text-lg leading-relaxed space-y-6">
               <StaggerItem>
                 <p className="font-medium text-navy/95 text-lg sm:text-xl">
-                  16 years in financial services — from credit unions to enterprise commercial banking. I help financial institutions migrate to modern digital banking platforms, owning the governance and delivery from Discovery through production.
+                  I'm Sergey Pochikovskiy — 16 years in financial services, from credit unions to enterprise commercial banking. I help financial institutions migrate to modern digital banking platforms, owning the governance and delivery from Discovery through production.
                 </p>
               </StaggerItem>
               <StaggerItem>
@@ -76,6 +76,32 @@ export default function About() {
 
           <FadeIn delay={0.3} className="lg:col-span-5">
             <div className="relative bg-white rounded-2xl p-8 sm:p-10 border border-gray-100 shadow-xl shadow-gray-100/50 overflow-hidden">
+              {/* Headshot + LinkedIn */}
+              <div className="flex items-center gap-4 mb-6">
+                <Image
+                  src="/images/sergey-headshot.jpg"
+                  alt="Sergey Pochikovskiy"
+                  width={96}
+                  height={96}
+                  className="w-24 h-24 rounded-2xl object-cover"
+                  priority
+                />
+                <div className="space-y-1">
+                  <p className="text-navy font-bold text-lg">Sergey Pochikovskiy</p>
+                  <a
+                    href="https://linkedin.com/in/pochikovskiy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-glacier text-sm font-medium hover:underline focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded focus:outline-none"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+
               <h3 className="text-xl font-bold text-navy mb-6 flex items-center gap-2">
                 <span className="text-glacier">■</span> Credentials
               </h3>

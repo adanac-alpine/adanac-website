@@ -10,12 +10,32 @@ describe('About', () => {
 
   it('renders the "About" eyebrow', () => {
     render(<About />)
-    expect(screen.getByText('About', { selector: '.uppercase' })).toBeInTheDocument()
+    expect(screen.getByText('About Me', { selector: '.uppercase' })).toBeInTheDocument()
   })
 
   it('mentions 16 years of experience', () => {
     render(<About />)
     expect(screen.getByText(/16 years/i)).toBeInTheDocument()
+  })
+
+  it('introduces Sergey by name', () => {
+    render(<About />)
+    const matches = screen.getAllByText(/Sergey Pochikovskiy/i)
+    expect(matches.length).toBeGreaterThanOrEqual(2)
+  })
+
+  it('renders the headshot image', () => {
+    render(<About />)
+    const img = screen.getByAltText('Sergey Pochikovskiy')
+    expect(img).toBeInTheDocument()
+    expect(img).toHaveAttribute('src', expect.stringContaining('sergey-headshot.jpg'))
+  })
+
+  it('links to LinkedIn profile', () => {
+    render(<About />)
+    const link = screen.getByRole('link', { name: /linkedin/i })
+    expect(link).toHaveAttribute('href', 'https://linkedin.com/in/pochikovskiy')
+    expect(link).toHaveAttribute('target', '_blank')
   })
 
   it('renders credential groups', () => {
