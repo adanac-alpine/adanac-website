@@ -13,6 +13,7 @@ const LOGO_MAP: Record<string, { src: string; width: number; height: number }> =
   mfin: { src: '/logos/certs/mfin.png', width: 350, height: 250 },
   ucw: { src: '/logos/certs/ucw.png', width: 1200, height: 318 },
   iiba: { src: '/logos/certs/iiba.jpg', width: 900, height: 900 },
+  productbc: { src: '/logos/certs/productbc.png', width: 512, height: 788 },
 }
 
 // Move static credential groups array outside of the component to prevent recreation on every render cycle.
@@ -38,7 +39,7 @@ const CREDENTIAL_GROUPS_DATA = [
     items: [
       { text: 'Sessional Instructor — University Canada West', logo: 'ucw' },
       { text: 'VP of Professional Development — IIBA', logo: 'iiba' },
-      { text: 'Product BC Mentor' },
+      { text: 'Product BC Mentor', logo: 'productbc' },
     ],
   },
 ]
