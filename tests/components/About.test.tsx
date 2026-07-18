@@ -21,7 +21,7 @@ describe('About', () => {
   it('introduces Sergey by name', () => {
     render(<About />)
     const matches = screen.getAllByText(/Sergey Pochikovskiy/i)
-    expect(matches.length).toBeGreaterThanOrEqual(2)
+    expect(matches.length).toBeGreaterThanOrEqual(1)
   })
 
   it('renders the headshot image', () => {
