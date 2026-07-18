@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { FadeIn } from './animation/FadeIn'
 
 function TechLogo({ name, label, className = '' }: { name: string; label: string; className?: string }) {
@@ -62,17 +63,26 @@ export default function TechStack() {
         <FadeIn delay={0.15}>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {platforms.map((platform, idx) => (
-              <div
-                key={idx}
-                className="group bg-off-white rounded-xl p-5 border border-gray-100 hover:border-glacier/30 hover:shadow-lg hover:shadow-glacier/5 transition-all duration-300"
-              >
-                <div className="h-8 flex items-center mb-2">
-                  <TechLogo name={platform.logo} label={platform.label} className="max-h-8 max-w-[120px] w-auto object-contain" />
-                </div>
-                <div className="text-xs text-medium-gray">
-                  {platform.description}
-                </div>
-              </div>
+              <FadeIn key={idx} delay={idx * 0.05}>
+                <motion.div
+                  whileHover={{ 
+                    scale: 1.02,
+                    y: -2,
+                    boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.08)',
+                    borderColor: 'rgba(74, 144, 217, 0.3)'
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.3, type: 'spring', stiffness: 300, damping: 30 }}
+                  className="group bg-off-white rounded-xl p-5 border border-gray-100 hover:border-glacier/30 hover:shadow-lg hover:shadow-glacier/5"
+                >
+                  <div className="h-8 flex items-center mb-2">
+                    <TechLogo name={platform.logo} label={platform.label} className="max-h-8 max-w-[120px] w-auto object-contain" />
+                  </div>
+                  <div className="text-xs text-medium-gray">
+                    {platform.description}
+                  </div>
+                </motion.div>
+              </FadeIn>
             ))}
           </div>
         </FadeIn>

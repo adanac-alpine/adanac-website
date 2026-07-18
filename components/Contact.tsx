@@ -105,86 +105,94 @@ export default function Contact() {
                   />
                 </div>
 
-                <div>
-                  <label htmlFor="email" className="block text-xs font-bold uppercase tracking-widest text-navy mb-2">
-                    Email
-                  </label>
-                  <motion.input
-                    whileFocus={{ scale: 1.01 }}
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formState.email}
-                    onChange={handleChange}
-                    placeholder="you@example.com"
-                    required
-                    className="w-full px-4 py-3 bg-off-white border border-gray-200 rounded-lg text-navy placeholder-medium-gray focus:outline-none focus:border-glacier focus:ring-2 focus:ring-glacier/25 transition-all duration-200"
-                  />
-                </div>
+<div>
+                   <label htmlFor="email" className="block text-xs font-bold uppercase tracking-widest text-navy mb-2">
+                     Email
+                   </label>
+                    <motion.input
+                      whileFocus={{ scale: 1.01 }}
+                      type="email"
+                     id="email"
+                     name="email"
+                     value={formState.email}
+                     onChange={handleChange}
+                     placeholder="you@example.com"
+                     required
+                     className="w-full px-4 py-3 bg-off-white border border-gray-200 rounded-lg text-navy placeholder-medium-gray focus:outline-none focus:border-glacier focus:ring-2 focus:ring-glacier/25 transition-all duration-300"
+                   />
+                 </div>
               </div>
 
-              <div>
-                <label htmlFor="message" className="block text-xs font-bold uppercase tracking-widest text-navy mb-2">
-                  Message
-                </label>
-                <motion.textarea
-                  whileFocus={{ scale: 1.01 }}
-                  id="message"
-                  name="message"
-                  value={formState.message}
-                  onChange={handleChange}
-                  placeholder="Tell me about your project..."
-                  rows={5}
-                  required
-                  className="w-full px-4 py-3 bg-off-white border border-gray-200 rounded-lg text-navy placeholder-medium-gray focus:outline-none focus:border-glacier focus:ring-2 focus:ring-glacier/25 transition-all duration-200 resize-none"
-                />
-              </div>
+<div>
+                   <label htmlFor="message" className="block text-xs font-bold uppercase tracking-widest text-navy mb-2">
+                     Message
+                   </label>
+                    <motion.textarea
+                      whileFocus={{ scale: 1.01 }}
+                      id="message"
+                     name="message"
+                     value={formState.message}
+                     onChange={handleChange}
+                     placeholder="Tell me about your project..."
+                     rows={5}
+                     required
+                     className="w-full px-4 py-3 bg-off-white border border-gray-200 rounded-lg text-navy placeholder-medium-gray focus:outline-none focus:border-glacier focus:ring-2 focus:ring-glacier/25 transition-all duration-300 resize-none"
+                   />
+                 </div>
 
-              {status === 'success' && (
-                <div
-                  role="status"
-                  aria-live="polite"
-                  className="p-4 bg-forest/10 border border-forest text-sm font-semibold rounded-lg text-forest flex items-center gap-3 animate-fade-in"
-                >
-                  <svg className="w-5 h-5 shrink-0 text-forest" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span>Thank you! I&apos;ll be in touch.</span>
-                </div>
-              )}
+{status === 'success' && (
+                 <motion.div
+                   initial={{ opacity: 0, y: 10 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   exit={{ opacity: 0, y: -10 }}
+                   transition={{ duration: 0.3 }}
+                   role="status"
+                   aria-live="polite"
+                   className="p-4 bg-forest/10 border border-forest text-sm font-semibold rounded-lg text-forest flex items-center gap-3"
+                 >
+                   <svg className="w-5 h-5 shrink-0 text-forest" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                   </svg>
+                    <span>Thank you! I&apos;ll be in touch.</span>
+                 </motion.div>
+               )}
 
-              {status === 'error' && (
-                <div
-                  role="status"
-                  aria-live="polite"
-                  className="p-4 bg-red-50 border border-red-200 text-sm font-semibold rounded-lg text-red-700 flex items-center gap-3 animate-fade-in"
-                >
-                  <svg className="w-5 h-5 shrink-0 text-red-700" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                  </svg>
-                  <span>Something went wrong. Please try again or email me directly.</span>
-                </div>
-              )}
+{status === 'error' && (
+                 <motion.div
+                   initial={{ opacity: 0, y: 10 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   exit={{ opacity: 0, y: -10 }}
+                   transition={{ duration: 0.3 }}
+                   role="status"
+                   aria-live="polite"
+                   className="p-4 bg-red-50 border border-red-200 text-sm font-semibold rounded-lg text-red-700 flex items-center gap-3"
+                 >
+                   <svg className="w-5 h-5 shrink-0 text-red-700" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                   </svg>
+                   <span>Something went wrong. Please try again or email me directly.</span>
+                 </motion.div>
+               )}
 
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                type="submit"
-                disabled={status === 'submitting'}
-                className="w-full bg-glacier hover:bg-glacier-600 disabled:bg-glacier/50 text-white font-bold tracking-wide py-4 rounded-lg shadow-lg shadow-glacier/25 transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus:outline-none flex items-center justify-center"
-              >
-                {status === 'submitting' ? (
-                  <>
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Sending...
-                  </>
-                ) : (
-                  'Send Message'
-                )}
-              </motion.button>
+<motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  type="submit"
+                 disabled={status === 'submitting'}
+                 className="w-full bg-glacier hover:bg-glacier-600 disabled:bg-glacier/50 text-white font-bold tracking-wide py-4 rounded-xl shadow-lg shadow-glacier/25 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus:outline-none flex items-center justify-center"
+               >
+                 {status === 'submitting' ? (
+                   <>
+                     <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                     </svg>
+                     Sending...
+                   </>
+                 ) : (
+                   'Send Message'
+                 )}
+               </motion.button>
             </form>
           </div>
         </FadeIn>

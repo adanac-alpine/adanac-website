@@ -75,47 +75,65 @@ export default function Services() {
         </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {SERVICES_DATA.map((service, idx) => (
-            <FadeIn key={idx} delay={idx * 0.15}>
-              <motion.div
-                whileHover={{ y: -4, boxShadow: '0 20px 40px -12px rgba(74, 144, 217, 0.15)' }}
-                transition={{ duration: 0.3 }}
-                className="group bg-off-white rounded-2xl p-8 border border-gray-100 hover:border-glacier/30 transition-colors duration-300 flex flex-col h-full"
-              >
-                <div className="space-y-6">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className="h-14 w-14 rounded-xl bg-navy/5 flex items-center justify-center transition-colors group-hover:bg-glacier/10"
-                  >
-                    {service.icon}
-                  </motion.div>
+{SERVICES_DATA.map((service, idx) => (
+               <FadeIn key={idx} delay={idx * 0.15}>
+                 <motion.div
+                   whileHover={{ 
+                     y: -4,
+                     boxShadow: '0 20px 40px -12px rgba(74, 144, 217, 0.15)',
+                     borderColor: 'rgba(74, 144, 217, 0.3)'
+                   }}
+                   whileTap={{ scale: 0.98 }}
+                   transition={{ duration: 0.4, type: 'spring', stiffness: 300, damping: 30 }}
+                   className="group bg-off-white rounded-2xl p-8 border border-gray-100 hover:border-glacier/30 transition-all duration-300 flex flex-col h-full"
+                 >
+                   <div className="space-y-6">
+                     <motion.div
+                       whileHover={{ scale: 1.05 }}
+                       transition={{ duration: 0.3 }}
+                       className="h-14 w-14 rounded-xl bg-navy/5 flex items-center justify-center transition-colors group-hover:bg-glacier/10"
+                     >
+                       {service.icon}
+                     </motion.div>
 
-                  <div className="space-y-3">
-                    <h3 className="text-xl font-bold text-navy group-hover:text-glacier transition-colors duration-200">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-dark-gray leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
+                     <div className="space-y-3">
+                       <motion.h3
+                         whileHover={{ 
+                           color: '#4a90d9'
+                         }}
+                         className="text-xl font-bold text-navy group-hover:text-glacier transition-colors duration-200"
+                       >
+                         {service.title}
+                       </motion.h3>
+                       <p className="text-sm sm:text-base text-dark-gray leading-relaxed">
+                         {service.description}
+                       </p>
+                     </div>
 
-                  <div className="pt-2">
-                    <div className="text-xs font-bold text-navy uppercase tracking-wider mb-3">
-                      What I deliver
-                    </div>
-                    <ul className="space-y-2">
-                      {service.capabilities.map((cap, capIdx) => (
-                        <li key={capIdx} className="flex items-center gap-2 text-sm text-dark-gray">
-                          <span className="h-1.5 w-1.5 rounded-full bg-glacier shrink-0" />
-                          <span>{cap}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </motion.div>
-            </FadeIn>
-          ))}
+                     <div className="pt-2">
+                       <div className="text-xs font-bold text-navy uppercase tracking-wider mb-3">
+                         What I deliver
+                       </div>
+                       <ul className="space-y-2">
+                         {service.capabilities.map((cap, capIdx) => (
+                           <motion.li
+                             key={capIdx}
+                             whileHover={{ 
+                               x: 2
+                             }}
+                             transition={{ duration: 0.2 }}
+                             className="flex items-center gap-2 text-sm text-dark-gray"
+                           >
+                             <span className="h-1.5 w-1.5 rounded-full bg-glacier shrink-0" />
+                             <span>{cap}</span>
+                           </motion.li>
+                         ))}
+                       </ul>
+                     </div>
+                   </div>
+                 </motion.div>
+               </FadeIn>
+             ))}
         </div>
 
       </div>
