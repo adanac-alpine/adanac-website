@@ -1,4 +1,4 @@
-# Project Rules — Adanac Advisory Website
+# Project Rules — Adanac Alpine Advisory Website
 
 > Project-specific overrides and commands. Source of truth for test/build/deploy.
 

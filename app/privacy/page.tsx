@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Adanac Advisory',
-  description: 'Privacy policy for Adanac Advisory Inc.',
+  title: 'Privacy Policy — Adanac Alpine Advisory',
+  description: 'Privacy policy for Adanac Alpine Advisory Inc.',
 }
 
 export default function PrivacyPolicy() {
@@ -26,7 +26,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-xl font-bold text-navy mb-3">1. Introduction</h2>
             <p>
-              Adanac Advisory Inc. (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) respects your privacy. This Privacy Policy explains how we collect, use, and protect your personal information when you visit our website or contact us.
+              Adanac Alpine Advisory Inc. (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) respects your privacy. This Privacy Policy explains how we collect, use, and protect your personal information when you visit our website or contact us.
             </p>
           </section>
 
@@ -102,10 +102,10 @@ export default function PrivacyPolicy() {
             <p>
               For questions about this Privacy Policy, contact us at{' '}
               <a
-                href="mailto:sergey@adanacadvisory.ca"
+                href="mailto:sergey@adanacalpine.ca"
                 className="text-glacier hover:underline focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded focus:outline-none"
               >
-                sergey@adanacadvisory.ca
+                sergey@adanacalpine.ca
               </a>.
             </p>
           </section>

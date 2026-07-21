@@ -12,7 +12,7 @@ export default function SentryExamplePage() {
         </p>
         <button
           onClick={() => {
-            throw new Error('Sentry test error from adanacadvisory.ca!')
+            throw new Error('Sentry test error from adanacalpine.ca!')
           }}
           className="bg-glacier text-white font-semibold px-6 py-3 rounded-xl hover:bg-blue-600 transition-colors"
         >

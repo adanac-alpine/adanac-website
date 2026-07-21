@@ -9,7 +9,7 @@ tags: [website, content, assets, design]
 timestamp: "2026-07-13T00:00:00Z"
 ---
 
-# Adanac Advisory Website
+# Adanac Alpine Advisory Website
 
 Landing page for Adanac Alpine Advisory (`adanacalpine.ca`). Next.js 14 + Tailwind CSS, deployed to Vercel.
 

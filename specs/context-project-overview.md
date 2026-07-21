@@ -1,7 +1,7 @@
 ---
 type: Context
 title: Project Overview
-description: Authoritative overview of Adanac Advisory website — tech stack, architecture, deployment, and constraints.
+description: Authoritative overview of Adanac Alpine Advisory website — tech stack, architecture, deployment, and constraints.
 tags: [overview, context, project, tech-stack]
 timestamp: "2026-07-14T00:00:00Z"
 ---
@@ -14,11 +14,11 @@ timestamp: "2026-07-14T00:00:00Z"
 
 ## Project Snapshot
 
-Single-page landing page for Adanac Advisory Inc. — a solo IT consulting practice specializing in fintech digital transformation. Modern, clean, professional. Built with Next.js + Vercel.
+Single-page landing page for Adanac Alpine Advisory Inc. — a solo IT consulting practice specializing in fintech digital transformation. Modern, clean, professional. Built with Next.js + Vercel.
 
 - **Frontend:** https://website-nu-one-11.vercel.app (Next.js 15 → Vercel)
 - **Repo:** github.com/Segey-P/adanac-website
-- **Domain:** adanacadvisory.ca (pending registration)
+- **Domain:** adanacalpine.ca (pending registration)
 
 ---
 

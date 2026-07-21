@@ -1,4 +1,4 @@
-# Adanac Advisory — Post-Registration TODO
+# Adanac Alpine Advisory — Post-Registration TODO
 
 ## Completed
 - [x] Brand V2 alignment (colors, fonts, logos, triangle patterns)
@@ -14,9 +14,9 @@
 ## Pending — After Corp Registration
 
 ### High Priority
-- [ ] Register domain `adanacadvisory.ca` on Porkbun (~$12/yr)
+- [ ] Register domain `adanacalpine.ca` on Porkbun (~$12/yr)
 - [ ] Connect domain to Vercel + SSL
-- [ ] Set up Google Workspace (`sergey@adanacadvisory.ca`)
+- [ ] Set up Google Workspace (`sergey@adanacalpine.ca`)
 - [ ] Create LinkedIn Corporate Page
 
 ### Medium Priority
@@ -24,3 +24,4 @@
 
 ### Low Priority
 - [ ] Activate Vercel Analytics
+- [ ] Mid-September: Review whether to register `adanacalpine.com` as redirect/brand protection

@@ -2,7 +2,7 @@
 
 ## Summary
 
-Make the About section personal — add name, headshot, LinkedIn link. Restore the Scoutloop section. Both changes reinforce that Adanac Advisory is Sergey Pochikovskiy, a solo consultant who also builds things for fun.
+Make the About section personal — add name, headshot, LinkedIn link. Restore the Scoutloop section. Both changes reinforce that Adanac Alpine Advisory is Sergey Pochikovskiy, a solo consultant who also builds things for fun.
 
 ---
 

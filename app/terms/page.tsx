@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — Adanac Advisory',
-  description: 'Terms of service for Adanac Advisory Inc.',
+  title: 'Terms of Service — Adanac Alpine Advisory',
+  description: 'Terms of service for Adanac Alpine Advisory Inc.',
 }
 
 export default function TermsOfService() {
@@ -26,14 +26,14 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-xl font-bold text-navy mb-3">1. Introduction</h2>
             <p>
-              These Terms of Service (&quot;Terms&quot;) govern your use of the Adanac Advisory website and services. By accessing our website or engaging our services, you agree to these Terms.
+              These Terms of Service (&quot;Terms&quot;) govern your use of the Adanac Alpine Advisory website and services. By accessing our website or engaging our services, you agree to these Terms.
             </p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-navy mb-3">2. Services</h2>
             <p>
-              Adanac Advisory Inc. provides IT consulting and digital transformation services to financial services organizations. Specific scope, deliverables, and fees are defined in individual service agreements or statements of work.
+              Adanac Alpine Advisory Inc. provides IT consulting and digital transformation services to financial services organizations. Specific scope, deliverables, and fees are defined in individual service agreements or statements of work.
             </p>
           </section>
 
@@ -50,7 +50,7 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-xl font-bold text-navy mb-3">4. Intellectual Property</h2>
             <p>
-              All content on this website, including text, graphics, logos, and design, is the property of Adanac Advisory Inc. and is protected by copyright law. You may not reproduce or distribute content without written permission.
+              All content on this website, including text, graphics, logos, and design, is the property of Adanac Alpine Advisory Inc. and is protected by copyright law. You may not reproduce or distribute content without written permission.
             </p>
           </section>
 
@@ -64,7 +64,7 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-xl font-bold text-navy mb-3">6. Limitation of Liability</h2>
             <p>
-              Adanac Advisory Inc. provides services on an &quot;as is&quot; basis. We are not liable for any indirect, incidental, or consequential damages arising from the use of our website or services.
+              Adanac Alpine Advisory Inc. provides services on an &quot;as is&quot; basis. We are not liable for any indirect, incidental, or consequential damages arising from the use of our website or services.
             </p>
           </section>
 
@@ -79,8 +79,8 @@ export default function TermsOfService() {
             <h2 className="text-xl font-bold text-navy mb-3">8. Contact</h2>
             <p>
               For questions about these Terms, contact us at{' '}
-              <a href="mailto:sergey@adanacadvisory.ca" className="text-glacier hover:underline focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded focus:outline-none">
-                sergey@adanacadvisory.ca
+              <a href="mailto:sergey@adanacalpine.ca" className="text-glacier hover:underline focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded focus:outline-none">
+                sergey@adanacalpine.ca
               </a>.
             </p>
           </section>

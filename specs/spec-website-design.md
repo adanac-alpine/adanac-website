@@ -1,7 +1,7 @@
 ---
 type: Business Case
 title: Website Design Spec
-description: Landing page website spec for Adanac Advisory — Next.js + Vercel, deployed as adanac-website project.
+description: Landing page website spec for Adanac Alpine Advisory — Next.js + Vercel, deployed as adanac-website project.
 Dependencies: []
 Test_Suite: [tests/components/]
 Status: Final (Jul 2026)
@@ -14,7 +14,7 @@ timestamp: "2026-07-14T00:00:00Z"
 
 ## Executive Summary
 
-Single-page landing page for Adanac Advisory Inc. — a solo IT consulting practice specializing in fintech digital transformation. Modern, clean, professional. Built with Next.js + Vercel.
+Single-page landing page for Adanac Alpine Advisory Inc. — a solo IT consulting practice specializing in fintech digital transformation. Modern, clean, professional. Built with Next.js + Vercel.
 
 ---
 
@@ -22,7 +22,7 @@ Single-page landing page for Adanac Advisory Inc. — a solo IT consulting pract
 
 | Field | Value |
 |-------|-------|
-| Domain | `adanacadvisory.ca` (pending registration) |
+| Domain | `adanacalpine.ca` (pending registration) |
 | Tech Stack | Next.js 15 (App Router) + Tailwind CSS v4 |
 | Hosting | Vercel (free tier) |
 | Analytics | Vercel Analytics |
@@ -197,7 +197,7 @@ Personal project showcase with tech stack logos.
 
 ### SEO
 
-- Meta title: "Adanac Advisory — Digital Enablement for Financial Services"
+- Meta title: "Adanac Alpine Advisory — Digital Enablement for Financial Services"
 - Meta description: "Implementation consulting for credit unions, banks, and FinTechs."
 - Open Graph image
 - Sitemap.xml

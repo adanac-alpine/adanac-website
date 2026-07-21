@@ -33,7 +33,7 @@ export default function Footer() {
                 <AdanacWordmark color="#ffffff" incColor="rgba(255,255,255,0.35)" fontSize={14} showInc={true} />
               </div>
               <p className="text-sm text-white/40 leading-relaxed">
-                Strategic Technology Consulting — British Columbia
+                Elevated Technology Consulting — British Columbia
               </p>
             </StaggerItem>
 
@@ -63,13 +63,13 @@ export default function Footer() {
             <StaggerItem className="md:col-span-4 space-y-3">
               <h4 className="text-xs font-bold uppercase tracking-widest text-white/30">Contact</h4>
               <motion.a
-                href="mailto:sergey@adanacadvisory.ca"
+                href="mailto:sergey@adanacalpine.ca"
                 whileHover={{ x: 4 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 25 }}
                 className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus-visible:ring-offset-navy rounded focus:outline-none"
               >
                 <Mail className="w-4 h-4" strokeWidth={2} />
-                sergey@adanacadvisory.ca
+                sergey@adanacalpine.ca
               </motion.a>
               <motion.a
                 href="https://linkedin.com/in/pochikovskiy"
@@ -96,7 +96,7 @@ export default function Footer() {
         <FadeIn delay={0.3}>
           <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-semibold tracking-wide text-white/30">
             <div>
-              © {currentYear} Adanac Advisory Inc. All rights reserved.
+              © {currentYear} Adanac Alpine Advisory Inc. All rights reserved.
             </div>
             <div className="flex gap-4">
               <a href="/privacy" className="hover:text-white/60 focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus-visible:ring-offset-navy rounded focus:outline-none">Privacy Policy</a>

@@ -89,7 +89,7 @@ export default function Navigation() {
               key="lockup"
               href="#hero"
               onClick={(e) => handleNavClick(e, '#hero')}
-              aria-label="Adanac Advisory home"
+              aria-label="Adanac Alpine Advisory home"
               className="flex items-center focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded-lg focus:outline-none"
               initial={{ opacity: 0, x: -8 }}
               animate={{ opacity: 1, x: 0 }}

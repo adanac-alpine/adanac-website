@@ -1,7 +1,7 @@
 # Bolt's Journal
 
 ## 2026-07-14 - Journal Initialization
-**Learning:** Initializing Bolt's performance optimization journal for the Adanac Advisory website repo.
+**Learning:** Initializing Bolt's performance optimization journal for the Adanac Alpine Advisory website repo.
 **Action:** Keep track of codebase-specific performance patterns and anti-patterns.
 
 ## 2026-07-14 - High-Frequency Scroll Listener Optimization

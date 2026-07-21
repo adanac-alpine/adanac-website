@@ -1,4 +1,4 @@
-# Adanac Advisory Website — Agent Guide
+# Adanac Alpine Advisory Website — Agent Guide
 
 **Read this before touching any code.** Project-specific entry point for AI-assisted work.
 Global workspace rules live in `Projects/AGENTS.md` — this file adds project context on top of those.
@@ -7,11 +7,11 @@ Global workspace rules live in `Projects/AGENTS.md` — this file adds project c
 
 ## Project snapshot
 
-Single-page landing page for Adanac Advisory Inc. — fintech digital transformation consulting. Next.js 15 + Tailwind CSS, deployed to Vercel.
+Single-page landing page for Adanac Alpine Advisory Inc. — fintech digital transformation consulting. Next.js 15 + Tailwind CSS, deployed to Vercel.
 
 - **Frontend:** https://website-nu-one-11.vercel.app (Next.js 15 → Vercel)
 - **Repo:** github.com/Segey-P/adanac-website
-- **Domain:** adanacadvisory.ca (pending registration)
+- **Domain:** adanacalpine.ca (pending registration)
 
 ---
 

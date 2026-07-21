@@ -6,7 +6,7 @@
 # ── Deployment modes ─────────────────────────────────────────────────────────
 #   Auto:    push to main → production deploy
 #   Manual:  Actions → Run workflow → choose environment
-#             - production: deploys to adanacadvisory.ca
+#             - production: deploys to adanacalpine.ca
 #             - preview:    deploys to a one-off preview URL
 #
 # ── Prerequisites ────────────────────────────────────────────────────────────
@@ -121,7 +121,7 @@ jobs:
             exit "$VERCEL_EXIT"
           fi
 
-          URL=$(cat /tmp/vercel_output.txt | grep -Eo 'https://[^ ]+\.(vercel\.app|adanacadvisory\.ca)' | tail -1)
+          URL=$(cat /tmp/vercel_output.txt | grep -Eo 'https://[^ ]+\.(vercel\.app|adanacalpine\.ca)' | tail -1)
           echo "DEPLOYMENT_URL=$URL" >> "$GITHUB_OUTPUT"
           echo "### Production deployment" >> "$GITHUB_STEP_SUMMARY"
           echo "**URL:** $URL" >> "$GITHUB_STEP_SUMMARY"

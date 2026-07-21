@@ -6,12 +6,12 @@ describe('Footer', () => {
   it('renders the copyright notice with current year', () => {
     render(<Footer />)
     const year = new Date().getFullYear()
-    expect(screen.getByText(new RegExp(`${year}.*Adanac Advisory`))).toBeInTheDocument()
+    expect(screen.getByText(new RegExp(`${year}.*Adanac Alpine Advisory`))).toBeInTheDocument()
   })
 
   it('renders the brand tagline', () => {
     render(<Footer />)
-    expect(screen.getByText(/strategic technology consulting/i)).toBeInTheDocument()
+    expect(screen.getByText(/elevated technology consulting/i)).toBeInTheDocument()
   })
 
   it('renders navigation links', () => {
@@ -24,8 +24,8 @@ describe('Footer', () => {
 
   it('renders email contact link', () => {
     render(<Footer />)
-    const emailLink = screen.getByRole('link', { name: /sergey@adanacadvisory.ca/i })
-    expect(emailLink).toHaveAttribute('href', 'mailto:sergey@adanacadvisory.ca')
+    const emailLink = screen.getByRole('link', { name: /sergey@adanacalpine.ca/i })
+    expect(emailLink).toHaveAttribute('href', 'mailto:sergey@adanacalpine.ca')
   })
 
   it('renders LinkedIn link', () => {
