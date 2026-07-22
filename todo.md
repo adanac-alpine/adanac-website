@@ -21,8 +21,6 @@
 
 ### Medium Priority
 - [ ] Set up UptimeRobot free tier monitoring
-- [ ] Expand Privacy Policy page
-- [ ] Expand Terms of Service page
 
 ### Low Priority
 - [ ] Activate Vercel Analytics
