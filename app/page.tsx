@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-white">
       <Navigation />
-      <main>
+      <main id="main-content" tabIndex={-1} className="focus:outline-none">
         <Hero />
         <About />
         <Services />

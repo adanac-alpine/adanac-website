@@ -15,9 +15,9 @@ describe('SocialProof', () => {
 
   it('renders tab buttons for each platform', () => {
     render(<SocialProof />)
-    expect(screen.getByRole('button', { name: /VeriPark/i })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /Backbase/i })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /Salesforce/i })).toBeInTheDocument()
+    expect(screen.getByRole('tab', { name: /VeriPark/i })).toBeInTheDocument()
+    expect(screen.getByRole('tab', { name: /Backbase/i })).toBeInTheDocument()
+    expect(screen.getByRole('tab', { name: /Salesforce/i })).toBeInTheDocument()
   })
 
   it('shows VeriPark cards by default', () => {
@@ -28,21 +28,21 @@ describe('SocialProof', () => {
 
   it('shows Backbase cards after clicking Backbase tab', () => {
     render(<SocialProof />)
-    fireEvent.click(screen.getByRole('button', { name: /Backbase/i }))
+    fireEvent.click(screen.getByRole('tab', { name: /Backbase/i }))
     const cards = screen.getAllByText(/Backbase/i)
     expect(cards.length).toBeGreaterThanOrEqual(1)
   })
 
   it('shows Salesforce cards after clicking Salesforce tab', () => {
     render(<SocialProof />)
-    fireEvent.click(screen.getByRole('button', { name: /^Salesforce$/i }))
+    fireEvent.click(screen.getByRole('tab', { name: /^Salesforce$/i }))
     const matches = screen.getAllByText(/Salesforce Financial Services Cloud/i)
     expect(matches.length).toBeGreaterThanOrEqual(1)
   })
 
   it('mentions requirements coordination in Salesforce tab', () => {
     render(<SocialProof />)
-    fireEvent.click(screen.getByRole('button', { name: /^Salesforce$/i }))
+    fireEvent.click(screen.getByRole('tab', { name: /^Salesforce$/i }))
     expect(screen.getByText(/requirements coordination/i)).toBeInTheDocument()
   })
 })
