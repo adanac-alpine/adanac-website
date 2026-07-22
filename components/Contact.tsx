@@ -90,7 +90,7 @@ export default function Contact() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-xs font-bold uppercase tracking-widest text-navy mb-2">
-                    Name
+                    Name <span className="text-red-500 font-bold" aria-hidden="true">*</span>
                   </label>
                   <motion.input
                     whileFocus={{ scale: 1.01 }}
@@ -100,14 +100,16 @@ export default function Contact() {
                     value={formState.name}
                     onChange={handleChange}
                     placeholder="Your name"
+                    autoComplete="name"
                     required
+                    aria-required="true"
                     className="w-full px-4 py-3 bg-off-white border border-gray-200 rounded-lg text-navy placeholder-medium-gray focus:outline-none focus:border-glacier focus:ring-2 focus:ring-glacier/25 transition-all duration-200"
                   />
                 </div>
 
 <div>
                    <label htmlFor="email" className="block text-xs font-bold uppercase tracking-widest text-navy mb-2">
-                     Email
+                     Email <span className="text-red-500 font-bold" aria-hidden="true">*</span>
                    </label>
                     <motion.input
                       whileFocus={{ scale: 1.01 }}
@@ -117,7 +119,9 @@ export default function Contact() {
                      value={formState.email}
                      onChange={handleChange}
                      placeholder="you@example.com"
+                     autoComplete="email"
                      required
+                     aria-required="true"
                      className="w-full px-4 py-3 bg-off-white border border-gray-200 rounded-lg text-navy placeholder-medium-gray focus:outline-none focus:border-glacier focus:ring-2 focus:ring-glacier/25 transition-all duration-300"
                    />
                  </div>
@@ -125,7 +129,7 @@ export default function Contact() {
 
 <div>
                    <label htmlFor="message" className="block text-xs font-bold uppercase tracking-widest text-navy mb-2">
-                     Message
+                     Message <span className="text-red-500 font-bold" aria-hidden="true">*</span>
                    </label>
                     <motion.textarea
                       whileFocus={{ scale: 1.01 }}
@@ -136,6 +140,7 @@ export default function Contact() {
                      placeholder="Tell me about your project..."
                      rows={5}
                      required
+                     aria-required="true"
                      className="w-full px-4 py-3 bg-off-white border border-gray-200 rounded-lg text-navy placeholder-medium-gray focus:outline-none focus:border-glacier focus:ring-2 focus:ring-glacier/25 transition-all duration-300 resize-none"
                    />
                  </div>

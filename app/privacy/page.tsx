@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-6 md:px-12 py-24 max-w-3xl">
-        <Link href="/" className="text-glacier text-sm font-semibold hover:underline mb-8 inline-block">
+        <Link href="/" className="text-glacier text-sm font-semibold hover:underline mb-8 inline-block focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded focus:outline-none">
           ← Back to home
         </Link>
 
@@ -64,8 +64,14 @@ export default function PrivacyPolicy() {
             <h2 className="text-xl font-bold text-navy mb-3">5. Analytics</h2>
             <p>
               This website uses Vercel Analytics, which collects anonymous usage data (page views, referral sources, general location). Vercel Analytics does not use cookies and does not track individual users. For more information, see{' '}
-              <a href="https://vercel.com/analytics" target="_blank" rel="noopener noreferrer" className="text-glacier hover:underline">
+              <a
+                href="https://vercel.com/analytics"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-glacier hover:underline focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded focus:outline-none"
+              >
                 Vercel Analytics
+                <span className="sr-only"> (opens in a new tab)</span>
               </a>.
             </p>
           </section>
@@ -95,7 +101,10 @@ export default function PrivacyPolicy() {
             <h2 className="text-xl font-bold text-navy mb-3">9. Contact</h2>
             <p>
               For questions about this Privacy Policy, contact us at{' '}
-              <a href="mailto:sergey@adanacadvisory.ca" className="text-glacier hover:underline">
+              <a
+                href="mailto:sergey@adanacadvisory.ca"
+                className="text-glacier hover:underline focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded focus:outline-none"
+              >
                 sergey@adanacadvisory.ca
               </a>.
             </p>

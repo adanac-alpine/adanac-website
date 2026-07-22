@@ -46,10 +46,14 @@ export default function SocialProof() {
         </FadeIn>
 
 <FadeIn>
-           <div className="flex gap-3 mb-10">
+           <div role="tablist" aria-label="Fintech projects track record" className="flex gap-3 mb-10">
              {tabs.map((tab) => (
                <motion.button
                  key={tab}
+                 id={`tab-${tab}`}
+                 role="tab"
+                 aria-selected={activeTab === tab}
+                 aria-controls={`panel-${tab}`}
                  onClick={() => setActiveTab(tab)}
                  whileHover={{ scale: 1.02 }}
                  whileTap={{ scale: 0.98 }}
@@ -67,7 +71,12 @@ export default function SocialProof() {
          </FadeIn>
 
         <StaggerChildren stagger={0.1} key={activeTab}>
-          <div className={`grid gap-6 ${activeProjects.length > 1 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'}`}>
+          <div
+            id={`panel-${activeTab}`}
+            role="tabpanel"
+            aria-labelledby={`tab-${activeTab}`}
+            className={`grid gap-6 ${activeProjects.length > 1 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'}`}
+          >
 {activeProjects.map((client, idx) => (
                <StaggerItem key={idx}>
                  <motion.div

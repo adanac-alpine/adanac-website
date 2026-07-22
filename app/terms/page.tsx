@@ -10,7 +10,7 @@ export default function TermsOfService() {
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-6 md:px-12 py-24 max-w-3xl">
-        <Link href="/" className="text-glacier text-sm font-semibold hover:underline mb-8 inline-block">
+        <Link href="/" className="text-glacier text-sm font-semibold hover:underline mb-8 inline-block focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded focus:outline-none">
           ← Back to home
         </Link>
 
@@ -79,7 +79,7 @@ export default function TermsOfService() {
             <h2 className="text-xl font-bold text-navy mb-3">8. Contact</h2>
             <p>
               For questions about these Terms, contact us at{' '}
-              <a href="mailto:sergey@adanacadvisory.ca" className="text-glacier hover:underline">
+              <a href="mailto:sergey@adanacadvisory.ca" className="text-glacier hover:underline focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded focus:outline-none">
                 sergey@adanacadvisory.ca
               </a>.
             </p>
