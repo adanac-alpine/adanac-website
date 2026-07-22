@@ -47,8 +47,8 @@
   <rect x="100" y="230" width="60" height="4" rx="2" fill="#4a90d9"/>
   
   <!-- Company name -->
-  <text x="100" y="280" font-family="Inter, system-ui, sans-serif" font-size="48" font-weight="700" fill="white" letter-spacing="0.08em">ADANAC</text>
-  <text x="330" y="280" font-family="Inter, system-ui, sans-serif" font-size="48" font-weight="300" fill="white" letter-spacing="0.12em">ADVISORY</text>
+  <text x="100" y="280" font-family="Inter, system-ui, sans-serif" font-size="48" font-weight="700" fill="white" letter-spacing="0.06em">ADANAC ALPINE</text>
+  <text x="430" y="280" font-family="Inter, system-ui, sans-serif" font-size="48" font-weight="300" fill="white" letter-spacing="0.12em">ADVISORY</text>
   
   <!-- Tagline -->
   <text x="100" y="330" font-family="Inter, system-ui, sans-serif" font-size="22" fill="rgba(255,255,255,0.6)">Digital Enablement for Financial Services</text>

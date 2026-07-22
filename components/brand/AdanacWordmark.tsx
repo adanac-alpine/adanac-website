@@ -17,18 +17,18 @@ export default function AdanacWordmark({
 }) {
   return (
     <div style={{ fontFamily: "Inter, sans-serif" }} className={className}>
-      <div style={{ display: "flex", alignItems: "baseline", gap: fontSize * 0.25 }}>
+      <div style={{ display: "flex", alignItems: "baseline", gap: fontSize * 0.2 }}>
         <span
           style={{
             fontSize,
             fontWeight: adanacWeight,
-            letterSpacing: "0.24em",
+            letterSpacing: "0.2em",
             color,
             textTransform: "uppercase",
             lineHeight: 1,
           }}
         >
-          ADANAC
+          ADANAC ALPINE
         </span>
         <span
           style={{
