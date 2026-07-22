@@ -25,3 +25,6 @@
 ### Low Priority
 - [ ] Activate Vercel Analytics
 - [ ] Mid-September: Review whether to register `adanacalpine.com` as redirect/brand protection
+
+## 2027 Roadmap
+- [ ] Q1 2027: Register "Adanac Alpine Advisory" trademark with CIPO (~$640 CAD, Class 35 + 42)
