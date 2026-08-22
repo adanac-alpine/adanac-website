@@ -69,7 +69,7 @@ describe('Contact', () => {
     fillForm()
     fireEvent.click(screen.getByRole('button', { name: /send message/i }))
 
-    expect(await screen.findByText(/something went wrong/i)).toBeInTheDocument()
+    expect(await screen.findByText(/couldn't send message/i)).toBeInTheDocument()
   })
 
   it('shows error message on network failure', async () => {
@@ -79,7 +79,7 @@ describe('Contact', () => {
     fillForm()
     fireEvent.click(screen.getByRole('button', { name: /send message/i }))
 
-    expect(await screen.findByText(/something went wrong/i)).toBeInTheDocument()
+    expect(await screen.findByText(/couldn't send message/i)).toBeInTheDocument()
   })
 
   it('shows "Sending..." while submitting', async () => {

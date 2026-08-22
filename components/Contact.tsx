@@ -13,10 +13,23 @@ export default function Contact() {
   })
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
+  const [fieldErrors, setFieldErrors] = useState<{ email?: string }>({})
+
+  const validateEmail = (email: string): boolean => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return re.test(email)
+  }
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     if (formState.honeypot) return
+
+    if (!validateEmail(formState.email)) {
+      setFieldErrors({ email: 'Please enter a valid email address' })
+      return
+    }
+    setFieldErrors({})
 
     setStatus('submitting')
 
@@ -127,9 +140,9 @@ export default function Contact() {
                     </svg>
                   </motion.div>
                   <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-navy">Something went wrong</h3>
+                    <h3 className="text-2xl font-bold text-navy">Couldn&apos;t send message</h3>
                     <p className="text-dark-gray max-w-sm mx-auto">
-                      Please try again or email me at{' '}
+                      Double-check your email address and try again. If it keeps failing, email me directly at{' '}
                       <a href="mailto:hello@adanacalpine.ca" className="text-glacier font-semibold hover:underline">hello@adanacalpine.ca</a>
                     </p>
                   </div>
@@ -199,6 +212,9 @@ export default function Contact() {
                         aria-required="true"
                         className="w-full px-4 py-3 bg-off-white border border-gray-200 rounded-lg text-navy placeholder-medium-gray focus:outline-none focus:border-glacier focus:ring-2 focus:ring-glacier/25 transition-all duration-300"
                       />
+                      {fieldErrors.email && (
+                        <p className="mt-1.5 text-sm text-red-600" role="alert">{fieldErrors.email}</p>
+                      )}
                     </div>
                   </div>
 
