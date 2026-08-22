@@ -59,7 +59,7 @@ describe('Contact', () => {
       )
     })
 
-    expect(await screen.findByText(/thank you/i)).toBeInTheDocument()
+    expect(await screen.findByText(/message sent!/i)).toBeInTheDocument()
   })
 
   it('shows error message on failed submission', async () => {
@@ -98,7 +98,7 @@ describe('Contact', () => {
 
     resolveFetch({ ok: true } as Response)
 
-    expect(await screen.findByText(/thank you/i)).toBeInTheDocument()
+    expect(await screen.findByText(/message sent!/i)).toBeInTheDocument()
   })
 
   it('does not submit when honeypot is filled (spam bot)', async () => {

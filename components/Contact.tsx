@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { FadeIn } from './animation/FadeIn'
 
 export default function Contact() {
@@ -73,132 +73,175 @@ export default function Contact() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <div className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-100 shadow-lg shadow-gray-100/40">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Honeypot anti-spam field */}
-              <input
-                type="text"
-                name="honeypot"
-                value={formState.honeypot}
-                onChange={handleChange}
-                className="hidden"
-                tabIndex={-1}
-                autoComplete="off"
-                aria-hidden="true"
-              />
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-xs font-bold uppercase tracking-widest text-navy mb-2">
-                    Name <span className="text-red-500 font-bold" aria-hidden="true">*</span>
-                  </label>
-                  <motion.input
-                    whileFocus={{ scale: 1.01 }}
+          <div className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-100 shadow-lg shadow-gray-100/40 min-h-[400px] flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              {status === 'success' ? (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
+                  className="text-center space-y-6 py-8"
+                >
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.15, type: 'spring', stiffness: 200, damping: 15 }}
+                    className="w-16 h-16 mx-auto rounded-full bg-forest/10 flex items-center justify-center"
+                  >
+                    <svg className="w-8 h-8 text-forest" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                  </motion.div>
+                  <div className="space-y-2">
+                    <h3 className="text-2xl font-bold text-navy">Message sent!</h3>
+                    <p className="text-dark-gray max-w-sm mx-auto">
+                      Thanks for reaching out. I&apos;ll get back to you within 24 hours.
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setStatus('idle')}
+                    className="text-glacier font-semibold hover:underline focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded focus:outline-none"
+                  >
+                    Send another message
+                  </button>
+                </motion.div>
+              ) : status === 'error' ? (
+                <motion.div
+                  key="error"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
+                  className="text-center space-y-6 py-8"
+                >
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.15, type: 'spring', stiffness: 200, damping: 15 }}
+                    className="w-16 h-16 mx-auto rounded-full bg-red-50 flex items-center justify-center"
+                  >
+                    <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                    </svg>
+                  </motion.div>
+                  <div className="space-y-2">
+                    <h3 className="text-2xl font-bold text-navy">Something went wrong</h3>
+                    <p className="text-dark-gray max-w-sm mx-auto">
+                      Please try again or email me at{' '}
+                      <a href="mailto:hello@adanacalpine.ca" className="text-glacier font-semibold hover:underline">hello@adanacalpine.ca</a>
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setStatus('idle')}
+                    className="text-glacier font-semibold hover:underline focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded focus:outline-none"
+                  >
+                    Try again
+                  </button>
+                </motion.div>
+              ) : (
+                <motion.form
+                  key="form"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  onSubmit={handleSubmit}
+                  className="space-y-6 w-full"
+                >
+                  {/* Honeypot anti-spam field */}
+                  <input
                     type="text"
-                    id="name"
-                    name="name"
-                    value={formState.name}
+                    name="honeypot"
+                    value={formState.honeypot}
                     onChange={handleChange}
-                    placeholder="Your name"
-                    autoComplete="name"
-                    required
-                    aria-required="true"
-                    className="w-full px-4 py-3 bg-off-white border border-gray-200 rounded-lg text-navy placeholder-medium-gray focus:outline-none focus:border-glacier focus:ring-2 focus:ring-glacier/25 transition-all duration-200"
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
                   />
-                </div>
 
-<div>
-                   <label htmlFor="email" className="block text-xs font-bold uppercase tracking-widest text-navy mb-2">
-                     Email <span className="text-red-500 font-bold" aria-hidden="true">*</span>
-                   </label>
-                    <motion.input
-                      whileFocus={{ scale: 1.01 }}
-                      type="email"
-                     id="email"
-                     name="email"
-                     value={formState.email}
-                     onChange={handleChange}
-                     placeholder="you@example.com"
-                     autoComplete="email"
-                     required
-                     aria-required="true"
-                     className="w-full px-4 py-3 bg-off-white border border-gray-200 rounded-lg text-navy placeholder-medium-gray focus:outline-none focus:border-glacier focus:ring-2 focus:ring-glacier/25 transition-all duration-300"
-                   />
-                 </div>
-              </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-xs font-bold uppercase tracking-widest text-navy mb-2">
+                        Name <span className="text-red-500 font-bold" aria-hidden="true">*</span>
+                      </label>
+                      <motion.input
+                        whileFocus={{ scale: 1.01 }}
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formState.name}
+                        onChange={handleChange}
+                        placeholder="Your name"
+                        autoComplete="name"
+                        required
+                        aria-required="true"
+                        className="w-full px-4 py-3 bg-off-white border border-gray-200 rounded-lg text-navy placeholder-medium-gray focus:outline-none focus:border-glacier focus:ring-2 focus:ring-glacier/25 transition-all duration-200"
+                      />
+                    </div>
 
-<div>
-                   <label htmlFor="message" className="block text-xs font-bold uppercase tracking-widest text-navy mb-2">
-                     Message <span className="text-red-500 font-bold" aria-hidden="true">*</span>
-                   </label>
+                    <div>
+                      <label htmlFor="email" className="block text-xs font-bold uppercase tracking-widest text-navy mb-2">
+                        Email <span className="text-red-500 font-bold" aria-hidden="true">*</span>
+                      </label>
+                      <motion.input
+                        whileFocus={{ scale: 1.01 }}
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formState.email}
+                        onChange={handleChange}
+                        placeholder="you@example.com"
+                        autoComplete="email"
+                        required
+                        aria-required="true"
+                        className="w-full px-4 py-3 bg-off-white border border-gray-200 rounded-lg text-navy placeholder-medium-gray focus:outline-none focus:border-glacier focus:ring-2 focus:ring-glacier/25 transition-all duration-300"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-xs font-bold uppercase tracking-widest text-navy mb-2">
+                      Message <span className="text-red-500 font-bold" aria-hidden="true">*</span>
+                    </label>
                     <motion.textarea
                       whileFocus={{ scale: 1.01 }}
                       id="message"
-                     name="message"
-                     value={formState.message}
-                     onChange={handleChange}
-                     placeholder="Tell me about your project..."
-                     rows={5}
-                     required
-                     aria-required="true"
-                     className="w-full px-4 py-3 bg-off-white border border-gray-200 rounded-lg text-navy placeholder-medium-gray focus:outline-none focus:border-glacier focus:ring-2 focus:ring-glacier/25 transition-all duration-300 resize-none"
-                   />
-                 </div>
+                      name="message"
+                      value={formState.message}
+                      onChange={handleChange}
+                      placeholder="Tell me about your project..."
+                      rows={5}
+                      required
+                      aria-required="true"
+                      className="w-full px-4 py-3 bg-off-white border border-gray-200 rounded-lg text-navy placeholder-medium-gray focus:outline-none focus:border-glacier focus:ring-2 focus:ring-glacier/25 transition-all duration-300 resize-none"
+                    />
+                  </div>
 
-{status === 'success' && (
-                 <motion.div
-                   initial={{ opacity: 0, y: 10 }}
-                   animate={{ opacity: 1, y: 0 }}
-                   exit={{ opacity: 0, y: -10 }}
-                   transition={{ duration: 0.3 }}
-                   role="status"
-                   aria-live="polite"
-                   className="p-4 bg-forest/10 border border-forest text-sm font-semibold rounded-lg text-forest flex items-center gap-3"
-                 >
-                   <svg className="w-5 h-5 shrink-0 text-forest" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
-                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                   </svg>
-                    <span>Thank you! I&apos;ll be in touch.</span>
-                 </motion.div>
-               )}
-
-{status === 'error' && (
-                 <motion.div
-                   initial={{ opacity: 0, y: 10 }}
-                   animate={{ opacity: 1, y: 0 }}
-                   exit={{ opacity: 0, y: -10 }}
-                   transition={{ duration: 0.3 }}
-                   role="status"
-                   aria-live="polite"
-                   className="p-4 bg-red-50 border border-red-200 text-sm font-semibold rounded-lg text-red-700 flex items-center gap-3"
-                 >
-                   <svg className="w-5 h-5 shrink-0 text-red-700" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
-                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                   </svg>
-                    <span>Something went wrong. Please try again or email me at <a href="mailto:hello@adanacalpine.ca" className="underline hover:text-red-800">hello@adanacalpine.ca</a></span>
-                 </motion.div>
-               )}
-
-<motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="submit"
-                 disabled={status === 'submitting'}
-                 className="w-full bg-glacier hover:bg-glacier-600 disabled:bg-glacier/50 text-white font-bold tracking-wide py-4 rounded-xl shadow-lg shadow-glacier/25 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus:outline-none flex items-center justify-center"
-               >
-                 {status === 'submitting' ? (
-                   <>
-                     <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                     </svg>
-                     Sending...
-                   </>
-                 ) : (
-                   'Send Message'
-                 )}
-               </motion.button>
-            </form>
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    type="submit"
+                    disabled={status === 'submitting'}
+                    className="w-full bg-glacier hover:bg-glacier-600 disabled:bg-glacier/50 text-white font-bold tracking-wide py-4 rounded-xl shadow-lg shadow-glacier/25 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus:outline-none flex items-center justify-center"
+                  >
+                    {status === 'submitting' ? (
+                      <>
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </>
+                    ) : (
+                      'Send Message'
+                    )}
+                  </motion.button>
+                </motion.form>
+              )}
+            </AnimatePresence>
           </div>
         </FadeIn>
 
