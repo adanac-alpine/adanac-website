@@ -16,47 +16,49 @@ export default function AdanacWordmark({
   className?: string;
 }) {
   return (
-    <div style={{ fontFamily: "Inter, sans-serif" }} className={className}>
-      <div style={{ display: "flex", alignItems: "baseline", gap: fontSize * 0.2 }}>
-        <span
-          style={{
-            fontSize,
-            fontWeight: adanacWeight,
-            letterSpacing: "0.2em",
-            color,
-            textTransform: "uppercase",
-            lineHeight: 1,
-          }}
-        >
-          ADANAC ALPINE
-        </span>
-        <span
-          style={{
-            fontSize,
-            fontWeight: advisoryWeight,
-            letterSpacing: "0.32em",
-            color,
-            textTransform: "uppercase",
-            lineHeight: 1,
-          }}
-        >
-          ADVISORY
-        </span>
-      </div>
+    <div
+      style={{ fontFamily: "Inter, sans-serif", display: "flex", flexDirection: "column", alignItems: "center" }}
+      className={className}
+    >
+      <span
+        style={{
+          fontSize,
+          fontWeight: adanacWeight,
+          letterSpacing: "0.25em",
+          color,
+          textTransform: "uppercase",
+          lineHeight: 1,
+        }}
+      >
+        ADANAC ALPINE
+      </span>
+      <span
+        style={{
+          fontSize,
+          fontWeight: advisoryWeight,
+          letterSpacing: "0.375em",
+          color,
+          textTransform: "uppercase",
+          lineHeight: 1,
+          marginTop: fontSize * 0.3,
+        }}
+      >
+        ADVISORY
+      </span>
       {showInc && (
-        <div
+        <span
           style={{
-            fontSize: Math.max(9, fontSize * 0.28),
+            fontSize: Math.max(9, fontSize * 0.41),
             fontWeight: 400,
             letterSpacing: "0.5em",
             color: incColor,
             textTransform: "uppercase",
-            textAlign: "center",
+            lineHeight: 1,
             marginTop: fontSize * 0.18,
           }}
         >
           INC.
-        </div>
+        </span>
       )}
     </div>
   );
