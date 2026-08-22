@@ -72,6 +72,20 @@ export default function Footer() {
                 hello@adanacalpine.ca
               </motion.a>
               <motion.a
+                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2-uqu7N6XDmRh6YG01wJm1ggXnLWzK6kptbhlaTtyf4ZV40N3MzazV6-RHMKzafAS4MFy1uv2U?gv=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: 4 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus-visible:ring-offset-navy rounded focus:outline-none"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                </svg>
+                Book a meeting
+                <span className="sr-only">(opens in a new tab)</span>
+              </motion.a>
+              <motion.a
                 href="https://linkedin.com/in/pochikovskiy"
                 target="_blank"
                 rel="noopener noreferrer"
