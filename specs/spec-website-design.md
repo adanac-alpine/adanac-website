@@ -22,13 +22,13 @@ Single-page landing page for Adanac Alpine Advisory Inc. — a solo IT consultin
 
 | Field | Value |
 |-------|-------|
-| Domain | `adanacalpine.ca` (pending registration) |
+| Domain | `adanacalpine.ca` (registered, DNS configured) |
 | Tech Stack | Next.js 15 (App Router) + Tailwind CSS v4 |
 | Hosting | Vercel (free tier) |
 | Analytics | Vercel Analytics |
 | Type | Single-page scroll (11 sections) |
 | Vercel Project | `adanac-website` |
-| Production URL | https://website-nu-one-11.vercel.app |
+| Production URL | https://www.adanacalpine.ca |
 
 ---
 
@@ -255,5 +255,5 @@ Personal project showcase with tech stack logos.
 | Testing | ✅ Done | All tests pass |
 | SEO | ✅ Done | Sitemap, OG, meta |
 | Sentry | ✅ Done | Error monitoring |
-| Deploy | ✅ Done | Production live |
-| Domain | 📅 Planned | Pending registration |
+| Deploy | ✅ Done | Vercel auto-deploy on push to main |
+| Domain | ✅ Done | adanacalpine.ca registered, www → Vercel |

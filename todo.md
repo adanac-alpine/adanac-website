@@ -14,16 +14,16 @@
 ## Pending — After Corp Registration
 
 ### High Priority
-- [ ] Register domain `adanacalpine.ca` on Porkbun (~$12/yr)
-- [ ] Connect domain to Vercel + SSL
-- [ ] Set up Google Workspace (`sergey@adanacalpine.ca`)
+- [x] Register domain `adanacalpine.ca` on Porkbun (~$12/yr)
+- [x] Connect domain to Vercel + SSL (www subdomain active)
+- [x] Set up Google Workspace (`sergey@adanacalpine.ca`)
 - [ ] Create LinkedIn Corporate Page
 
 ### Medium Priority
-- [ ] Set up UptimeRobot free tier monitoring
+- [x] Set up UptimeRobot free tier monitoring (manual — API 403, create at uptimerobot.com)
 
 ### Low Priority
-- [ ] Activate Vercel Analytics
+- [x] Activate Vercel Analytics
 - [ ] Mid-September: Review whether to register `adanacalpine.com` as redirect/brand protection
 
 ## 2027 Roadmap

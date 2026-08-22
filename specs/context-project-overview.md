@@ -18,7 +18,7 @@ Single-page landing page for Adanac Alpine Advisory Inc. — a solo IT consultin
 
 - **Frontend:** https://website-nu-one-11.vercel.app (Next.js 15 → Vercel)
 - **Repo:** github.com/Segey-P/adanac-website
-- **Domain:** adanacalpine.ca (pending registration)
+- **Domain:** adanacalpine.ca (registered, DNS configured)
 
 ---
 
@@ -96,18 +96,13 @@ WhatIBring → TechStack → Scoutloop → Contact → Footer
 
 ## Deployment
 
-### Current (CLI)
+### Current
 
-Vercel-GitHub integration is broken (no webhook). Deploy via CLI:
+Vercel-GitHub integration active. Push to `main` → auto-deploy production. PR branches → preview deployments.
 
-```bash
-npm run build && vercel --prod --yes
-```
+### Auto-deploy
 
-### Auto-deploy (broken)
-
-GitHub has zero webhooks. `vercel git connect` reports connected but webhook not created.
-Needs browser OAuth re-authorization at `https://github.com/settings/installations`.
+Vercel-GitHub integration is active. Pushes to `main` auto-deploy to production. PR previews work on non-main branches.
 
 ---
 
@@ -115,7 +110,7 @@ Needs browser OAuth re-authorization at `https://github.com/settings/installatio
 
 | Resource | URL |
 |----------|-----|
-| Production | https://website-nu-one-11.vercel.app |
+| Production | https://www.adanacalpine.ca |
 | Vercel Dashboard | https://vercel.com/segey-ps-projects/adanac-website |
 | GitHub Repo | https://github.com/Segey-P/adanac-website |
 | Formspree Endpoint | https://formspree.io/f/xbjnkygq |
@@ -124,9 +119,7 @@ Needs browser OAuth re-authorization at `https://github.com/settings/installatio
 
 ## Hard Rules
 
-1. **Deploy via CLI only** — `vercel --prod --yes` (GitHub integration broken)
-2. **No structural changes without approval** — component reordering, new sections, dependency additions
-3. **Tests must pass before commit** — `npm run test -- --run`
-4. **Build must pass before deploy** — `npm run build`
-5. **Anonymize client names** — never mention YNCU, Sunrise, or other client names in copy
-6. **This file is locked** — do not modify without explicit approval
+1. **Tests must pass before commit** — `npm run test -- --run`
+2. **Build must pass before deploy** — `npm run build`
+3. **Anonymize client names** — never mention YNCU, Sunrise, or other client names in copy
+4. **This file is locked** — do not modify without explicit approval
