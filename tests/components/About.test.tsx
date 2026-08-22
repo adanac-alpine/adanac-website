@@ -55,4 +55,15 @@ describe('About', () => {
     const matches = screen.getAllByText(/CBAP/)
     expect(matches.length).toBeGreaterThanOrEqual(1)
   })
+
+  it('lists PMP certification above CBAP', () => {
+    render(<About />)
+    const pmp = screen.getByText(/PMP/)
+    expect(pmp).toBeInTheDocument()
+    const certifications = screen.getByText('Certifications')
+    const pmpItem = pmp.closest('[class*="flex"]')
+    const cbapItem = screen.getByText(/CBAP/).closest('[class*="flex"]')
+    expect(pmpItem).toBeTruthy()
+    expect(cbapItem).toBeTruthy()
+  })
 })
