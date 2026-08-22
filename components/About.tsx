@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { FadeIn, StaggerChildren, StaggerItem } from './animation/FadeIn'
 
 const LOGO_MAP: Record<string, { src: string; width: number; height: number }> = {
+  pmp: { src: '/logos/certs/pmp.png', width: 680, height: 680 },
   cbap: { src: '/logos/certs/cbap.png', width: 400, height: 400 },
   cspo: { src: '/logos/certs/cspo.png', width: 757, height: 765 },
   backbase: { src: '/logos/certs/backbase.jpg', width: 474, height: 474 },
@@ -28,6 +29,7 @@ const CREDENTIAL_GROUPS_DATA = [
   {
     title: 'Certifications',
     items: [
+      { text: 'PMP® (Project Management Professional)', logo: 'pmp' },
       { text: 'CBAP (Certified Business Analysis Professional)', logo: 'cbap' },
       { text: 'CSPO (Certified Scrum Product Owner)', logo: 'cspo' },
       { text: 'Backbase Certified Consultant', logo: 'backbase' },
