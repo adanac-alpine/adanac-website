@@ -72,7 +72,7 @@ export default function Footer() {
                 hello@adanacalpine.ca
               </motion.a>
               <motion.a
-                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2-uqu7N6XDmRh6YG01wJm1ggXnLWzK6kptbhlaTtyf4ZV40N3MzazV6-RHMKzafAS4MFy1uv2U?gv=true"
+                href="https://calendar.app.google/vDV9rooe9Ghp37Ls6"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ x: 4 }}

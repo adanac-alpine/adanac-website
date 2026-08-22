@@ -251,7 +251,7 @@ export default function Contact() {
               Prefer to book a time directly?
             </p>
             <a
-              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2-uqu7N6XDmRh6YG01wJm1ggXnLWzK6kptbhlaTtyf4ZV40N3MzazV6-RHMKzafAS4MFy1uv2U?gv=true"
+              href="https://calendar.app.google/vDV9rooe9Ghp37Ls6"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-glacier font-semibold hover:underline focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded focus:outline-none"
