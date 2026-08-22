@@ -30,8 +30,8 @@ const CREDENTIAL_GROUPS_DATA = [
     title: 'Certifications',
     items: [
       { text: 'PMP® (Project Management Professional)', logo: 'pmp' },
-      { text: 'CBAP (Certified Business Analysis Professional)', logo: 'cbap' },
-      { text: 'CSPO (Certified Scrum Product Owner)', logo: 'cspo' },
+      { text: 'CBAP® (Certified Business Analysis Professional)', logo: 'cbap' },
+      { text: 'CSPO® (Certified Scrum Product Owner)', logo: 'cspo' },
       { text: 'Backbase Certified Consultant', logo: 'backbase' },
       { text: 'Salesforce Certified Administrator', logo: 'sfadmin' },
     ],
