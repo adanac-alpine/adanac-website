@@ -79,8 +79,8 @@ export default function TermsOfService() {
             <h2 className="text-xl font-bold text-navy mb-3">8. Contact</h2>
             <p>
               For questions about these Terms, contact us at{' '}
-              <a href="mailto:sergey@adanacalpine.ca" className="text-glacier hover:underline focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded focus:outline-none">
-                sergey@adanacalpine.ca
+              <a href="mailto:hello@adanacalpine.ca" className="text-glacier hover:underline focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded focus:outline-none">
+                hello@adanacalpine.ca
               </a>.
             </p>
           </section>

@@ -19,7 +19,7 @@ export default function WhatIBring() {
     },
     {
       title: 'Coaching & Team Building',
-      description: "I've hired and coached new consultants at Modes. I help your team build internal capability, not dependency.",
+      description: "I've worked closely with and coached high-performing delivery teams. I help your team build internal capability, not dependency.",
       icon: <GraduationCap className="w-6 h-6" strokeWidth={1.5} />,
     },
     {

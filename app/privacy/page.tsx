@@ -102,10 +102,10 @@ export default function PrivacyPolicy() {
             <p>
               For questions about this Privacy Policy, contact us at{' '}
               <a
-                href="mailto:sergey@adanacalpine.ca"
+                href="mailto:hello@adanacalpine.ca"
                 className="text-glacier hover:underline focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded focus:outline-none"
               >
-                sergey@adanacalpine.ca
+                hello@adanacalpine.ca
               </a>.
             </p>
           </section>

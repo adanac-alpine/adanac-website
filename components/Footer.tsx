@@ -63,13 +63,13 @@ export default function Footer() {
             <StaggerItem className="md:col-span-4 space-y-3">
               <h4 className="text-xs font-bold uppercase tracking-widest text-white/30">Contact</h4>
               <motion.a
-                href="mailto:sergey@adanacalpine.ca"
+                href="mailto:hello@adanacalpine.ca"
                 whileHover={{ x: 4 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 25 }}
                 className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus-visible:ring-offset-navy rounded focus:outline-none"
               >
                 <Mail className="w-4 h-4" strokeWidth={2} />
-                sergey@adanacalpine.ca
+                hello@adanacalpine.ca
               </motion.a>
               <motion.a
                 href="https://linkedin.com/in/pochikovskiy"

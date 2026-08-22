@@ -25,7 +25,7 @@ describe('WhatIBring', () => {
     render(<WhatIBring />)
     expect(screen.getByText(/RAID management/i)).toBeInTheDocument()
     expect(screen.getByText(/don't just advise/i)).toBeInTheDocument()
-    expect(screen.getByText(/hired and coached/i)).toBeInTheDocument()
+    expect(screen.getByText(/worked closely with and coached/i)).toBeInTheDocument()
     expect(screen.getByText(/english and russian/i)).toBeInTheDocument()
   })
 

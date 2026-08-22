@@ -23,8 +23,8 @@ export default function Home() {
         <Process />
         <ToolsWorkflow />
         <WhatIBring />
-        <Scoutloop />
         <Contact />
+        <Scoutloop />
       </main>
       <Footer />
     </div>

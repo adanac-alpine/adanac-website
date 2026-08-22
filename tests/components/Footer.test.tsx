@@ -24,8 +24,8 @@ describe('Footer', () => {
 
   it('renders email contact link', () => {
     render(<Footer />)
-    const emailLink = screen.getByRole('link', { name: /sergey@adanacalpine.ca/i })
-    expect(emailLink).toHaveAttribute('href', 'mailto:sergey@adanacalpine.ca')
+    const emailLink = screen.getByRole('link', { name: /hello@adanacalpine.ca/i })
+    expect(emailLink).toHaveAttribute('href', 'mailto:hello@adanacalpine.ca')
   })
 
   it('renders LinkedIn link', () => {
