@@ -44,23 +44,9 @@ Remaining components (SocialProof, Process, TechStack, ToolsWorkflow, WhatIBring
 
 ## CI/CD
 
-GitHub Actions workflow (`.github/workflows/deploy.yml`):
+GitHub Actions workflow (`.github/workflows/deploy.yml`) runs CI only: lint → typecheck → build → tests on every push/PR to `main`.
 
-| Trigger | What happens |
-|---------|-------------|
-| Push to `main` | Lint → Test → Deploy to Vercel (production) |
-| Pull request to `main` | Lint → Test (no deploy) |
-| Manual dispatch | Choose production or preview deploy |
-
-### Required GitHub Secrets
-
-Set in repo Settings → Secrets and variables → Actions:
-
-| Secret | Value |
-|--------|-------|
-| `VERCEL_TOKEN` | Vercel dashboard → Settings → Tokens |
-| `VERCEL_ORG_ID` | `team_PFN8aBk4T3KzjhaUoFIDJ5Az` |
-| `VERCEL_PROJECT_ID` | `prj_S92QOUmkhhnQtcJeSOFBYZtkz3qX` |
+Production deploys are handled by the native Vercel-GitHub integration (project linked to `adanac-alpine/adanac-website`, productionBranch `main`). Push to `main` → Vercel auto-deploys. Use `vercel --prod --yes` only for urgent hotfixes.
 
 ## Project Structure
 
