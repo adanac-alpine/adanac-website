@@ -17,7 +17,7 @@ timestamp: "2026-07-14T00:00:00Z"
 Single-page landing page for Adanac Alpine Advisory Inc. — a solo IT consulting practice specializing in fintech digital transformation. Modern, clean, professional. Built with Next.js + Vercel.
 
 - **Frontend:** https://website-nu-one-11.vercel.app (Next.js 15 → Vercel)
-- **Repo:** github.com/Segey-P/adanac-website
+- **Repo:** github.com/adanac-alpine/adanac-website
 - **Domain:** adanacalpine.ca (registered, DNS configured)
 
 ---
@@ -112,7 +112,7 @@ Vercel-GitHub integration is active. Pushes to `main` auto-deploy to production.
 |----------|-----|
 | Production | https://www.adanacalpine.ca |
 | Vercel Dashboard | https://vercel.com/segey-ps-projects/adanac-website |
-| GitHub Repo | https://github.com/Segey-P/adanac-website |
+| GitHub Repo | https://github.com/adanac-alpine/adanac-website |
 | Formspree Endpoint | https://formspree.io/f/xbjnkygq |
 
 ---

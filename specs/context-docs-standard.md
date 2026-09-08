@@ -87,7 +87,7 @@ Use `resource:` to link a spec to its live deployed asset. Reference table per p
 |---|---|
 | Frontend app | `https://website-nu-one-11.vercel.app` |
 | Vercel project | `https://vercel.com/segey-ps-projects/adanac-website` |
-| Repo | `https://github.com/Segey-P/adanac-website` |
+| Repo | `https://github.com/adanac-alpine/adanac-website` |
 
 ---
 

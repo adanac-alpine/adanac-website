@@ -11,7 +11,7 @@ Single-page landing page for Adanac Alpine Advisory Inc. — fintech digital tra
 
 - **Frontend:** https://website-nu-one-11.vercel.app (Next.js 15 → Vercel)
 - **Repo:** github.com/adanac-alpine/adanac-website
-- **Domain:** adanacalpine.ca (pending registration)
+- **Domain:** adanacalpine.ca (registered)
 
 ---
 
