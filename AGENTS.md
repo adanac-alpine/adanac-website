@@ -10,7 +10,7 @@ Global workspace rules live in `Projects/AGENTS.md` — this file adds project c
 Single-page landing page for Adanac Alpine Advisory Inc. — fintech digital transformation consulting. Next.js 15 + Tailwind CSS, deployed to Vercel.
 
 - **Frontend:** https://website-nu-one-11.vercel.app (Next.js 15 → Vercel)
-- **Repo:** github.com/Segey-P/adanac-website
+- **Repo:** github.com/adanac-alpine/adanac-website
 - **Domain:** adanacalpine.ca (pending registration)
 
 ---
