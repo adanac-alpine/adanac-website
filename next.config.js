@@ -3,6 +3,9 @@ const { withSentryConfig } = require('@sentry/nextjs')
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    serverComponentsExternalPackages: ['@sentry/server-utils', '@apm-js-collab/tracing-hooks'],
+  },
 }
 
 module.exports = withSentryConfig(nextConfig, {
