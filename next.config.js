@@ -11,6 +11,10 @@ module.exports = withSentryConfig(nextConfig, {
   project: 'javascript-nextjs',
   widenClientFileUpload: true,
   hideSourceMaps: true,
-  disableLogger: true,
-  automaticVercelMonitors: true,
+  webpack: {
+    treeshake: {
+      removeDebugLogging: true,
+    },
+    automaticVercelMonitors: true,
+  },
 })
