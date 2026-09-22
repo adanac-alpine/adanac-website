@@ -6,3 +6,6 @@
 
 ## Feature Specs
 * [Website Design Spec](spec-website-design.md) — Landing page design, sections, technical requirements, and implementation status.
+
+## Infrastructure Specs
+* [Email Authentication (SPF / DKIM / DMARC)](spec-email-authentication.md) — Domain email-authentication records and the decision to keep DNS at Porkbun.
