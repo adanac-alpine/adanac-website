@@ -7,5 +7,8 @@
 ## Feature Specs
 * [Website Design Spec](spec-website-design.md) — Landing page design, sections, technical requirements, and implementation status.
 
+## Plans
+* [Next.js 16 Migration](plan-next16-migration.md) — Sequenced plan to move from Next.js 14.2 / React 18 to Next.js 16 / React 19.
+
 ## Infrastructure Specs
 * [Email Authentication (SPF / DKIM / DMARC)](spec-email-authentication.md) — Domain email-authentication records and the decision to keep DNS at Porkbun.
