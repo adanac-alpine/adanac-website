@@ -50,14 +50,7 @@ export default function WhatIBring() {
              {differentiators.map((item, idx) => (
                <StaggerItem key={idx}>
                  <motion.div
-                   whileHover={{ 
-                     y: -4,
-                     boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.08)',
-                     borderColor: 'rgba(74, 144, 217, 0.3)'
-                   }}
-                   whileTap={{ scale: 0.98 }}
-                   transition={{ duration: 0.3, type: 'spring', stiffness: 300, damping: 30 }}
-                   className="space-y-4 border rounded-xl border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-glacier/30"
+                   className="space-y-4 border rounded-xl border-white/10 bg-white/5 backdrop-blur-sm p-6"
                  >
                    <motion.div
                      whileHover={{ scale: 1.05 }}

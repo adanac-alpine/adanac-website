@@ -78,14 +78,7 @@ export default function Services() {
 {SERVICES_DATA.map((service, idx) => (
                <FadeIn key={idx} delay={idx * 0.15}>
                  <motion.div
-                   whileHover={{ 
-                     y: -4,
-                     boxShadow: '0 20px 40px -12px rgba(74, 144, 217, 0.15)',
-                     borderColor: 'rgba(74, 144, 217, 0.3)'
-                   }}
-                   whileTap={{ scale: 0.98 }}
-                   transition={{ duration: 0.4, type: 'spring', stiffness: 300, damping: 30 }}
-                   className="group bg-off-white rounded-2xl p-8 border border-gray-100 hover:border-glacier/30 transition-all duration-300 flex flex-col h-full"
+                   className="group bg-off-white rounded-2xl p-8 border border-gray-100 flex flex-col h-full"
                  >
                    <div className="space-y-6">
                      <motion.div

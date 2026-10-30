@@ -47,6 +47,12 @@ module.exports = {
           800: '#122a20',
           900: '#091510',
         },
+        // Neutrals mirror the --color-* tokens in app/globals.css
+        'off-white': '#f8f9fa',
+        'light-gray': '#e5e7eb',
+        'medium-gray': '#6b7280',
+        'dark-gray': '#374151',
+        'near-black': '#111827',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

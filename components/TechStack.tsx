@@ -39,7 +39,7 @@ export default function TechStack() {
     { name: 'Microsoft Azure', description: 'Cloud Infrastructure', logo: 'azure', label: 'Azure' },
     { name: 'Fiserv DNA', description: 'Core Banking Integration', logo: 'fiserv', label: 'Fiserv' },
     { name: 'Central 1', description: 'Canadian Payments', logo: 'central1', label: 'Central 1' },
-    { name: 'Azure DevOps', description: 'CI/CD & Project Tracking', logo: 'azuredevops', label: 'Azure DevOps' },
+    { name: 'Azure DevOps', description: 'CI/CD & Project Tracking', logo: 'azure-devops', label: 'Azure DevOps' },
   ]
 
   return (
