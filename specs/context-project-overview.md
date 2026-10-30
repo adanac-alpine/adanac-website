@@ -3,7 +3,7 @@ type: Context
 title: Project Overview
 description: Authoritative overview of Adanac Alpine Advisory website — tech stack, architecture, deployment, and constraints.
 tags: [overview, context, project, tech-stack]
-timestamp: "2026-07-14T00:00:00Z"
+timestamp: "2026-10-30T00:00:00Z"
 ---
 
 # Project Overview
@@ -16,7 +16,7 @@ timestamp: "2026-07-14T00:00:00Z"
 
 Single-page landing page for Adanac Alpine Advisory Inc. — a solo IT consulting practice specializing in fintech digital transformation. Modern, clean, professional. Built with Next.js + Vercel.
 
-- **Frontend:** https://website-nu-one-11.vercel.app (Next.js 15 → Vercel)
+- **Frontend:** https://website-nu-one-11.vercel.app (Next.js → Vercel)
 - **Repo:** github.com/adanac-alpine/adanac-website
 - **Domain:** adanacalpine.ca (registered, DNS configured)
 
@@ -24,16 +24,19 @@ Single-page landing page for Adanac Alpine Advisory Inc. — a solo IT consultin
 
 ## Tech Stack
 
+The single source of truth for versions — AGENTS.md and other docs stay version-free.
+
 | Layer | Technology | Version |
 |-------|-----------|---------|
-| Framework | Next.js (App Router) | 15.x |
+| Framework | Next.js (App Router, Turbopack builds) | 16.x |
 | UI | React | 19.x |
-| Styling | Tailwind CSS | 4.x |
-| Animation | Framer Motion | 11.x |
+| Styling | Tailwind CSS | 3.4.x |
+| Animation | Framer Motion | 12.x |
 | Testing | Vitest + React Testing Library | latest |
-| Linting | ESLint | latest |
+| Linting | ESLint (flat config, `eslint .`) | 9.x |
 | Icons | Lucide React | latest |
-| Error Monitoring | Sentry | latest |
+| Error Monitoring | Sentry (`@sentry/nextjs`) | 10.x |
+| Runtime | Node.js (CI + Vercel) | 22 LTS |
 | Hosting | Vercel (free tier) | — |
 
 ---

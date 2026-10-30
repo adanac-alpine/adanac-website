@@ -6,7 +6,7 @@ Module: Platform
 Business_Case_Stage: Maintenance
 Dependencies: [context-project-overview, spec-website-design]
 Test_Suite: [tests/components/]
-Status: Approved (Oct 2026) — pending AGENTS.md wording approval
+Status: In progress (Oct 2026) — implemented on chore/next-16, verifying
 tags: [nextjs, react, upgrade, dependencies, plan]
 timestamp: "2026-10-30T00:00:00Z"
 ---
@@ -66,15 +66,15 @@ One branch `chore/next-16`, three commits so any step can be bisected or reverte
 
 ## 3. Verification (before merging)
 
-- [ ] `npm run test -- --run` — all tests pass (currently 75); no new React 19 `act` warnings
-- [ ] `npm run build` and `npm run lint` pass locally and in CI
+- [x] `npm run test -- --run` — all tests pass (currently 75); no new React 19 `act` warnings
+- [x] `npm run build` and `npm run lint` pass locally (CI: on the PR)
 - [ ] Vercel preview: home, `/privacy`, `/terms`, a 404, all sections render; Inter (incl. 300),
       logos, headshot, Hero and Track Record animations, Tools marquee
 - [ ] Contact form submits (Formspree) from the preview
 - [ ] Sentry: `/sentry-example-page` error shows in Sentry from the preview (client and server)
 - [ ] Vercel Analytics records a page view on the preview
-- [ ] Before/after screenshots of each section match (no visual changes intended)
-- [ ] Design sync re-run (`.design-sync/NOTES.md`): bundle now vendors React 19; check all 18 cards
+- [x] Before/after screenshots of each section match (no visual changes intended)
+- [x] Design sync re-run (`.design-sync/NOTES.md`): bundle now vendors React 19; check all 18 cards
 
 ## 4. Rollback
 

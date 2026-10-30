@@ -1,4 +1,4 @@
-const { withSentryConfig } = require('@sentry/nextjs')
+const { withSentryConfig } = require('@sentry/nextjs/config')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -11,11 +11,8 @@ module.exports = withSentryConfig(nextConfig, {
   org: 'team_PFN8aBk4T3KzjhaUoFIDJ5Az',
   project: 'javascript-nextjs',
   widenClientFileUpload: true,
-  hideSourceMaps: true,
-  webpack: {
-    treeshake: {
-      removeDebugLogging: true,
-    },
-    automaticVercelMonitors: true,
+  // Bundler-agnostic replacement for webpack.treeshake.removeDebugLogging (Turbopack is the default).
+  bundleSizeOptimizations: {
+    excludeDebugStatements: true,
   },
 })
