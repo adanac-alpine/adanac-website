@@ -1,0 +1,3 @@
+/* Design-sync stylesheet: Inter (the site loads it via next/font) + the site's compiled Tailwind + tokens. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import '../app/globals.css';

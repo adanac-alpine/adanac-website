@@ -18,11 +18,6 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.4, 0.25, 1] as const } },
 }
 
-const line = {
-  hidden: { scaleX: 0 },
-  visible: { scaleX: 1, transition: { duration: 0.8, ease: [0.25, 0.4, 0.25, 1] as const } },
-}
-
 export default function Hero() {
   const handleScrollToContact = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
@@ -45,16 +40,14 @@ export default function Hero() {
         variants={container}
         initial="hidden"
         animate="visible"
-        className="relative z-10 flex flex-col items-center gap-8 text-center max-w-4xl px-6"
+        className="relative z-10 flex flex-col items-center gap-6 text-center max-w-4xl px-6"
       >
         <motion.div variants={item}>
-          <AdanacMark size={120} tile={false} fill="#ffffff" />
+          <AdanacMark size={72} tile={false} fill="#ffffff" />
         </motion.div>
 
-        <motion.div variants={line} className="w-px h-8 bg-white/20" />
-
         <motion.div variants={item}>
-          <AdanacWordmark color="#ffffff" incColor="rgba(255,255,255,0.35)" fontSize={24} />
+          <AdanacWordmark color="#ffffff" incColor="rgba(255,255,255,0.35)" fontSize={18} />
         </motion.div>
 
         <motion.h1

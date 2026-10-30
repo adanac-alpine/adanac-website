@@ -51,7 +51,7 @@ Light, clean, modern — similar to Aequilibrium's approachability with Modes' p
 ### Typography
 
 - **Font:** Inter (Google Fonts)
-- **Weights:** 400 (body), 500 (emphasis), 600 (subheadings), 700 (headings), 800 (hero)
+- **Weights:** 300 (wordmark "ADVISORY"), 400 (body), 500 (emphasis), 600 (subheadings), 700 (headings), 800 (hero)
 - **Headings:** Inter 700, navy `#1a2332`
 - **Body:** Inter 400, dark gray `#333333`
 - **Links:** Glacier Blue `#4a90d9`
@@ -87,6 +87,9 @@ Light, clean, modern — similar to Aequilibrium's approachability with Modes' p
 
 **Layout:** Full viewport height, centered content, subtle mountain background
 
+**Lockup:** 72px mark above an 18px wordmark (no divider), kept compact so the headline and CTAs
+sit above the fold on a 13" laptop.
+
 **Content:**
 - **Headline:** Launch your digital banking platform.
 - **Subtitle:** Implementation consulting for credit unions, banks, and FinTechs.
@@ -120,9 +123,10 @@ Light, clean, modern — similar to Aequilibrium's approachability with Modes' p
 
 ### 4. SocialProof (Track Record)
 
-**Layout:** Tabbed showcase (VeriPark / Backbase / Salesforce)
+**Layout:** 3-column grid of all engagements (VeriPark / Backbase / Salesforce)
 
-Shows relevant projects per platform. Tabs switch content with stagger animation.
+Every project is visible at once; each card's badge names its platform. Cards stagger in and
+are not interactive (no hover lift), since they aren't links.
 
 ---
 
