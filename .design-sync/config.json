@@ -1,0 +1,118 @@
+{
+  "projectId": "a4f89e9c-e34e-4389-a928-94733b5921f3",
+  "shape": "package",
+  "pkg": "adanac-advisory",
+  "globalName": "AdanacDS",
+  "buildCmd": "node .design-sync/gen-assets.mjs && npx tailwindcss -c .design-sync/tailwind.config.js -i .design-sync/ds.css -o .design-sync/.cache/tailwind.css",
+  "srcDir": "components",
+  "tsconfig": ".design-sync/tsconfig.json",
+  "cssEntry": ".design-sync/.cache/tailwind.css",
+  "componentSrcMap": {
+    "AdanacMark": "components/brand/AdanacMark.tsx",
+    "AdanacWordmark": "components/brand/AdanacWordmark.tsx",
+    "TrianglePattern": "components/brand/TrianglePattern.tsx",
+    "FadeIn": "components/animation/FadeIn.tsx",
+    "StaggerChildren": "components/animation/FadeIn.tsx",
+    "StaggerItem": "components/animation/FadeIn.tsx",
+    "Navigation": "components/Navigation.tsx",
+    "Hero": "components/Hero.tsx",
+    "About": "components/About.tsx",
+    "WhatIBring": "components/WhatIBring.tsx",
+    "Services": "components/Services.tsx",
+    "Process": "components/Process.tsx",
+    "TechStack": "components/TechStack.tsx",
+    "ToolsWorkflow": "components/ToolsWorkflow.tsx",
+    "Scoutloop": "components/Scoutloop.tsx",
+    "SocialProof": "components/SocialProof.tsx",
+    "Contact": "components/Contact.tsx",
+    "Footer": "components/Footer.tsx"
+  },
+  "dtsPropsFor": {
+    "AdanacMark": "/** Pixel size of the square SVG. @default 200 */ size?: number; /** Glyph colour. @default \"#ffffff\" */ fill?: string; /** Tile background colour. @default \"#1a2332\" (navy) */ bg?: string; /** Draw the rounded background tile; false = bare glyph on transparent. @default true */ tile?: boolean; /** Tile corner radius as a fraction of size. @default 0.09 */ tileRadius?: number; className?: string;",
+    "AdanacWordmark": "/** Main text colour. @default \"#1a2332\" (navy) */ color?: string; /** Colour of the INC. line. @default \"#6b7280\" */ incColor?: string; /** Font weight of ADANAC ALPINE. @default 700 */ adanacWeight?: number; /** Font weight of ADVISORY. @default 300 */ advisoryWeight?: number; /** Base font size in px; other lines scale from it. @default 32 */ fontSize?: number; /** Show the INC. line. @default true */ showInc?: boolean; className?: string;",
+    "TrianglePattern": "/** \"dark\" = white strokes for navy backgrounds; \"light\" = navy strokes for light backgrounds. @default \"dark\" */ variant?: \"dark\" | \"light\"; /** Stroke opacity. @default 0.08 */ opacity?: number; /** Size/position it, e.g. \"absolute inset-0 w-full h-full\" - the SVG has no intrinsic size. */ className?: string;",
+    "FadeIn": "children: React.ReactNode; /** Seconds before the animation starts. @default 0 */ delay?: number; /** Seconds. @default 0.6 */ duration?: number; /** Initial y offset (px). @default 20 */ y?: number; /** Initial x offset (px). @default 0 */ x?: number; /** Initial scale. @default 0.9 */ scale?: number; /** Initial opacity. @default 0 */ opacity?: number; /** Initial rotation (deg). @default 0 */ rotate?: number; origin?: string; className?: string; /** Animate only the first time it scrolls into view. @default true */ once?: boolean;",
+    "StaggerChildren": "children: React.ReactNode; stagger?: number; /** @default 0 */ delay?: number; /** @default 0.5 */ duration?: number; /** @default 20 */ y?: number; className?: string; /** @default true */ once?: boolean;",
+    "StaggerItem": "children: React.ReactNode; delay?: number; duration?: number; y?: number; x?: number; scale?: number; opacity?: number; rotate?: number; className?: string;",
+    "Navigation": "/** Self-contained page section: renders fixed Adanac site copy. Takes no props. */",
+    "Hero": "/** Self-contained page section: renders fixed Adanac site copy. Takes no props. */",
+    "About": "/** Self-contained page section: renders fixed Adanac site copy. Takes no props. */",
+    "WhatIBring": "/** Self-contained page section: renders fixed Adanac site copy. Takes no props. */",
+    "Services": "/** Self-contained page section: renders fixed Adanac site copy. Takes no props. */",
+    "Process": "/** Self-contained page section: renders fixed Adanac site copy. Takes no props. */",
+    "TechStack": "/** Self-contained page section: renders fixed Adanac site copy. Takes no props. */",
+    "ToolsWorkflow": "/** Self-contained page section: renders fixed Adanac site copy. Takes no props. */",
+    "Scoutloop": "/** Self-contained page section: renders fixed Adanac site copy. Takes no props. */",
+    "SocialProof": "/** Self-contained page section: renders fixed Adanac site copy. Takes no props. */",
+    "Contact": "/** Self-contained page section: renders fixed Adanac site copy. Takes no props. */",
+    "Footer": "/** Self-contained page section: renders fixed Adanac site copy. Takes no props. */"
+  },
+  "docsMap": {
+    "Navigation": ".design-sync/docs/section.md",
+    "Hero": ".design-sync/docs/section.md",
+    "About": ".design-sync/docs/section.md",
+    "WhatIBring": ".design-sync/docs/section.md",
+    "Services": ".design-sync/docs/section.md",
+    "Process": ".design-sync/docs/section.md",
+    "TechStack": ".design-sync/docs/section.md",
+    "ToolsWorkflow": ".design-sync/docs/section.md",
+    "Scoutloop": ".design-sync/docs/section.md",
+    "SocialProof": ".design-sync/docs/section.md",
+    "Contact": ".design-sync/docs/section.md",
+    "Footer": ".design-sync/docs/section.md"
+  },
+  "overrides": {
+    "Navigation": {
+      "cardMode": "single",
+      "viewport": "1280x96"
+    },
+    "Hero": {
+      "cardMode": "single",
+      "viewport": "1280x900"
+    },
+    "About": {
+      "cardMode": "single",
+      "viewport": "1280x900"
+    },
+    "WhatIBring": {
+      "cardMode": "single",
+      "viewport": "1280x900"
+    },
+    "Services": {
+      "cardMode": "single",
+      "viewport": "1280x900"
+    },
+    "Process": {
+      "cardMode": "single",
+      "viewport": "1280x900"
+    },
+    "TechStack": {
+      "cardMode": "single",
+      "viewport": "1280x900"
+    },
+    "ToolsWorkflow": {
+      "cardMode": "single",
+      "viewport": "1280x900"
+    },
+    "Scoutloop": {
+      "cardMode": "single",
+      "viewport": "1280x900"
+    },
+    "SocialProof": {
+      "cardMode": "single",
+      "viewport": "1280x900"
+    },
+    "Contact": {
+      "cardMode": "single",
+      "viewport": "1280x900"
+    },
+    "Footer": {
+      "cardMode": "single",
+      "viewport": "1280x900"
+    },
+    "AdanacWordmark": {
+      "cardMode": "column"
+    }
+  },
+  "readmeHeader": ".design-sync/conventions.md"
+}
