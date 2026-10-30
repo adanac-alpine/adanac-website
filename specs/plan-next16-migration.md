@@ -61,7 +61,7 @@ One branch `chore/next-16`, three commits so any step can be bisected or reverte
    - Drop or replace the webpack-only Sentry options (`webpack.treeshake`, `automaticVercelMonitors`)
      per Sentry's Turbopack docs at implementation time. Fallback if Sentry misbehaves:
      `next build --webpack` and keep the options as they are.
-   - CI `node-version: "22"`; set Vercel project Node.js version to 22.x.
+   - CI `node-version: "22"`; `package.json` `engines.node: "22.x"` (Vercel honours it over the dashboard setting) and `.nvmrc`.
    - Update `context-project-overview.md` to the real versions; make `AGENTS.md` version-free (§5).
 
 ## 3. Verification (before merging)
