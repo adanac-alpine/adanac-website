@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FadeIn } from './animation/FadeIn'
+import { ESTIMATE_STORAGE_KEY } from '@/lib/aiSavings'
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -14,6 +15,23 @@ export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
   const [fieldErrors, setFieldErrors] = useState<{ email?: string }>({})
+
+  // Pre-fill the message with an estimate handed over from the /ai-savings calculator.
+  useEffect(() => {
+    let estimate: string | null = null
+    try {
+      estimate = sessionStorage.getItem(ESTIMATE_STORAGE_KEY)
+      sessionStorage.removeItem(ESTIMATE_STORAGE_KEY)
+    } catch {
+      return
+    }
+    if (estimate) {
+      const text = estimate
+      // sessionStorage only exists after hydration, so this must run post-mount.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setFormState((f) => (f.message ? f : { ...f, message: text }))
+    }
+  }, [])
 
   const validateEmail = (email: string): boolean => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
