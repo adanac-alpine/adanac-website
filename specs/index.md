@@ -6,6 +6,7 @@
 
 ## Feature Specs
 * [Website Design Spec](spec-website-design.md) — Landing page design, sections, technical requirements, and implementation status.
+* [AI Time Savings Calculator](spec-ai-savings-calculator.md) — Standalone /ai-savings page estimating hours and money saved by an AI tools setup.
 
 ## Plans
 * [Next.js 16 Migration](plan-next16-migration.md) — Sequenced plan to move from Next.js 14.2 / React 18 to Next.js 16 / React 19.
