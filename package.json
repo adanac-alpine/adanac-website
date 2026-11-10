@@ -30,7 +30,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.0.3",
-    "@vitest/coverage-v8": "^4.1.10",
+    "@vitest/coverage-v8": "^4.1.12",
     "autoprefixer": "^10.4.19",
     "eslint": "^9.39.5",
     "eslint-config-next": "16.4.3",
@@ -38,12 +38,20 @@
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.6",
     "typescript": "^5.5.3",
-    "vitest": "^4.1.11"
+    "vitest": "^4.1.12"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
       "@sentry/cli",
       "unrs-resolver"
-    ]
+    ],
+    "overrides": {
+      "glob": "^14.0.2",
+      "brace-expansion@^1.1.7": "^1.1.21"
+    }
+  },
+  "overrides": {
+    "glob": "^14.0.2",
+    "brace-expansion@^1.1.7": "^1.1.21"
   }
 }
