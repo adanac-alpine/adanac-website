@@ -171,8 +171,8 @@ export function money(n: number): string {
   return (n < 0 ? '−$' : '$') + Math.round(Math.abs(n)).toLocaleString('en-CA')
 }
 
-/** sessionStorage key used to hand the estimate to the contact form on the home page. */
-export const ESTIMATE_STORAGE_KEY = 'adanac:ai-savings-estimate'
+/** Window event (detail: summary string) that hands the estimate to the contact form on the same page. */
+export const ESTIMATE_EVENT = 'adanac:ai-savings-estimate'
 
 const USE_TEXT: Record<TimeUse, string> = {
   1: 'billing the freed hours',

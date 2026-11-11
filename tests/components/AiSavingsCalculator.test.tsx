@@ -1,10 +1,10 @@
-import { render, screen, fireEvent } from '@testing-library/react'
-import { describe, it, expect, beforeEach } from 'vitest'
+import { render, screen, fireEvent, act } from '@testing-library/react'
+import { describe, it, expect } from 'vitest'
 import AiSavingsCalculator from '../../components/AiSavingsCalculator'
 import Contact from '../../components/Contact'
 import {
   DEFAULT_RATE,
-  ESTIMATE_STORAGE_KEY,
+  ESTIMATE_EVENT,
   PACKAGES,
   PRESETS,
   estimate,
@@ -70,7 +70,6 @@ describe('formatting helpers', () => {
 })
 
 describe('AiSavingsCalculator', () => {
-  beforeEach(() => sessionStorage.clear())
 
   const openStep = (name: RegExp) => fireEvent.click(screen.getByRole('button', { name }))
 
@@ -142,19 +141,32 @@ describe('AiSavingsCalculator', () => {
     expect(tailoredBtn).toHaveTextContent('+GST')
   })
 
-  it('has no copy button and hands the estimate to the contact form', () => {
+  it('has no copy button and links the call-to-action to the on-page form', () => {
     render(<AiSavingsCalculator />)
     expect(screen.queryByRole('button', { name: /copy/i })).not.toBeInTheDocument()
-    const cta = screen.getByRole('link', { name: /book a free 30-min call/i })
-    expect(cta).toHaveAttribute('href', '/#contact')
-    fireEvent.click(cta)
-    expect(sessionStorage.getItem(ESTIMATE_STORAGE_KEY)).toContain('AI saves ~7 h/week')
+    expect(screen.getByRole('link', { name: /book a free 30-min call/i })).toHaveAttribute('href', '#contact')
   })
 
-  it('pre-fills the contact form message from the handed-over estimate', () => {
-    sessionStorage.setItem(ESTIMATE_STORAGE_KEY, 'My estimate: 7 h/week')
+  it('pre-fills the contact form on the same page when Book is clicked', () => {
+    render(
+      <>
+        <AiSavingsCalculator />
+        <Contact />
+      </>,
+    )
+    fireEvent.click(screen.getByRole('link', { name: /book a free 30-min call/i }))
+    expect((screen.getByLabelText(/message/i) as HTMLTextAreaElement).value).toContain('AI saves ~7 h/week')
+  })
+
+  it('updates an earlier pre-fill but never overwrites a message the visitor typed', () => {
     render(<Contact />)
-    expect(screen.getByLabelText(/message/i)).toHaveValue('My estimate: 7 h/week')
-    expect(sessionStorage.getItem(ESTIMATE_STORAGE_KEY)).toBeNull()
+    const send = (text: string) => act(() => window.dispatchEvent(new CustomEvent(ESTIMATE_EVENT, { detail: text })))
+    send('Estimate A')
+    expect(screen.getByLabelText(/message/i)).toHaveValue('Estimate A')
+    send('Estimate B')
+    expect(screen.getByLabelText(/message/i)).toHaveValue('Estimate B')
+    fireEvent.change(screen.getByLabelText(/message/i), { target: { value: 'My own words' } })
+    send('Estimate C')
+    expect(screen.getByLabelText(/message/i)).toHaveValue('My own words')
   })
 })

@@ -5,7 +5,7 @@ description: Standalone /ai-savings page where small-business owners estimate ho
 Module: AI Savings Calculator
 Business_Case_Stage: Prototype
 Dependencies: [context-project-overview, spec-website-design]
-Test_Suite: [tests/components/AiSavingsCalculator.test.tsx]
+Test_Suite: [tests/components/AiSavingsCalculator.test.tsx, tests/components/AiSavingsSections.test.tsx]
 Status: Draft (Nov 2026) — page is noindex, not linked from home
 resource: https://adanacalpine.ca/ai-savings
 tags: [calculator, ai, lead-generation, pricing]
@@ -22,9 +22,26 @@ reports). Visitors see a conservative, explained estimate of time saved and what
 ## Location
 
 - Route: `app/ai-savings/page.tsx` (not linked from the landing page nav yet; `robots: noindex`; not in sitemap).
-- Component: `components/AiSavingsCalculator.tsx` (client component).
+- Landing sections: `components/AiSavingsSections.tsx`. Calculator: `components/AiSavingsCalculator.tsx`.
 - Data and maths: `lib/aiSavings.ts` (pure, unit-tested).
 - Original HTML prototype: `prototypes/ai-savings-calculator/index.html` (not committed).
+
+## Page structure (landing page, approved Nov 2026)
+
+1. **Header**: logo → `/`, "Book a free call" → `#contact`. Not sticky.
+2. **Hero** (navy): H1 "Get hours of your week back with AI", buttons "Estimate my savings" (`#calculator`) and
+   "Book a free call" (`#contact`), three trust points, and a "typical result" card computed live from the
+   calculator defaults (no hard-coded numbers).
+3. **Where AI helps**: four task cards with the task's typical saving from `TASKS`.
+4. **Calculator** (`#calculator`): the accordion calculator below.
+5. **How it works**: free call → setup on your accounts → training & tune-ups.
+6. **CTA band** (navy) → `#contact`.
+7. **FAQ**: native `<details>` items (data safety, which AI, technical skill, Microsoft 365, running costs,
+   GST/people, calculator accuracy).
+8. **Contact form** (`components/Contact.tsx` with AI-specific heading/intro/placeholder props), then the site
+   footer. Footer section links fall back to `/#section` when the section isn't on the current page.
+
+Packages are shown only inside the calculator (no separate pricing section). No testimonials until real ones exist.
 
 ## Inputs
 
@@ -64,10 +81,11 @@ Fixed assumptions shown as text, not inputs: one person, $30/month AI subscripti
 
 ## Call to action
 
-"Book a free 30-min call" links to `/#contact`. On click it writes a plain-text summary of the estimate
-(`estimateSummary()`) to `sessionStorage` under `adanac:ai-savings-estimate`. `components/Contact.tsx`
-reads and clears it after mount and pre-fills the Message field if empty. Nothing goes in the URL. The
-Google Calendar "Book a meeting" link can't be pre-filled.
+"Book a free 30-min call" scrolls to the contact form on the same page (`#contact`). On click it dispatches a
+window event `adanac:ai-savings-estimate` (`ESTIMATE_EVENT`) whose detail is a plain-text summary
+(`estimateSummary()`). `components/Contact.tsx` listens and pre-fills the Message field. A later click replaces
+an earlier pre-fill, but never text the visitor typed. Nothing is stored or put in the URL. The Google Calendar
+"Book a meeting" link can't be pre-filled.
 
 ## Open items
 
