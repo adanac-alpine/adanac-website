@@ -1,11 +1,12 @@
 'use client'
 
-import { useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 import { ChevronDown, Check } from 'lucide-react'
 import {
   DEFAULT_PRESET,
   DEFAULT_RATE,
+  DEFAULT_USE,
   ESTIMATE_EVENT,
   EXTRA_PERSON_PRICE,
   PACKAGES,
@@ -28,8 +29,8 @@ import {
 
 const USE_OPTIONS: { value: TimeUse; label: string }[] = [
   { value: 1, label: 'Bill them' },
-  { value: 0.5, label: 'Half & half' },
-  { value: 0, label: 'Time off' },
+  { value: 0.5, label: 'Some of each' },
+  { value: 0, label: 'Take time off' },
 ]
 
 type StepId = 1 | 2 | 3
@@ -66,7 +67,7 @@ function StepSection({
         >
           <span
             className={`inline-flex h-[22px] w-[22px] flex-none items-center justify-center rounded-full text-xs font-bold ${
-              done && !open ? 'bg-forest text-white' : 'bg-glacier-50 text-glacier'
+              done && !open ? 'bg-forest text-white' : 'bg-glacier-50 text-glacier-700'
             }`}
           >
             {done && !open ? <Check size={13} strokeWidth={3} aria-hidden /> : n}
@@ -112,11 +113,12 @@ export default function AiSavingsCalculator() {
   const [hours, setHours] = useState<Hours>({ ...PRESETS[DEFAULT_PRESET].hours })
   const [rateInput, setRateInput] = useState(String(DEFAULT_RATE))
   const [pkgId, setPkgId] = useState<PackageId>('everyday')
-  const [use, setUse] = useState<TimeUse>(1)
+  const [use, setUse] = useState<TimeUse>(DEFAULT_USE)
   const [openStep, setOpenStep] = useState<StepId | null>(1)
   const [done, setDone] = useState<Record<StepId, boolean>>({ 1: false, 2: false, 3: false })
   const [showCalc, setShowCalc] = useState(false)
   const resultsRef = useRef<HTMLElement>(null)
+  const scrollToResultsPending = useRef(false)
 
   const rate = Math.max(0, parseFloat(rateInput) || 0)
   const pkg = PACKAGES.find((p) => p.id === pkgId) ?? PACKAGES[1]
@@ -124,6 +126,18 @@ export default function AiSavingsCalculator() {
   const days = Math.round(est.savedDaysPerYear)
   const avgPct = est.totalHours ? Math.round((est.savedPerWeek / est.totalHours) * 100) : 0
   const pctFor = (id: string) => Math.round((est.rows.find((r) => r.id === id)?.pct ?? 0) * 100)
+
+  // On phones the results sit below the inputs. Scroll only once step 3 has collapsed (this effect runs
+  // after that render); scrolling before the collapse lands far below the results because the layout shrinks.
+  useEffect(() => {
+    if (openStep !== null || !scrollToResultsPending.current) return
+    scrollToResultsPending.current = false
+    scrollToResults()
+  }, [openStep])
+
+  function scrollToResults() {
+    resultsRef.current?.scrollIntoView?.({ behavior: 'smooth', block: 'start' })
+  }
 
   function choosePreset(id: PresetId) {
     setPreset(id)
@@ -140,9 +154,7 @@ export default function AiSavingsCalculator() {
       setOpenStep((n + 1) as StepId)
     } else {
       setOpenStep(null)
-      if (typeof window !== 'undefined' && window.innerWidth < 1024) {
-        resultsRef.current?.scrollIntoView?.({ behavior: 'smooth', block: 'start' })
-      }
+      scrollToResultsPending.current = typeof window !== 'undefined' && window.innerWidth < 1024
     }
   }
 
@@ -157,18 +169,18 @@ export default function AiSavingsCalculator() {
   if (use === 1) {
     story = (
       <>
-        <strong>What this looks like:</strong> the {oneDecimal(est.savedPerWeek)} hours you used to spend on paperwork go
-        to work clients pay for: billing an extra {oneDecimal(est.savedPerWeek)} hours, taking on one more small job, or
-        getting quotes out faster. At ${rate}/h that&apos;s about{' '}
-        <strong>{money(est.savedPerWeek * rate)} a week</strong> you weren&apos;t earning before.
+        <strong>What this looks like:</strong> {oneDecimal(est.savedPerWeek)} hours a week back for work clients pay
+        for, like one more small job or quotes out the same day. At ${rate}/h that&apos;s up to{' '}
+        <strong>{money(est.savedPerWeek * rate)} a week</strong>, if you have the work to fill it.
       </>
     )
   } else if (use === 0.5) {
     story = (
       <>
         <strong>What this looks like:</strong> you bill about {oneDecimal(est.billedPerWeek)} more hours a week (≈{' '}
-        {money(est.billedPerWeek * rate)}) and keep the other {oneDecimal(freed)} for yourself, finishing about{' '}
-        <strong>{perWeekday(freed)} earlier every weekday</strong> instead of catching up on email at night.
+        {money(est.billedPerWeek * rate)}, if you have the work) and keep the other {oneDecimal(freed)} for yourself,
+        finishing about <strong>{perWeekday(freed)} earlier every weekday</strong> instead of catching up on email at
+        night.
       </>
     )
   } else {
@@ -187,165 +199,184 @@ export default function AiSavingsCalculator() {
   return (
     <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
       {/* Inputs: three accordion steps */}
-      <div className={`${CARD} overflow-hidden`}>
-        <StepSection
-          n={1}
-          title="Your business"
-          summary={`${PRESETS[preset].label} · $${rate}/h`}
-          open={openStep === 1}
-          done={done[1]}
-          onToggle={() => toggle(1)}
-        >
-          <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_150px] sm:items-end">
-            <div>
-              <label htmlFor="preset" className="mb-1.5 block text-xs font-semibold text-medium-gray">
-                Type of work (sets typical hours)
-              </label>
-              <select
-                id="preset"
-                value={preset}
-                onChange={(e) => choosePreset(e.target.value as PresetId)}
-                className={`${fieldBox} px-2.5 py-2 focus:outline-none`}
-              >
-                {(Object.keys(PRESETS) as PresetId[]).map((id) => (
-                  <option key={id} value={id}>
-                    {PRESETS[id].label}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label htmlFor="rate" className="mb-1.5 block text-xs font-semibold text-medium-gray">
-                Your hourly rate
-              </label>
-              <div className={`${fieldBox} flex items-center overflow-hidden`}>
-                <span className="pl-2.5 pr-1 text-sm text-medium-gray">$</span>
-                <input
-                  id="rate"
-                  type="number"
-                  inputMode="decimal"
-                  min={0}
-                  step={5}
-                  value={rateInput}
-                  onChange={(e) => setRateInput(e.target.value)}
-                  className="w-full min-w-0 bg-transparent px-1.5 py-2 outline-none"
-                />
-              </div>
-            </div>
-          </div>
-          <NextButton onClick={() => finish(1)}>Next: your week →</NextButton>
-        </StepSection>
-
-        <StepSection
-          n={2}
-          title="Your week today, without AI"
-          summary={
-            <>
-              <span data-testid="total-hours">{oneDecimal(est.totalHours)}</span> h/wk of admin
-            </>
-          }
-          open={openStep === 2}
-          done={done[2]}
-          onToggle={() => toggle(2)}
-        >
-          <div className="mb-1.5 flex items-baseline justify-between gap-3 rounded-[10px] bg-glacier-50 px-3.5 py-2.5">
-            <div className="text-[13px] font-semibold text-navy">
-              Admin &amp; paperwork per week
-              <span className="block text-xs font-medium text-medium-gray">Adjust each task to match your week</span>
-            </div>
-            <div className="whitespace-nowrap text-[26px] font-extrabold tracking-tight text-navy tabular-nums">
-              <span data-testid="total-hours-box">{oneDecimal(est.totalHours)}</span>{' '}
-              <small className="text-[13px] font-semibold text-medium-gray">h/wk</small>
-            </div>
-          </div>
-          {TASKS.map((t) => (
-            <div
-              key={t.id}
-              className="grid grid-cols-[minmax(0,1fr)_56px] items-center gap-x-3 gap-y-1 border-dashed border-light-gray py-1.5 [&:not(:first-of-type)]:border-t sm:grid-cols-[minmax(0,1fr)_minmax(90px,1fr)_56px]"
-            >
-              <label htmlFor={`h-${t.id}`} className="text-sm font-semibold text-navy">
-                {t.label}
-                <span
-                  className="ml-1.5 inline-block rounded bg-forest-50 px-1.5 py-px align-[1px] text-[11px] font-semibold text-forest"
-                  title={`AI typically saves about ${pctFor(t.id)}% of this time with the ${pkg.name} package`}
+      <div>
+        <div className={`${CARD} overflow-hidden`}>
+          <StepSection
+            n={1}
+            title="Your business"
+            summary={`$${rate}/h · ${PRESETS[preset].short}`}
+            open={openStep === 1}
+            done={done[1]}
+            onToggle={() => toggle(1)}
+          >
+            <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] sm:items-end">
+              <div>
+                <label htmlFor="preset" className="mb-1.5 block text-xs font-semibold text-medium-gray">
+                  Type of business
+                </label>
+                <select
+                  id="preset"
+                  value={preset}
+                  onChange={(e) => choosePreset(e.target.value as PresetId)}
+                  className={`${fieldBox} px-2.5 py-2 focus:outline-none`}
                 >
-                  −{pctFor(t.id)}%
-                </span>
-                <span className="block text-xs font-medium text-medium-gray">{t.hint}</span>
-              </label>
-              <input
-                id={`h-${t.id}`}
-                type="range"
-                min={0}
-                max={20}
-                step={0.5}
-                value={hours[t.id]}
-                onChange={(e) => setHours((h) => ({ ...h, [t.id]: parseFloat(e.target.value) }))}
-                className="col-span-2 row-start-2 m-0 w-full accent-glacier sm:col-span-1 sm:row-start-auto"
-              />
-              <div className="col-start-2 row-start-1 whitespace-nowrap text-right text-sm font-bold tabular-nums sm:col-start-auto sm:row-start-auto">
-                {hours[t.id]} <small className="font-medium text-medium-gray">h</small>
+                  {(Object.keys(PRESETS) as PresetId[]).map((id) => (
+                    <option key={id} value={id}>
+                      {PRESETS[id].label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label htmlFor="rate" className="mb-1.5 block text-xs font-semibold text-medium-gray">
+                  What an hour of your time is worth
+                </label>
+                <div className={`${fieldBox} flex items-center overflow-hidden`}>
+                  <span className="pl-2.5 pr-1 text-sm text-medium-gray">$</span>
+                  <input
+                    id="rate"
+                    type="number"
+                    inputMode="decimal"
+                    min={0}
+                    step={5}
+                    value={rateInput}
+                    onChange={(e) => setRateInput(e.target.value)}
+                    className="w-full min-w-0 bg-transparent px-1.5 py-2 outline-none"
+                  />
+                </div>
               </div>
             </div>
-          ))}
-          <p className="mt-2 text-xs text-medium-gray">
-            Green tags show the typical time AI saves on each task with the {pkg.name} package.
-          </p>
-          <NextButton onClick={() => finish(2)}>Next: choose a package →</NextButton>
-        </StepSection>
+            <NextButton onClick={() => finish(1)}>Next: your week →</NextButton>
+          </StepSection>
 
-        <StepSection
-          n={3}
-          title="Choose a setup package"
-          summary={`${pkg.name} · ${pkg.fromPrice ? 'from ' : ''}${money(pkg.price)}`}
-          open={openStep === 3}
-          done={done[3]}
-          onToggle={() => toggle(3)}
-        >
-          <div className="grid gap-2.5 sm:grid-cols-3" role="group" aria-label="Setup package">
-            {PACKAGES.map((p) => (
-              <button
-                key={p.id}
-                type="button"
-                aria-pressed={p.id === pkgId}
-                onClick={() => setPkgId(p.id)}
-                className={`flex flex-col gap-1 rounded-xl border-[1.5px] bg-white p-3 text-left text-navy transition hover:border-glacier focus:outline-none focus-visible:ring-2 focus-visible:ring-glacier ${
-                  p.id === pkgId ? 'border-navy shadow-[0_0_0_1px_#1a2332]' : 'border-light-gray'
-                }`}
+          <StepSection
+            n={2}
+            title="Your week now: hours on admin"
+            summary={
+              <>
+                <span data-testid="total-hours">{oneDecimal(est.totalHours)}</span> h/wk of admin
+              </>
+            }
+            open={openStep === 2}
+            done={done[2]}
+            onToggle={() => toggle(2)}
+          >
+            <div className="mb-1.5 flex items-baseline justify-between gap-3 rounded-[10px] bg-glacier-50 px-3.5 py-2.5">
+              <div className="text-[13px] font-semibold text-navy">
+                Your admin hours per week
+                <span className="block text-xs font-medium text-medium-gray">Drag each slider to match a normal week</span>
+              </div>
+              <div className="whitespace-nowrap text-[26px] font-extrabold tracking-tight text-navy tabular-nums">
+                <span data-testid="total-hours-box">{oneDecimal(est.totalHours)}</span>{' '}
+                <small className="text-[13px] font-semibold text-medium-gray">h/wk</small>
+              </div>
+            </div>
+            {TASKS.map((t) => (
+              <div
+                key={t.id}
+                className="grid grid-cols-[minmax(0,1fr)_56px] items-center gap-x-3 gap-y-1 border-dashed border-light-gray py-1.5 [&:not(:first-of-type)]:border-t sm:grid-cols-[minmax(0,1fr)_minmax(90px,1fr)_56px]"
               >
-                <span className="flex justify-between gap-1.5 text-sm font-bold">
-                  {p.name}
-                  {p.badge && (
-                    <span className="self-center rounded bg-forest-50 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-forest">
-                      {p.badge}
-                    </span>
-                  )}
-                </span>
-                <span className="text-lg font-extrabold tabular-nums">
-                  {p.fromPrice && <small className="mr-1 text-xs font-medium text-medium-gray">from</small>}
-                  {money(p.price)}
-                  <small className="block text-xs font-medium text-medium-gray">+GST, one-time</small>
-                </span>
-                <ul className="mt-0.5 list-disc pl-4 text-xs text-medium-gray">
-                  {p.items.map((i) => (
-                    <li key={i}>{i}</li>
-                  ))}
-                </ul>
-                <span className="mt-auto pt-1.5 text-xs font-semibold text-glacier-600">{p.effect}</span>
-              </button>
+                <label htmlFor={`h-${t.id}`} className="text-sm font-semibold text-navy">
+                  {t.label}
+                  <span className="ml-1.5 inline-block rounded bg-forest-50 px-1.5 py-px align-[1px] text-xs font-semibold text-forest">
+                    −{pctFor(t.id)}%
+                  </span>
+                  <span className="block text-xs font-medium text-medium-gray">{t.hint}</span>
+                </label>
+                <input
+                  id={`h-${t.id}`}
+                  type="range"
+                  min={0}
+                  max={20}
+                  step={0.5}
+                  value={hours[t.id]}
+                  aria-valuetext={`${hours[t.id]} hours a week`}
+                  onChange={(e) => setHours((h) => ({ ...h, [t.id]: parseFloat(e.target.value) }))}
+                  className="col-span-2 row-start-2 m-0 w-full accent-glacier-600 sm:col-span-1 sm:row-start-auto"
+                />
+                <div className="col-start-2 row-start-1 whitespace-nowrap text-right text-sm font-bold tabular-nums sm:col-start-auto sm:row-start-auto">
+                  {hours[t.id]} <small className="font-medium text-medium-gray">h</small>
+                </div>
+              </div>
             ))}
+            <p className="mt-2 text-xs text-medium-gray">
+              Green tags show how much of each task&apos;s time AI typically saves on the {pkg.name} package.
+            </p>
+            <NextButton onClick={() => finish(2)}>Next: pick a package →</NextButton>
+          </StepSection>
+
+          <StepSection
+            n={3}
+            title="Pick a setup package"
+            summary={`${pkg.name} · ${pkg.fromPrice ? 'from ' : ''}${money(pkg.price)}`}
+            open={openStep === 3}
+            done={done[3]}
+            onToggle={() => toggle(3)}
+          >
+            <div className="grid gap-2.5 sm:grid-cols-3" role="group" aria-label="Setup package">
+              {PACKAGES.map((p) => (
+                <button
+                  key={p.id}
+                  type="button"
+                  aria-pressed={p.id === pkgId}
+                  onClick={() => setPkgId(p.id)}
+                  className={`flex flex-col gap-1 rounded-xl border-[1.5px] bg-white p-3 text-left text-navy transition hover:border-glacier focus:outline-none focus-visible:ring-2 focus-visible:ring-glacier ${
+                    p.id === pkgId ? 'border-navy shadow-[0_0_0_1px_#1a2332]' : 'border-light-gray'
+                  }`}
+                >
+                  <span className="flex justify-between gap-1.5 text-sm font-bold">
+                    {p.name}
+                    {p.badge && (
+                      <span className="self-center rounded bg-forest-50 px-1.5 py-0.5 text-xs font-bold text-forest">
+                        {p.badge}
+                      </span>
+                    )}
+                  </span>
+                  <span className="text-lg font-extrabold tabular-nums">
+                    {p.fromPrice && <small className="mr-1 text-xs font-medium text-medium-gray">from</small>}
+                    {money(p.price)}
+                    <small className="block text-xs font-medium text-medium-gray">
+                      +GST, one-time · {p.days} {p.days === 1 ? 'day' : 'days'}
+                    </small>
+                  </span>
+                  <ul className="mt-0.5 list-disc pl-4 text-xs text-medium-gray">
+                    {p.items.map((i) => (
+                      <li key={i}>{i}</li>
+                    ))}
+                  </ul>
+                  <span className="mt-auto pt-1.5 text-xs font-semibold text-glacier-700">{p.effect}</span>
+                </button>
+              ))}
+            </div>
+            <p className="mt-3.5 text-xs text-medium-gray">
+              Setup takes 1–5 days depending on the package, with about 2 hours a day of your time. Packages cover up to
+              3 people (+{money(EXTRA_PERSON_PRICE)} per extra person). Optional tune-ups after support ends:{' '}
+              {money(TUNE_UP_PER_MONTH)}/month. Microsoft 365 / Copilot setups may cost more.
+            </p>
+            <p className="mt-1.5 text-xs text-medium-gray">
+              <strong className="font-semibold text-navy">Estimate assumes:</strong> one person · AI subscription ~$
+              {SUBSCRIPTION_PER_MONTH}/month (varies by tool) · {WORKING_WEEKS} working weeks a year · you review
+              everything before it goes out.
+            </p>
+            <NextButton onClick={() => finish(3)}>See my results</NextButton>
+          </StepSection>
+        </div>
+
+        {/* Phones: keep the payoff in sight while adjusting the inputs. */}
+        {openStep !== null && (
+          <div className="sticky bottom-3 z-10 mt-3 lg:hidden">
+            <button
+              type="button"
+              onClick={scrollToResults}
+              className="flex w-full items-center justify-between gap-3 rounded-xl bg-navy px-4 py-3 text-left text-white shadow-lg shadow-navy/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2"
+            >
+              <span className="text-sm">
+                ≈ <strong className="text-base tabular-nums">{oneDecimal(est.savedPerWeek)} h/week</strong> back
+              </span>
+              <span className="text-sm font-bold text-glacier-200">See results ↓</span>
+            </button>
           </div>
-          <p className="mt-3.5 text-xs text-medium-gray">
-            Packages cover up to 3 people (+{money(EXTRA_PERSON_PRICE)} per extra person). Optional tune-ups after
-            support ends: {money(TUNE_UP_PER_MONTH)}/month. Microsoft 365 / Copilot setups may cost more.
-          </p>
-          <p className="mt-1.5 text-xs text-medium-gray">
-            <strong className="font-semibold text-navy">Estimate assumes:</strong> one person · AI assistant
-            subscription ${SUBSCRIPTION_PER_MONTH}/month · {WORKING_WEEKS} working weeks a year · you review everything
-            before it goes out.
-          </p>
-          <NextButton onClick={() => finish(3)}>See my results</NextButton>
-        </StepSection>
+        )}
       </div>
 
       {/* Results */}
@@ -366,14 +397,14 @@ export default function AiSavingsCalculator() {
             aria-expanded={showCalc}
             aria-controls="calc-breakdown"
             onClick={() => setShowCalc((v) => !v)}
-            className="mt-1 inline-flex items-center gap-1 rounded text-[12.5px] font-semibold text-glacier-300 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-glacier"
+            className="mt-1 inline-flex items-center gap-1 rounded text-[13px] font-semibold text-glacier-300 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-glacier"
           >
             How is this calculated?
             <ChevronDown size={14} aria-hidden className={`transition-transform ${showCalc ? 'rotate-180' : ''}`} />
           </button>
           {showCalc && (
             <div id="calc-breakdown">
-              <table className="mt-2 w-full border-collapse text-[12.5px] tabular-nums" aria-label="How the hours are calculated">
+              <table className="mt-2 w-full border-collapse text-[13px] tabular-nums" aria-label="How the hours are calculated">
                 <tbody>
                   {est.rows
                     .filter((r) => r.hours > 0)
@@ -395,9 +426,9 @@ export default function AiSavingsCalculator() {
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-[11.5px] text-navy-200">
+              <p className="mt-2 text-xs text-navy-200">
                 Your hours on each task × the share AI typically takes off it with the {pkg.name} package. AI drafts,
-                summarises and sorts; you still check and send.
+                summarizes and sorts; you still check and send.
               </p>
             </div>
           )}
@@ -427,8 +458,8 @@ export default function AiSavingsCalculator() {
             <tbody className="[&_td]:px-3 [&_td]:py-2 [&_tr+tr_td]:border-t [&_tr+tr_td]:border-light-gray">
               <tr>
                 <td>
-                  {use === 0 ? 'Extra income' : 'Extra income from the freed hours'}
-                  <small className="block text-[11.5px] text-medium-gray">
+                  {use === 0 ? 'Extra income' : 'Extra billable income'}
+                  <small className="block text-xs text-medium-gray">
                     {use === 0
                       ? "None: you're taking the time off"
                       : `${oneDecimal(est.billedPerWeek)} h/wk × $${rate} × ${WORKING_WEEKS} weeks`}
@@ -439,7 +470,7 @@ export default function AiSavingsCalculator() {
               <tr>
                 <td>
                   AI subscription
-                  <small className="block text-[11.5px] text-medium-gray">${SUBSCRIPTION_PER_MONTH}/month × 12</small>
+                  <small className="block text-xs text-medium-gray">~${SUBSCRIPTION_PER_MONTH}/month × 12</small>
                 </td>
                 <td className="whitespace-nowrap text-right font-bold text-medium-gray">−{money(est.subscriptionPerYear)}</td>
               </tr>
@@ -451,7 +482,7 @@ export default function AiSavingsCalculator() {
               </tr>
               {use > 0 ? (
                 <tr className="bg-forest-50 font-bold">
-                  <td>Net, first year</td>
+                  <td>Net gain, first year (after costs)</td>
                   <td className="whitespace-nowrap text-right text-lg text-forest" data-testid="net">
                     {money(est.netFirstYear)}
                   </td>
@@ -460,7 +491,7 @@ export default function AiSavingsCalculator() {
                 <tr className="bg-forest-50 font-bold">
                   <td>
                     Cost, first year
-                    <small className="block text-[11.5px] font-medium text-medium-gray">
+                    <small className="block text-xs font-medium text-medium-gray">
                       In exchange for {days} days of your time back
                     </small>
                   </td>
@@ -470,7 +501,7 @@ export default function AiSavingsCalculator() {
                 </tr>
               )}
               {use > 0 && (
-                <tr className="text-[12.5px] text-medium-gray">
+                <tr className="text-[13px] text-medium-gray">
                   <td>Setup pays for itself in</td>
                   <td className="whitespace-nowrap text-right font-bold text-navy">{formatPayback(est.paybackWeeks)}</td>
                 </tr>
@@ -486,14 +517,16 @@ export default function AiSavingsCalculator() {
         <a
           href="#contact"
           onClick={handOffEstimate}
-          className="mt-3.5 block rounded-[10px] bg-glacier px-3 py-[11px] text-center text-sm font-bold text-white hover:bg-glacier-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2"
+          className="mt-3.5 block rounded-[10px] bg-glacier-600 px-3 py-[11px] text-center text-sm font-bold text-white hover:bg-glacier-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2"
         >
-          Book a free 30-min call
+          Send my estimate &amp; book a call
         </a>
-        <p className="mt-1.5 text-center text-[11.5px] text-medium-gray">Your estimate is added to the message for you.</p>
-        <p className="mt-2.5 text-[11.5px] text-medium-gray">
-          Estimates only. Real savings depend on your tools, your data and how closely the setup fits your work. Prices
-          in CAD.
+        <p className="mt-1.5 text-center text-xs text-medium-gray">
+          We&apos;ll add these numbers to your message. Nothing is sent until you submit the form.
+        </p>
+        <p className="mt-2.5 text-xs text-medium-gray">
+          Estimates, not a guarantee. Results depend on your work, your tools and how often you use the assistant.
+          Prices in CAD, before GST.
         </p>
       </aside>
     </div>

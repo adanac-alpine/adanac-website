@@ -10,13 +10,27 @@ interface ContactProps {
   heading?: string
   intro?: string
   messagePlaceholder?: string
+  submitLabel?: string
+  /** Shown after "I'll get back to you" in the success message. */
+  replyTime?: string
+  calendarPrompt?: string
+  calendarLabel?: string
+  /** 'above' offers the calendar as an equal first option above the form. */
+  calendarPlacement?: 'above' | 'below'
 }
+
+const CALENDAR_URL = 'https://calendar.app.google/vDV9rooe9Ghp37Ls6'
 
 export default function Contact({
   eyebrow = 'Contact',
   heading = "Let's talk",
   intro = "Have a digital banking project in mind? I'd love to hear about it. Drop me a message and I'll get back to you within 24 hours.",
   messagePlaceholder = 'Tell me about your project...',
+  submitLabel = 'Send Message',
+  replyTime = 'within 24 hours',
+  calendarPrompt = 'Prefer to book a time directly?',
+  calendarLabel = 'Book a meeting',
+  calendarPlacement = 'below',
 }: ContactProps = {}) {
   const [formState, setFormState] = useState({
     name: '',
@@ -96,6 +110,32 @@ export default function Contact({
     })
   }
 
+  const calendarLink = (
+    <div className={calendarPlacement === 'above' ? 'mb-8 text-center' : 'mt-8 text-center'}>
+      <p className="text-sm text-dark-gray mb-3">{calendarPrompt}</p>
+      <a
+        href={CALENDAR_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={
+          calendarPlacement === 'above'
+            ? 'inline-flex items-center gap-2 rounded-xl border-2 border-glacier-600 bg-white px-6 py-3 font-bold text-glacier-700 transition-colors hover:bg-glacier-50 focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus:outline-none'
+            : 'inline-flex items-center gap-2 text-glacier-700 font-semibold hover:underline focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded focus:outline-none'
+        }
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+        </svg>
+        {calendarLabel}
+        <span className="sr-only">(opens in a new tab)</span>
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+        </svg>
+      </a>
+      {calendarPlacement === 'above' && <p className="mt-4 text-sm text-medium-gray">or send a note below</p>}
+    </div>
+  )
+
   return (
     <section id="contact" className="py-24 bg-off-white">
       <div className="container mx-auto px-6 md:px-12 max-w-4xl">
@@ -113,6 +153,8 @@ export default function Contact({
             </p>
           </div>
         </FadeIn>
+
+        {calendarPlacement === 'above' && <FadeIn delay={0.05}>{calendarLink}</FadeIn>}
 
         <FadeIn delay={0.1}>
           <div className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-100 shadow-lg shadow-gray-100/40 min-h-[400px] flex items-center justify-center">
@@ -139,7 +181,7 @@ export default function Contact({
                   <div className="space-y-2">
                     <h3 className="text-2xl font-bold text-navy">Message sent!</h3>
                     <p className="text-dark-gray max-w-sm mx-auto">
-                      Thanks for reaching out. I&apos;ll get back to you within 24 hours.
+                      Thanks for reaching out. I&apos;ll get back to you {replyTime}.
                     </p>
                   </div>
                   <button
@@ -270,7 +312,7 @@ export default function Contact({
                     whileTap={{ scale: 0.98 }}
                     type="submit"
                     disabled={status === 'submitting'}
-                    className="w-full bg-glacier hover:bg-glacier-600 disabled:bg-glacier/50 text-white font-bold tracking-wide py-4 rounded-xl shadow-lg shadow-glacier/25 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus:outline-none flex items-center justify-center"
+                    className="w-full bg-glacier-600 hover:bg-glacier-700 disabled:bg-glacier/50 text-white font-bold tracking-wide py-4 rounded-xl shadow-lg shadow-glacier/25 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus:outline-none flex items-center justify-center"
                   >
                     {status === 'submitting' ? (
                       <>
@@ -281,7 +323,7 @@ export default function Contact({
                         Sending...
                       </>
                     ) : (
-                      'Send Message'
+                      submitLabel
                     )}
                   </motion.button>
                 </motion.form>
@@ -290,28 +332,7 @@ export default function Contact({
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.2}>
-          <div className="mt-8 text-center">
-            <p className="text-sm text-dark-gray mb-3">
-              Prefer to book a time directly?
-            </p>
-            <a
-              href="https://calendar.app.google/vDV9rooe9Ghp37Ls6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-glacier font-semibold hover:underline focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 rounded focus:outline-none"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-              </svg>
-              Book a meeting
-              <span className="sr-only">(opens in a new tab)</span>
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-              </svg>
-            </a>
-          </div>
-        </FadeIn>
+        {calendarPlacement === 'below' && <FadeIn delay={0.2}>{calendarLink}</FadeIn>}
 
       </div>
     </section>
