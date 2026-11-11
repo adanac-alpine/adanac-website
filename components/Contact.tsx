@@ -1,11 +1,23 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FadeIn } from './animation/FadeIn'
-import { ESTIMATE_STORAGE_KEY } from '@/lib/aiSavings'
+import { ESTIMATE_EVENT } from '@/lib/aiSavings'
 
-export default function Contact() {
+interface ContactProps {
+  eyebrow?: string
+  heading?: string
+  intro?: string
+  messagePlaceholder?: string
+}
+
+export default function Contact({
+  eyebrow = 'Contact',
+  heading = "Let's talk",
+  intro = "Have a digital banking project in mind? I'd love to hear about it. Drop me a message and I'll get back to you within 24 hours.",
+  messagePlaceholder = 'Tell me about your project...',
+}: ContactProps = {}) {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -16,21 +28,20 @@ export default function Contact() {
 
   const [fieldErrors, setFieldErrors] = useState<{ email?: string }>({})
 
-  // Pre-fill the message with an estimate handed over from the /ai-savings calculator.
+  // Pre-fill the message when the /ai-savings calculator on the same page hands over an estimate.
+  // Replaces an earlier pre-fill, but never text the visitor typed themselves.
+  const lastPrefill = useRef('')
   useEffect(() => {
-    let estimate: string | null = null
-    try {
-      estimate = sessionStorage.getItem(ESTIMATE_STORAGE_KEY)
-      sessionStorage.removeItem(ESTIMATE_STORAGE_KEY)
-    } catch {
-      return
+    const onEstimate = (e: Event) => {
+      const text = (e as CustomEvent<string>).detail
+      if (typeof text !== 'string' || !text) return
+      const previous = lastPrefill.current
+      lastPrefill.current = text
+      setFormState((f) => (f.message && f.message !== previous ? f : { ...f, message: text }))
+      setStatus((s) => (s === 'success' ? 'idle' : s))
     }
-    if (estimate) {
-      const text = estimate
-      // sessionStorage only exists after hydration, so this must run post-mount.
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setFormState((f) => (f.message ? f : { ...f, message: text }))
-    }
+    window.addEventListener(ESTIMATE_EVENT, onEstimate)
+    return () => window.removeEventListener(ESTIMATE_EVENT, onEstimate)
   }, [])
 
   const validateEmail = (email: string): boolean => {
@@ -92,13 +103,13 @@ export default function Contact() {
         <FadeIn>
           <div className="text-center mb-12 space-y-4">
             <span className="text-xs font-bold tracking-widest text-glacier uppercase">
-              Contact
+              {eyebrow}
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight leading-tight">
-              Let&apos;s talk
+              {heading}
             </h2>
             <p className="text-base sm:text-lg text-dark-gray max-w-xl mx-auto">
-              Have a digital banking project in mind? I&apos;d love to hear about it. Drop me a message and I&apos;ll get back to you within 24 hours.
+              {intro}
             </p>
           </div>
         </FadeIn>
@@ -246,7 +257,7 @@ export default function Contact() {
                       name="message"
                       value={formState.message}
                       onChange={handleChange}
-                      placeholder="Tell me about your project..."
+                      placeholder={messagePlaceholder}
                       rows={5}
                       required
                       aria-required="true"

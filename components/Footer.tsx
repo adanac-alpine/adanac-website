@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 import { FadeIn, StaggerChildren, StaggerItem } from './animation/FadeIn'
 import AdanacMark from './brand/AdanacMark'
 import AdanacWordmark from './brand/AdanacWordmark'
@@ -9,12 +10,16 @@ import { Mail } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const router = useRouter()
 
   const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
     const element = document.querySelector(href)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      // Section lives on the home page (e.g. footer shown on /ai-savings).
+      router.push(`/${href}`)
     }
   }
 

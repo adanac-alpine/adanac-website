@@ -1,12 +1,12 @@
 'use client'
 
 import { useMemo, useRef, useState } from 'react'
-import Link from 'next/link'
+
 import { ChevronDown, Check } from 'lucide-react'
 import {
   DEFAULT_PRESET,
   DEFAULT_RATE,
-  ESTIMATE_STORAGE_KEY,
+  ESTIMATE_EVENT,
   EXTRA_PERSON_PRICE,
   PACKAGES,
   PRESETS,
@@ -56,7 +56,7 @@ function StepSection({
 }) {
   return (
     <section className="border-light-gray [&+&]:border-t">
-      <h2>
+      <h3>
         <button
           type="button"
           aria-expanded={open}
@@ -83,7 +83,7 @@ function StepSection({
             className={`flex-none text-medium-gray transition-transform ${open ? 'ml-auto rotate-180' : ''}`}
           />
         </button>
-      </h2>
+      </h3>
       {open && (
         <div id={`step-${n}`} className="px-5 pb-5">
           {children}
@@ -147,11 +147,9 @@ export default function AiSavingsCalculator() {
   }
 
   function handOffEstimate() {
-    try {
-      sessionStorage.setItem(ESTIMATE_STORAGE_KEY, estimateSummary(PRESETS[preset].label, pkg, rate, use, est))
-    } catch {
-      // Storage blocked (private mode etc.): the form just opens empty.
-    }
+    window.dispatchEvent(
+      new CustomEvent(ESTIMATE_EVENT, { detail: estimateSummary(PRESETS[preset].label, pkg, rate, use, est) }),
+    )
   }
 
   const freed = est.savedPerWeek - est.billedPerWeek
@@ -351,7 +349,7 @@ export default function AiSavingsCalculator() {
       </div>
 
       {/* Results */}
-      <aside ref={resultsRef} aria-live="polite" className={`${CARD} scroll-mt-4 p-5 lg:sticky lg:top-24`}>
+      <aside ref={resultsRef} aria-live="polite" className={`${CARD} scroll-mt-4 p-5 lg:sticky lg:top-6`}>
         <div className="rounded-xl bg-navy px-[18px] py-4 text-white">
           <div className="flex flex-wrap items-baseline justify-between gap-2.5">
             <div>
@@ -485,13 +483,13 @@ export default function AiSavingsCalculator() {
           {story}
         </p>
 
-        <Link
-          href="/#contact"
+        <a
+          href="#contact"
           onClick={handOffEstimate}
           className="mt-3.5 block rounded-[10px] bg-glacier px-3 py-[11px] text-center text-sm font-bold text-white hover:bg-glacier-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2"
         >
           Book a free 30-min call
-        </Link>
+        </a>
         <p className="mt-1.5 text-center text-[11.5px] text-medium-gray">Your estimate is added to the message for you.</p>
         <p className="mt-2.5 text-[11.5px] text-medium-gray">
           Estimates only. Real savings depend on your tools, your data and how closely the setup fits your work. Prices
