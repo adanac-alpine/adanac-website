@@ -11,33 +11,39 @@ export interface Task {
   cut: number
 }
 
+// Per-task cuts sit below lab-study results (e.g. 40% less time on writing tasks, Noy & Zhang, Science 2023)
+// because real-world averages are lower (Microsoft Copilot studies 2023-25, UK government trial 2025).
 export const TASKS: Task[] = [
-  { id: 'email', label: 'Email', hint: 'Reading, sorting, replying', cut: 0.4 },
-  { id: 'meetings', label: 'Meeting notes', hint: 'Write-ups, decisions, actions', cut: 0.6 },
-  { id: 'drafting', label: 'Drafting & reports', hint: 'Letters, quotes, progress reports', cut: 0.5 },
-  { id: 'reading', label: 'Long documents', hint: 'Contracts, specs, RFPs', cut: 0.45 },
-  { id: 'admin', label: 'Admin & filing', hint: 'Scheduling, files, photos, to-dos', cut: 0.25 },
+  { id: 'email', label: 'Email', hint: 'Reading, sorting, replying', cut: 0.25 },
+  { id: 'meetings', label: 'Meeting notes', hint: 'Write-ups, decisions, actions', cut: 0.5 },
+  { id: 'drafting', label: 'Drafting & reports', hint: 'Quotes, proposals, letters, reports', cut: 0.35 },
+  { id: 'reading', label: 'Long documents', hint: 'Contracts, specs, RFPs', cut: 0.35 },
+  { id: 'admin', label: 'Admin & filing', hint: 'Scheduling, files, photos, to-dos', cut: 0.15 },
 ]
 
 export type Hours = Record<TaskId, number>
 
 export type PresetId = 'professional' | 'trades' | 'retail' | 'custom'
 
-export const PRESETS: Record<PresetId, { label: string; hours: Hours }> = {
+export const PRESETS: Record<PresetId, { label: string; short: string; hours: Hours }> = {
   professional: {
     label: 'Professional services',
+    short: 'Professional',
     hours: { email: 6, meetings: 2, drafting: 3.5, reading: 2, admin: 3 },
   },
   trades: {
     label: 'Trades & field services',
+    short: 'Trades',
     hours: { email: 2, meetings: 1, drafting: 3, reading: 0.5, admin: 3.5 },
   },
   retail: {
     label: 'Retail & hospitality',
+    short: 'Retail',
     hours: { email: 2, meetings: 0.5, drafting: 2, reading: 0.5, admin: 3.5 },
   },
   custom: {
-    label: 'Something else',
+    label: 'Other or mixed',
+    short: 'Other',
     hours: { email: 3, meetings: 1.5, drafting: 3, reading: 1.5, admin: 2 },
   },
 }
@@ -53,6 +59,8 @@ export interface Package {
   fromPrice?: boolean
   /** Scales each task's cut: a more tailored setup saves more. */
   factor: number
+  /** Working days the setup takes, at about 2 hours a day of the client's time. */
+  days: number
   effect: string
   badge?: string
   items: string[]
@@ -65,17 +73,30 @@ export const PACKAGES: Package[] = [
     name: 'Quick Start',
     price: 850,
     factor: 0.7,
-    effect: '70% of typical savings',
-    items: ['AI assistant set up on your accounts', 'Connected to email & calendar', 'One training session'],
+    days: 1,
+    effect: 'Lighter savings (≈70% of typical)',
+    items: [
+      'AI assistant set up on your subscription, with privacy settings checked',
+      'Connected to your email and calendar',
+      'One 2-hour hands-on session',
+      '14 days of email support',
+    ],
   },
   {
     id: 'everyday',
     name: 'Everyday Assistant',
     price: 1950,
     factor: 1,
-    effect: 'Typical savings',
-    badge: 'Popular',
-    items: ['Everything in Quick Start', 'Files, notes & email drafting set up', '2 sessions + 30 days support'],
+    days: 3,
+    effect: 'Typical savings (baseline)',
+    badge: 'Recommended',
+    items: [
+      'Everything in Quick Start',
+      'Files and meeting notes connected',
+      'Workflows for your 3 most time-consuming tasks',
+      'Three 2-hour sessions on your real work',
+      '30 days of support',
+    ],
   },
   {
     id: 'tailored',
@@ -83,8 +104,15 @@ export const PACKAGES: Package[] = [
     price: 3800,
     fromPrice: true,
     factor: 1.25,
-    effect: '125% of typical savings',
-    items: ['Everything in Everyday Assistant', 'Reports & daily brief in your voice', '60 days of tune-ups'],
+    days: 5,
+    effect: 'Bigger savings (≈125% of typical)',
+    items: [
+      'Everything in Everyday Assistant',
+      'Templates for your quotes, reports and letters',
+      'A morning brief of what needs you today',
+      'Five 2-hour sessions on your real work',
+      '60 days of support and tune-ups',
+    ],
   },
 ]
 
@@ -96,7 +124,10 @@ export type TimeUse = 1 | 0.5 | 0
 
 export const DEFAULT_RATE = 120
 export const DEFAULT_PRESET: PresetId = 'professional'
-export const SUBSCRIPTION_PER_MONTH = 30
+/** Default answer to "What will you do with those hours?": bill half, keep half. */
+export const DEFAULT_USE: TimeUse = 0.5
+/** Approximate CAD per person per month; varies by AI tool (Claude Pro is about $28). */
+export const SUBSCRIPTION_PER_MONTH = 28
 export const WORKING_WEEKS = 46
 export const MAX_CUT = 0.75
 
@@ -175,23 +206,27 @@ export function money(n: number): string {
 export const ESTIMATE_EVENT = 'adanac:ai-savings-estimate'
 
 const USE_TEXT: Record<TimeUse, string> = {
-  1: 'billing the freed hours',
-  0.5: 'billing half the freed hours',
-  0: 'taking the time off',
+  1: 'If I bill the freed hours',
+  0.5: 'If I bill half the freed hours',
+  0: 'Taking the time off',
 }
 
 /** Plain-text summary used to pre-fill the contact form message. */
 export function estimateSummary(presetLabel: string, pkg: Package, rate: number, use: TimeUse, e: Estimate): string {
   const days = Math.round(e.savedDaysPerYear)
   return [
-    "Hi Sergey, I used the AI time-savings calculator and I'd like to talk about a setup.",
+    "Hi Sergey, I tried the AI time-savings calculator and I'd like to talk about a setup.",
     '',
     `My estimate (${presetLabel}, ${pkg.name} package):`,
-    `• Admin today: ${oneDecimal(e.totalHours)} h/week → AI saves ~${oneDecimal(e.savedPerWeek)} h/week (~${days} days/year)`,
-    `• Assuming ${USE_TEXT[use]} at $${rate}/h: ${money(e.incomePerYear)}/year extra`,
-    `• Costs: subscription ${money(e.subscriptionPerYear)}/year + setup ${pkg.fromPrice ? 'from ' : ''}${money(e.setupFee)}`,
+    `• Admin now: ${oneDecimal(e.totalHours)} h/week → about ${oneDecimal(e.savedPerWeek)} h/week saved (~${days} working days a year)`,
+    use > 0
+      ? `• ${USE_TEXT[use]} at $${rate}/h: about ${money(e.incomePerYear)}/year`
+      : `• ${USE_TEXT[use]}: no extra income`,
+    `• Costs: AI subscription ~${money(e.subscriptionPerYear)}/year + setup ${pkg.fromPrice ? 'from ' : ''}${money(e.setupFee)} + GST`,
     use > 0
       ? `• Net, first year: ${money(e.netFirstYear)} · Pays back in ${formatPayback(e.paybackWeeks)}`
       : `• First-year cost: ${money(e.costFirstYear)}`,
+    '',
+    'What takes most of my week: ',
   ].join('\n')
 }

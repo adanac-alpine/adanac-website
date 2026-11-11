@@ -1,7 +1,19 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
-import { BookOpen, Check, FileText, Mail, NotebookPen, Phone, Settings, GraduationCap, ChevronDown } from 'lucide-react'
+import {
+  BookOpen,
+  CalendarCheck,
+  Check,
+  ChevronDown,
+  FileText,
+  GraduationCap,
+  Mail,
+  NotebookPen,
+  Phone,
+  Settings,
+} from 'lucide-react'
 import { FadeIn, StaggerChildren, StaggerItem } from './animation/FadeIn'
 import AdanacMark from './brand/AdanacMark'
 import AdanacWordmark from './brand/AdanacWordmark'
@@ -16,15 +28,51 @@ import {
   TASKS,
   TUNE_UP_PER_MONTH,
   estimate,
-  formatPayback,
   money,
   oneDecimal,
 } from '@/lib/aiSavings'
 
 const focusRing = 'focus:outline-none focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2'
+const primaryButton = `rounded-xl bg-glacier-600 font-bold text-white shadow-lg shadow-glacier/25 transition-colors hover:bg-glacier-700 ${focusRing}`
+const textLink = 'font-semibold text-glacier-700 underline-offset-2 hover:underline'
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
-  return <span className="text-xs font-bold uppercase tracking-widest text-glacier">{children}</span>
+const SOURCES = [
+  {
+    label: 'MIT / Science, 2023',
+    href: 'https://economics.mit.edu/news/study-finds-chatgpt-boosts-worker-productivity-some-writing-tasks',
+  },
+  {
+    label: 'Microsoft, 2023',
+    href: 'https://www.microsoft.com/en-us/worklab/work-trend-index/copilots-earliest-users-teach-us-about-generative-ai-at-work',
+  },
+  {
+    label: 'UK government, 2025',
+    href: 'https://www.gov.uk/government/publications/microsoft-365-copilot-experiment-cross-government-findings-report/microsoft-365-copilot-experiment-cross-government-findings-report-html',
+  },
+]
+
+function SourceLinks() {
+  return (
+    <>
+      {SOURCES.map((s, i) => (
+        <span key={s.href}>
+          {i > 0 && ', '}
+          <a href={s.href} target="_blank" rel="noopener noreferrer" className={textLink}>
+            {s.label}
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+        </span>
+      ))}
+    </>
+  )
+}
+
+function Eyebrow({ children, onDark = false }: { children: React.ReactNode; onDark?: boolean }) {
+  return (
+    <span className={`text-xs font-bold uppercase tracking-widest ${onDark ? 'text-glacier-300' : 'text-glacier-700'}`}>
+      {children}
+    </span>
+  )
 }
 
 function SectionHeading({ eyebrow, title, intro }: { eyebrow: string; title: string; intro?: string }) {
@@ -67,13 +115,16 @@ export function LandingHeader() {
 
 const TRUST_POINTS = [
   'Works with Gmail, Outlook and Google Drive',
-  'Your data stays in your own accounts',
-  `Fixed-price packages from ${money(PACKAGES[0].price)}`,
+  'Runs on your own accounts and AI subscription',
+  `Fixed prices from ${money(PACKAGES[0].price)} + GST`,
 ]
 
 export function LandingHero() {
-  const typicalPkg = PACKAGES.find((p) => p.id === 'everyday') ?? PACKAGES[1]
-  const typical = estimate(PRESETS[DEFAULT_PRESET].hours, typicalPkg, DEFAULT_RATE, 1)
+  const examplePkg = PACKAGES.find((p) => p.id === 'everyday') ?? PACKAGES[1]
+  // Hours only: the money depends on whether you bill the freed time, which the calculator asks.
+  const example = estimate(PRESETS[DEFAULT_PRESET].hours, examplePkg, DEFAULT_RATE, 0)
+  const minDays = Math.min(...PACKAGES.map((p) => p.days))
+  const maxDays = Math.max(...PACKAGES.map((p) => p.days))
 
   return (
     <section id="hero" className="relative overflow-hidden bg-navy pb-20 pt-32 text-white sm:pb-24 sm:pt-36">
@@ -81,19 +132,16 @@ export function LandingHero() {
       <div className="relative z-10 container mx-auto grid items-center gap-12 px-6 md:px-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
         <FadeIn y={16} scale={1}>
           <div className="space-y-6">
-            <Eyebrow>AI tools setup for small business</Eyebrow>
+            <Eyebrow onDark>AI assistant setup for BC small businesses</Eyebrow>
             <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-[56px]">
-              Get hours of your week back with AI
+              Get hours back from email and paperwork every week
             </h1>
-            <p className="max-w-xl text-lg text-white/70">
-              I set up an AI assistant on your own email, calendar and files, tailor it to how you work, and train you
-              to use it. Less time on email, notes and reports. More time for paid work.
+            <p className="max-w-xl text-lg text-white/75">
+              I connect an AI assistant like ChatGPT or Claude to your email, calendar and files, set it up for the way
+              you work, and train you to use it. It drafts and sorts. You check and send.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
-              <a
-                href="#calculator"
-                className={`rounded-xl bg-glacier px-6 py-3.5 font-bold text-white shadow-lg shadow-glacier/25 transition-colors hover:bg-glacier-600 ${focusRing} focus-visible:ring-offset-navy`}
-              >
+              <a href="#calculator" className={`${primaryButton} px-6 py-3.5 focus-visible:ring-offset-navy`}>
                 Estimate my savings
               </a>
               <a
@@ -103,7 +151,7 @@ export function LandingHero() {
                 Book a free call
               </a>
             </div>
-            <ul className="grid gap-2 pt-4 text-sm text-white/70 sm:grid-cols-3 sm:gap-4">
+            <ul className="grid gap-2 pt-4 text-sm text-white/75 sm:grid-cols-3 sm:gap-4">
               {TRUST_POINTS.map((t) => (
                 <li key={t} className="flex items-start gap-2">
                   <Check size={16} strokeWidth={3} className="mt-0.5 flex-none text-forest-300" aria-hidden />
@@ -116,24 +164,26 @@ export function LandingHero() {
 
         <FadeIn delay={0.15} y={16} scale={0.97}>
           <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur-sm sm:p-8">
-            <div className="text-xs font-semibold uppercase tracking-widest text-white/50">A typical result</div>
+            <div className="text-xs font-semibold uppercase tracking-widest text-white/60">Example: professional services</div>
             <div className="mt-2 text-6xl font-extrabold tracking-tight tabular-nums">
-              {oneDecimal(typical.savedPerWeek)}
-              <span className="ml-2 text-xl font-semibold text-white/60">hours a week</span>
+              {oneDecimal(example.savedPerWeek)}
+              <span className="ml-2 text-xl font-semibold text-white/70">hours a week</span>
             </div>
             <dl className="mt-6 grid grid-cols-2 gap-4 border-t border-white/10 pt-6 text-sm">
               <div>
-                <dt className="text-white/50">Working days a year</dt>
-                <dd className="mt-1 text-2xl font-bold tabular-nums">≈ {Math.round(typical.savedDaysPerYear)}</dd>
+                <dt className="text-white/60">Working days back a year</dt>
+                <dd className="mt-1 text-2xl font-bold tabular-nums">≈ {Math.round(example.savedDaysPerYear)}</dd>
               </div>
               <div>
-                <dt className="text-white/50">Setup pays back in</dt>
-                <dd className="mt-1 text-2xl font-bold">{formatPayback(typical.paybackWeeks)}</dd>
+                <dt className="text-white/60">Setup takes</dt>
+                <dd className="mt-1 text-2xl font-bold">
+                  {minDays}–{maxDays} days
+                </dd>
               </div>
             </dl>
-            <p className="mt-6 text-xs text-white/40">
-              Professional services, {typicalPkg.name} package, ${DEFAULT_RATE}/h. Your numbers will differ: try the
-              calculator below.
+            <p className="mt-6 text-xs text-white/60">
+              Based on {oneDecimal(example.totalHours)} h/week of admin, the {examplePkg.name} package and $
+              {DEFAULT_RATE}/h. Your numbers will differ. Try the calculator below.
             </p>
           </div>
         </FadeIn>
@@ -149,7 +199,7 @@ const PLATE = [
     task: 'email',
     icon: Mail,
     title: 'Email',
-    body: 'Long threads summarised, urgent items flagged, replies drafted in your tone. You review and send.',
+    body: 'Long threads summarized, urgent items flagged, replies drafted in your voice. You review and send.',
   },
   {
     task: 'meetings',
@@ -167,7 +217,13 @@ const PLATE = [
     task: 'reading',
     icon: BookOpen,
     title: 'Long documents',
-    body: 'Contracts, specs and RFPs boiled down to what matters, with key dates and risks pulled out.',
+    body: 'Contracts, specs and RFPs boiled down to what matters, with key dates and obligations pulled out.',
+  },
+  {
+    task: 'admin',
+    icon: CalendarCheck,
+    title: 'Admin & scheduling',
+    body: 'Meeting times found, invites drafted, files named and to-dos pulled out of your inbox.',
   },
 ] as const
 
@@ -181,18 +237,18 @@ export function PlateSection() {
           intro="AI won't do your job. It takes the first pass at the admin around it, so you spend minutes checking instead of hours writing."
         />
         <StaggerChildren stagger={0.1}>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {PLATE.map(({ task, icon: Icon, title, body }) => {
               const cut = TASKS.find((t) => t.id === task)?.cut ?? 0
               return (
                 <StaggerItem key={task}>
                   <div className="h-full rounded-2xl border border-light-gray bg-white p-6 transition-shadow hover:shadow-lg hover:shadow-navy/5">
                     <div className="flex items-center justify-between">
-                      <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-glacier-50 text-glacier">
+                      <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-glacier-50 text-glacier-700">
                         <Icon size={22} strokeWidth={1.75} aria-hidden />
                       </span>
                       <span className="rounded-md bg-forest-50 px-2 py-1 text-xs font-semibold text-forest">
-                        ~{Math.round(cut * 100)}% faster
+                        saves ~{Math.round(cut * 100)}%
                       </span>
                     </div>
                     <h3 className="mt-5 text-lg font-bold text-navy">{title}</h3>
@@ -203,6 +259,11 @@ export function PlateSection() {
             })}
           </div>
         </StaggerChildren>
+        <p className="mt-6 max-w-3xl text-sm text-dark-gray">
+          Typical estimates for a well-set-up assistant, not guarantees. They&apos;re based on published studies of AI on
+          writing, email and meeting tasks (<SourceLinks />
+          ). Real results vary. The calculator uses the same figures.
+        </p>
       </div>
     </section>
   )
@@ -216,8 +277,8 @@ export function CalculatorSection({ children }: { children: React.ReactNode }) {
       <div className="container mx-auto px-6 md:px-12">
         <SectionHeading
           eyebrow="Calculator"
-          title="Estimate your savings"
-          intro="Three quick steps. Adjust anything to match your week, and see how the numbers are worked out."
+          title="How many hours could you get back?"
+          intro="Three quick steps, about a minute. Start from a typical week for your type of business, then adjust."
         />
         {children}
       </div>
@@ -236,7 +297,7 @@ const STEPS = [
   {
     icon: Settings,
     title: 'Setup on your accounts',
-    body: 'I connect an AI assistant to your email, calendar and files on your own licence, and tailor it to your work.',
+    body: 'I connect an AI assistant to your email, calendar and files on your own subscription, and set it up for your work. Done in 1–5 days depending on the package, with about 2 hours a day of your time.',
   },
   {
     icon: GraduationCap,
@@ -259,7 +320,7 @@ export function HowItWorksSection() {
                     <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-navy text-white">
                       <Icon size={20} strokeWidth={1.75} aria-hidden />
                     </span>
-                    <span className="text-xs font-bold uppercase tracking-widest text-glacier">Step 0{i + 1}</span>
+                    <span className="text-xs font-bold uppercase tracking-widest text-glacier-700">Step 0{i + 1}</span>
                   </div>
                   <h3 className="mt-5 text-lg font-bold text-navy">{title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-dark-gray">{body}</p>
@@ -273,25 +334,33 @@ export function HowItWorksSection() {
   )
 }
 
-/* ---------- CTA band ---------- */
+/* ---------- Who you'll work with ---------- */
 
-export function CtaBand() {
+export function AboutBlock() {
   return (
-    <section className="relative overflow-hidden bg-navy py-20 text-white">
-      <TrianglePattern variant="dark" opacity={0.05} className="absolute inset-0 h-full w-full" />
-      <div className="relative z-10 container mx-auto flex flex-col items-start justify-between gap-8 px-6 md:flex-row md:items-center md:px-12">
-        <FadeIn y={12} scale={1}>
-          <div className="max-w-2xl space-y-3">
-            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Ready to get your week back?</h2>
-            <p className="text-lg text-white/70">A free 30-minute call. No obligation, no jargon.</p>
+    <section id="about-me" className="bg-white pb-24">
+      <div className="container mx-auto px-6 md:px-12">
+        <FadeIn>
+          <div className="flex flex-col items-start gap-6 rounded-2xl border border-light-gray bg-off-white p-7 sm:flex-row sm:items-center sm:p-9">
+            <Image
+              src="/images/sergey-headshot.jpg"
+              alt="Sergey Pochikovskiy"
+              width={112}
+              height={112}
+              className="h-24 w-24 flex-none rounded-full object-cover sm:h-28 sm:w-28"
+            />
+            <div className="space-y-2">
+              <Eyebrow>Who you&apos;ll work with</Eyebrow>
+              <p className="max-w-3xl text-lg font-medium leading-relaxed text-navy">
+                I&apos;m Sergey Pochikovskiy, a Squamish-based consultant with 16 years in banking systems, where data
+                security comes first. I do every setup myself, on your accounts, and train you on your real work.
+              </p>
+              <Link href="/#about" className={`inline-block rounded text-sm ${textLink} ${focusRing}`}>
+                More about me →
+              </Link>
+            </div>
           </div>
         </FadeIn>
-        <a
-          href="#contact"
-          className={`flex-none rounded-xl bg-glacier px-7 py-4 font-bold text-white shadow-lg shadow-glacier/25 transition-colors hover:bg-glacier-600 ${focusRing} focus-visible:ring-offset-navy`}
-        >
-          Book a free call
-        </a>
       </div>
     </section>
   )
@@ -299,10 +368,24 @@ export function CtaBand() {
 
 /* ---------- FAQ ---------- */
 
-export const FAQS: { q: string; a: string }[] = [
+const dayCount = (d: number) => `${d} ${d === 1 ? 'day' : 'days'}`
+
+export const FAQS: { q: string; a: React.ReactNode }[] = [
   {
     q: 'Is my business data safe?',
-    a: "Everything runs on your own accounts and your own AI subscription, so your email and files stay where they are today. I'll help you pick a plan and settings that don't use your data to train AI models.",
+    a: "Your email and files stay in your own accounts. The assistant reads them only when you ask, through your own AI subscription, under the provider's business privacy terms. I'll set you up on a plan and settings where your data isn't used to train AI models. I don't keep your logins or copies of your data: what I bring, and keep, is the workflows and know-how.",
+  },
+  {
+    q: 'How long does setup take?',
+    a: `Done in 1–5 days depending on the package: ${PACKAGES.map((p) => `${dayCount(p.days)} for ${p.name}`).join(', ')}. Plan on about 2 hours a day of your time to learn and try things on your real work.`,
+  },
+  {
+    q: 'Do you work remotely or on-site?',
+    a: "Remote anywhere in BC. On-site if you're in Squamish.",
+  },
+  {
+    q: "What if it doesn't save me time?",
+    a: "If it isn't saving you time 30 days after setup, I'll run one extra tune-up session free. That applies when you've done the learning sessions during setup.",
   },
   {
     q: 'Which AI tool do you use?',
@@ -310,7 +393,7 @@ export const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Do I need to be technical?',
-    a: "No. If you can use email and a phone app, you can use this. Training is hands-on, using your own real work, not generic examples.",
+    a: 'No. If you can use email and a phone app, you can use this. Training is hands-on, using your own real work, not generic examples.',
   },
   {
     q: 'I use Outlook / Microsoft 365. Does that work?',
@@ -318,7 +401,7 @@ export const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'What does it cost after setup?',
-    a: `Just the AI subscription, about $${SUBSCRIPTION_PER_MONTH}/month per person, paid directly to the provider. Optional tune-ups are ${money(TUNE_UP_PER_MONTH)}/month once the included support ends.`,
+    a: `Just the AI subscription, about $${SUBSCRIPTION_PER_MONTH}/month per person, depending on the AI tool you choose, paid directly to the provider. Optional tune-ups are ${money(TUNE_UP_PER_MONTH)}/month once the included support ends.`,
   },
   {
     q: 'Are prices before tax? How many people are covered?',
@@ -326,7 +409,14 @@ export const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'How accurate is the calculator?',
-    a: 'It is deliberately conservative: your own hours times typical savings per task. Real results depend on your work and how much you use it. We will sanity-check the numbers together on the call.',
+    a: (
+      <>
+        It&apos;s an estimate: your hours times typical savings per task. The per-task figures come from published
+        studies (<SourceLinks />
+        ), set below their lab results because everyday gains are smaller. Real results depend on your work and how much
+        you use the assistant. We&apos;ll check the numbers together on the call.
+      </>
+    ),
   },
 ]
 
@@ -334,11 +424,11 @@ export function FaqSection() {
   return (
     <section id="faq" className="bg-off-white py-24">
       <div className="container mx-auto grid gap-12 px-6 md:px-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
-        <SectionHeading eyebrow="FAQ" title="Common questions" intro="Something else on your mind? Ask it on the call." />
+        <SectionHeading eyebrow="FAQ" title="Common questions" intro="Something else on your mind? Ask me on the call." />
         <div className="divide-y divide-light-gray rounded-2xl border border-light-gray bg-white">
           {FAQS.map(({ q, a }) => (
             <details key={q} className="group px-6 [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-left font-semibold text-navy focus:outline-none focus-visible:text-glacier">
+              <summary className="-mx-2 flex cursor-pointer list-none items-center justify-between gap-4 rounded-lg px-2 py-5 text-left font-semibold text-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-glacier">
                 {q}
                 <ChevronDown size={18} aria-hidden className="flex-none text-medium-gray transition-transform group-open:rotate-180" />
               </summary>
