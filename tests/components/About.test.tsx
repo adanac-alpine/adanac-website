@@ -13,9 +13,9 @@ describe('About', () => {
     expect(screen.getByText('About Me', { selector: '.uppercase' })).toBeInTheDocument()
   })
 
-  it('mentions 16 years of experience', () => {
+  it('mentions 15+ years of experience', () => {
     render(<About />)
-    expect(screen.getByText(/16 years/i)).toBeInTheDocument()
+    expect(screen.getByText(/15\+ years/i)).toBeInTheDocument()
   })
 
   it('introduces Sergey by name', () => {
