@@ -33,7 +33,7 @@ timestamp: "2026-07-11T00:00:00Z"
 
 ### Short bio (hero/subtitle)
 
-16 years in financial services — from banking product management in Belarus to Backbase and VeriPark delivery in Canada. I help credit unions, banks, and FinTechs go from digital strategy to production.
+15+ years in financial services — from banking product management in Belarus to Backbase and VeriPark delivery in Canada. I help credit unions, banks, and FinTechs go from digital strategy to production.
 
 ### Full bio (About section)
 
@@ -144,7 +144,7 @@ Have a digital project in mind? We'd love to hear about it. Let's connect on how
 - Professional but approachable
 - Confident, not arrogant
 - Technical but accessible
-- First person plural ("we") for company sections, first person singular ("I") for About section
+- First person singular ("I") everywhere. "We" only in the inclusive you-and-me sense ("together we define…") and in legal pages
 - No jargon without explanation
 - Action-oriented (verbs, not nouns)
 
