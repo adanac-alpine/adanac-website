@@ -292,7 +292,7 @@ const STEPS = [
   {
     icon: Phone,
     title: 'Free 30-minute call',
-    body: "We look at your week, your tools and where the time goes. You get an honest view of what AI can and can't do for you.",
+    body: "I look at your week, your tools and where the time goes. You get an honest view of what AI can and can't do for you.",
   },
   {
     icon: Settings,
@@ -352,7 +352,7 @@ export function AboutBlock() {
             <div className="space-y-2">
               <Eyebrow>Who you&apos;ll work with</Eyebrow>
               <p className="max-w-3xl text-lg font-medium leading-relaxed text-navy">
-                I&apos;m Sergey Pochikovskiy, a Squamish-based consultant with 16 years in banking systems, where data
+                I&apos;m Sergey Pochikovskiy, a Squamish-based consultant with 15+ years in banking systems, where data
                 security comes first. I do every setup myself, on your accounts, and train you on your real work.
               </p>
               <Link href="/#about" className={`inline-block rounded text-sm ${textLink} ${focusRing}`}>

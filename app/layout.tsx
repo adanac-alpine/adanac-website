@@ -9,13 +9,13 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Adanac Alpine Advisory — Digital Enablement for Financial Services',
+  title: 'Adanac Alpine Advisory — Digital Banking Platform Delivery',
   description: 'IT consulting and digital transformation for financial services. Backbase and Salesforce implementation experts for banks and credit unions.',
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
-    title: 'Adanac Alpine Advisory — Digital Enablement for Financial Services',
+    title: 'Adanac Alpine Advisory — Digital Banking Platform Delivery',
     description: 'IT consulting and digital transformation for financial services. Backbase and Salesforce implementation experts for banks and credit unions.',
     url: 'https://adanacalpine.ca',
     siteName: 'Adanac Alpine Advisory',
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
         url: 'https://adanacalpine.ca/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Adanac Alpine Advisory — Digital Enablement for Financial Services',
+        alt: 'Adanac Alpine Advisory — Digital Banking Platform Delivery',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Adanac Alpine Advisory — Digital Enablement for Financial Services',
+    title: 'Adanac Alpine Advisory — Digital Banking Platform Delivery',
     description: 'IT consulting and digital transformation for financial services. Backbase and Salesforce implementation experts for banks and credit unions.',
     images: ['https://adanacalpine.ca/og-image.png'],
   },
