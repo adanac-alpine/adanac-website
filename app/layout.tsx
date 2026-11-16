@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://adanacalpine.ca/og-image.png',
+        url: 'https://adanacalpine.ca/og-image-v2.png',
         width: 1200,
         height: 630,
         alt: 'Adanac Alpine Advisory — Digital Banking Platform Delivery',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Adanac Alpine Advisory — Digital Banking Platform Delivery',
     description: 'IT consulting and digital transformation for financial services. Backbase and Salesforce implementation experts for banks and credit unions.',
-    images: ['https://adanacalpine.ca/og-image.png'],
+    images: ['https://adanacalpine.ca/og-image-v2.png'],
   },
   robots: {
     index: true,
