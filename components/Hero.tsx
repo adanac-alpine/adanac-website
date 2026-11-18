@@ -23,7 +23,7 @@ export default function Hero() {
     e.preventDefault()
     const contactSection = document.querySelector('#contact')
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' })
+      contactSection.scrollIntoView()
     }
   }
 
@@ -75,7 +75,7 @@ export default function Hero() {
             href="#about"
             onClick={(e) => {
               e.preventDefault()
-              document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })
+              document.querySelector('#about')?.scrollIntoView()
             }}
             className="border border-white/20 hover:border-white/40 hover:bg-white/5 text-white font-semibold tracking-wide px-8 py-4 rounded-lg transition-all duration-300 focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus-visible:ring-offset-navy focus:outline-none"
           >

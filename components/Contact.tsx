@@ -41,6 +41,7 @@ export default function Contact({
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
   const [fieldErrors, setFieldErrors] = useState<{ email?: string }>({})
+  const emailRef = useRef<HTMLInputElement>(null)
 
   // Pre-fill the message when the /ai-savings calculator on the same page hands over an estimate.
   // Replaces an earlier pre-fill, but never text the visitor typed themselves.
@@ -70,6 +71,8 @@ export default function Contact({
 
     if (!validateEmail(formState.email)) {
       setFieldErrors({ email: 'Please enter a valid email address' })
+      // Screen readers announce a field's error when focus reaches it
+      emailRef.current?.focus()
       return
     }
     setFieldErrors({})
@@ -108,6 +111,7 @@ export default function Contact({
       ...formState,
       [e.target.name]: e.target.value,
     })
+    if (e.target.name === 'email' && fieldErrors.email) setFieldErrors({})
   }
 
   const calendarLink = (
@@ -281,10 +285,13 @@ export default function Contact({
                         autoComplete="email"
                         required
                         aria-required="true"
+                        ref={emailRef}
+                        aria-invalid={fieldErrors.email ? 'true' : 'false'}
+                        aria-describedby={fieldErrors.email ? 'email-error' : undefined}
                         className="w-full px-4 py-3 bg-off-white border border-gray-200 rounded-lg text-navy placeholder-medium-gray focus:outline-none focus:border-glacier focus:ring-2 focus:ring-glacier/25 transition-all duration-300"
                       />
                       {fieldErrors.email && (
-                        <p className="mt-1.5 text-sm text-red-600" role="alert">{fieldErrors.email}</p>
+                        <p id="email-error" className="mt-1.5 text-sm text-red-600">{fieldErrors.email}</p>
                       )}
                     </div>
                   </div>

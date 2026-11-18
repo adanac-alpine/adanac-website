@@ -136,7 +136,7 @@ export default function AiSavingsCalculator() {
   }, [openStep])
 
   function scrollToResults() {
-    resultsRef.current?.scrollIntoView?.({ behavior: 'smooth', block: 'start' })
+    resultsRef.current?.scrollIntoView?.({ block: 'start' })
   }
 
   function choosePreset(id: PresetId) {

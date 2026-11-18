@@ -77,7 +77,13 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
+  /* Keep anchor targets and focused controls clear of the fixed navigation bar (WCAG 2.4.11) */
+  scroll-padding-top: 5rem;
+
+  /* Smooth scrolling is spatial motion: opt in only when the user hasn't asked for less */
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -97,12 +103,17 @@ body {
   100% { transform: translateX(0); }
 }
 
+/* Default to a static row; opt in to the marquee only without a reduced-motion preference */
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  @media (prefers-reduced-motion: no-preference) {
+    animation: marquee 30s linear infinite;
+  }
 }
 
 .animate-marquee-reverse {
-  animation: marquee-reverse 30s linear infinite;
+  @media (prefers-reduced-motion: no-preference) {
+    animation: marquee-reverse 30s linear infinite;
+  }
 }
 
 .group:hover .animate-marquee,
@@ -120,24 +131,11 @@ body {
 }
 
 /* ── Respect Vestibular/Motion Sensitivity ────────── */
+/* Motion is handled per animation above (and by MotionConfig for Framer Motion) rather than a
+   global 0.01ms override, so colour/opacity transitions on links and buttons keep working. */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto !important;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-
-  .animate-marquee,
-  .animate-marquee-reverse {
-    animation-play-state: paused !important;
-    animation: none !important;
-    transform: none !important;
+  /* Keep the busy spinner turning so it still signals activity, just slowly */
+  .animate-spin {
+    animation-duration: 6s;
   }
 }
