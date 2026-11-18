@@ -9,7 +9,12 @@ See [AGENTS.md](./AGENTS.md) — it is the authoritative guide for all work on t
 
 2. **End every task with a summary** that ALWAYS includes:
    - **What shipped** — concise bullets of code changes and commits
-   - **Your next steps** — numbered checklist of what the user must do (deploy, verification, etc.)
+   - **Your next steps** — only things the user truly must do themselves (e.g. approve something
+     in a dashboard), in plain language. If there is nothing, say so.
+
+5. **The user is not a developer.** Do the work yourself — run installs, pulls, tests, deploy
+   checks and verification instead of handing over commands. Never ask the user to run terminal
+   commands. Report results in plain language and avoid jargon (stashes, lockfiles, engines, etc.).
 
 3. **AGENTS.md is locked.** Do not modify it without explicit permission. Add detail to `specs/`
    instead. Keep AGENTS.md lean (~50 lines) as an entry point only.
