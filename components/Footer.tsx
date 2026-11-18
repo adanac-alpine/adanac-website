@@ -16,7 +16,7 @@ export default function Footer() {
     e.preventDefault()
     const element = document.querySelector(href)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      element.scrollIntoView()
     } else {
       // Section lives on the home page (e.g. footer shown on /ai-savings).
       router.push(`/${href}`)

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
+import MotionProvider from '@/components/animation/MotionProvider'
 import './globals.css'
 
 const inter = Inter({ 
@@ -66,7 +67,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
       <Analytics />
     </html>
