@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { describe, it, expect } from 'vitest'
 import ToolsWorkflow from '../../components/ToolsWorkflow'
 
@@ -30,5 +31,26 @@ describe('ToolsWorkflow', () => {
     const { container } = render(<ToolsWorkflow />)
     const icons = container.querySelectorAll('img')
     expect(icons.length).toBeGreaterThanOrEqual(20)
+  })
+
+  it('pauses and resumes the marquee with a visible button', async () => {
+    const user = userEvent.setup()
+    const { container } = render(<ToolsWorkflow />)
+    const rows = () => Array.from(container.querySelectorAll<HTMLElement>('.animate-marquee, .animate-marquee-reverse'))
+
+    await user.click(screen.getByRole('button', { name: 'Pause animation' }))
+    rows().forEach((row) => expect(row.style.animationPlayState).toBe('paused'))
+
+    await user.click(screen.getByRole('button', { name: 'Play animation' }))
+    rows().forEach((row) => expect(row.style.animationPlayState).toBe(''))
+  })
+
+  it('hides the duplicated loop copy from screen readers', () => {
+    const { container } = render(<ToolsWorkflow />)
+    const row = container.querySelector('.animate-marquee')!
+    const cards = Array.from(row.children)
+    const half = cards.length / 2
+    expect(cards.slice(0, half).every((c) => !c.hasAttribute('aria-hidden'))).toBe(true)
+    expect(cards.slice(half).every((c) => c.getAttribute('aria-hidden') === 'true')).toBe(true)
   })
 })

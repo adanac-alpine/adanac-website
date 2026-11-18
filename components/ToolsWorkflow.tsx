@@ -1,6 +1,8 @@
 'use client'
 
+import { useState } from 'react'
 import Image from 'next/image'
+import { Pause, Play } from 'lucide-react'
 import { FadeIn } from './animation/FadeIn'
 
 function ToolIcon({ name, className = '' }: { name: string; className?: string }) {
@@ -49,18 +51,20 @@ const row2 = [
   { name: 'Playwright', icon: 'playwright' },
 ]
 
-function MarqueeRow({ tools, reverse = false }: { tools: typeof row1; reverse?: boolean }) {
+function MarqueeRow({ tools, reverse = false, paused = false }: { tools: typeof row1; reverse?: boolean; paused?: boolean }) {
   const doubled = [...tools, ...tools]
 
   return (
     <div className="relative overflow-hidden group">
       <div
         className={`flex gap-3 w-max ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', animationPlayState: paused ? 'paused' : undefined }}
       >
         {doubled.map((tool, idx) => (
           <div
             key={idx}
+            // The second copy only exists to loop the animation; keep screen readers from reading it twice
+            aria-hidden={idx >= tools.length ? true : undefined}
             className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 border border-gray-100 hover:border-glacier/30 hover:shadow-md hover:shadow-glacier/5 transition-all duration-300 shrink-0"
           >
             <ToolIcon name={tool.icon} className="w-8 h-8 shrink-0" />
@@ -75,6 +79,9 @@ function MarqueeRow({ tools, reverse = false }: { tools: typeof row1; reverse?: 
 }
 
 export default function ToolsWorkflow() {
+  // Auto-moving content that runs longer than 5 seconds needs a visible way to stop it (WCAG 2.2.2)
+  const [paused, setPaused] = useState(false)
+
   return (
     <section id="tools" className="py-24 bg-off-white">
       <div className="container mx-auto px-6 md:px-12">
@@ -91,8 +98,20 @@ export default function ToolsWorkflow() {
         </FadeIn>
 
         <div className="space-y-4">
-          <MarqueeRow tools={row1} />
-          <MarqueeRow tools={row2} reverse />
+          <MarqueeRow tools={row1} paused={paused} />
+          <MarqueeRow tools={row2} reverse paused={paused} />
+        </div>
+
+        {/* Under reduced motion the rows are already static, so the control has nothing to do */}
+        <div className="mt-6 flex justify-end motion-reduce:hidden">
+          <button
+            type="button"
+            onClick={() => setPaused((p) => !p)}
+            className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm font-semibold text-navy transition-colors hover:border-glacier/40 hover:text-glacier-700 focus-visible:ring-2 focus-visible:ring-glacier focus-visible:ring-offset-2 focus:outline-none"
+          >
+            {paused ? <Play size={14} aria-hidden /> : <Pause size={14} aria-hidden />}
+            {paused ? 'Play animation' : 'Pause animation'}
+          </button>
         </div>
 
       </div>
